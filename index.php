@@ -1,7 +1,6 @@
 <?php
 
 $uri = $_SERVER["REQUEST_URI"];
-echo "($uri)";
 
 // log
 if (!empty($_REQUEST)) {
@@ -18,4 +17,7 @@ $template = $pageas[$uri] ?? false;
 
 if ($template) {
     require "templates/$template.php";
+}
+else {
+    echo "($uri)";
 }
