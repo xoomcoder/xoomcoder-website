@@ -7,6 +7,9 @@
     <p>
     Pour XoomCoder.com, comme il y aura beaucoup de tutoriels, il faudra aussi pouvoir montrer les résultats sur des pages de demo. Ce sera ainsi mieux organisé et plus simple de séparer tous ces dossiers dans un sous-domaine, par exemple: demo.xoomcoder.com qui sera plus simple que le site principal.    
     </p>
+    <p>
+    Et cela permet aussi sur le serveur de séparer le site principal en 2 repositories. Un repo pour le code du framework/cms et un 2e pour le contenu du site. 
+    </p>
 </article>
 
 <article>
