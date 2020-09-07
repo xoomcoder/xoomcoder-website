@@ -231,17 +231,6 @@ let usercircle = null;
 
 app.component('xmap', {
     destroyed () {
-        // // reset map
-        // if (mymap) {
-        //     mymap.eachLayer(function(layer){
-        //         layer.remove();
-        //     });
-        //     mymap.remove();
-        //     // reset map
-        //     let lastmap = document.querySelector('#mapid');
-        //     lastmap.innerHTML = '';
-        //     lastmap.className='';
-        // }
         mymap = null;
         userpos = null;
         usermarker = null;
