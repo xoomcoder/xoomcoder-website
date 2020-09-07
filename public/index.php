@@ -1,4 +1,3 @@
 <?php
 
-$uri = $_SERVER["REQUEST_URI"];
-echo $uri;
+require dirname(__DIR__) . "/index.php";
