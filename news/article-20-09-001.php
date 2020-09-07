@@ -21,7 +21,7 @@
 </article>
 
 <article>
-    <h2>Sous-domaines</h2>
+    <h2>Sous-domaines pour découper le projet en plusieurs sites</h2>
     <p>
     Quand on loue un nom de domaine, il est généralement inclus dans les packs de pouvoir créer des adresses emails et aussi de créer des milliers de sous-domaines. 
     Un sous-domaine, permet de séparer les contenus qui seront considérés par les moteurs de recherche comme des sites différents.
