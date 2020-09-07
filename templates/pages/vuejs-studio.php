@@ -229,6 +229,14 @@ let userpos = null;
 let usermarker = null;
 let usercircle = null;
 
+
+function userMove (e) {
+    userpos = e;
+    usermarker
+    .bindPopup('<pre>lat: ' + e.latlng.lat + '\nlng: ' +e.latlng.lng + '</pre>' )
+    .openPopup();
+}
+
 app.component('xmap', {
     destroyed () {
         mymap = null;
@@ -256,7 +264,9 @@ app.component('xmap', {
             var radius = e.accuracy / 2;
 
             if (usermarker == null) {
-                usermarker = L.marker(e.latlng, { draggable: true }).addTo(mymap)
+                usermarker = L.marker(e.latlng, { draggable: true })
+                .on('move', userMove)
+                .addTo(mymap)
                 .bindPopup("estimation de " + radius + " metres autour du centre.").openPopup();
                 usercircle = L.circle(e.latlng, radius).addTo(mymap);
             }
