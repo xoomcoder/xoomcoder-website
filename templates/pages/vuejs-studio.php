@@ -69,6 +69,12 @@ section {
             <h1>SITE TITLE</h1>
         </header>
         <main>
+            <section v-for="section in sections">
+                <h2>{{ section.title }}</h2>
+                <article v-for="article in section.articles">
+                    <h3>{{ article.title }}</h3>
+                </article>
+            </section>
             <section>
                 <h1>TITLE1 SECTION</h1>
                 <article>
@@ -109,6 +115,26 @@ import * as Vue from 'https://cdn.jsdelivr.net/npm/vue@3.0.0-rc.1/dist/vue.esm-b
 const appconf = {
   data() {
     return {
+        sections: [
+            { title: 'section1', articles: [
+                { title: 'article1' },
+                { title: 'article2' },
+                { title: 'article3' },
+                { title: 'article4' },
+                { title: 'article5' },
+                { title: 'article6' },
+            ] },
+            { title: 'section2', articles: [
+                { title: 'article1' },
+                { title: 'article2' },
+                { title: 'article3' },
+            ]},
+            { title: 'section3', articles: [
+                { title: 'article1' },
+                { title: 'article2' },
+                { title: 'article3' },
+            ] }
+        ],
         debug: 'xoomcoder.com'
     }
   }
