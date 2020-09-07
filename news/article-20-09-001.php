@@ -1,4 +1,21 @@
 <article>
+    <h2>LeafletJS pour affihcer une carte interactive</h2>
+    <p>
+    Pour afficher très simplement une carte avec JS, il y a la librairie LeafletJS.
+    Vraiment très simple d'utilisation, avec une documentation bien faite, on peut obtenir en quelques minutes une carte animée et interactive.
+    Et tout est fluide aussi sur mobile.     
+    </p>
+    <p>
+    Entre la technique et l'art, l'utilisation des cartes, depuis des siècles, essaie de transmettre le maximum d'informations différentes, sur une surface restreinte.
+    Dans le contexte de la formation, on retrouve bien la notion de zoom.
+    D'abord comprendre les éléments dans leur ensemble et ensuite aller progressivement dans les détails. Et une route sur une carte montre clairement que, pour aller de sa position actuelle jusqu'à son objectif, le chemin est rarement en ligne droite, mais parsemé de plein de détours. Et dans un contexte de formation dans du virtuel, c'est toujours agréable de pouvoir s'appuyer sur une carte du monde réel.
+    </p>
+    <p>
+    https://leafletjs.com/    
+    </p>
+</article>
+
+<article>
     <h2>Sous-domaines</h2>
     <p>
     Quand on loue un nom de domaine, il est généralement inclus dans les packs de pouvoir créer des adresses emails et aussi de créer des milliers de sous-domaines. 
