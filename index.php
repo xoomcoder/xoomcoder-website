@@ -9,14 +9,22 @@ if (!empty($_REQUEST)) {
     file_put_contents(__DIR__ . "/log/request-$today.log", "$logdata\n", FILE_APPEND);    
 }
 
-$pageas = [
-    "/gitpull"  => "gitpull",
-    "/info"     => "info",
-];
-$template = $pageas[$uri] ?? false;
+function buildPages ($root) 
+{
+    $results = [];
+    $files = glob("$root/templates/pages/*.php");
+    foreach($files as $file) {
+        extract($pathinfo($file));
+        $results["/$filename"] = $filename;
+    }
+    return $results;
+}
+
+$pageas     = buildPages(__DIR__);
+$template   = $pageas[$uri] ?? false;
 
 if ($template) {
-    require "templates/$template.php";
+    require "templates/pages/$template.php";
 }
 else {
     echo "($uri)";
