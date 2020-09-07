@@ -15,15 +15,15 @@ function buildPages ($root)
     $files = glob("$root/templates/pages/*.php");
     foreach($files as $file) {
         extract(pathinfo($file));
-        $results["/$filename"] = $filename;
+        $results["$filename"] = $filename;
     }
     return $results;
 }
+$pageas     = buildPages(__DIR__);
 
 if ($uri == "/") $uri = "/index.php";
-
-$pageas     = buildPages(__DIR__);
-$template   = $pageas[$uri] ?? false;
+extract(pathinfo($uri));
+$template   = $pageas[$filename] ?? false;
 
 if ($template) {
     require "templates/pages/$template.php";
