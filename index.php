@@ -14,7 +14,7 @@ function buildPages ($root)
     $results = [];
     $files = glob("$root/templates/pages/*.php");
     foreach($files as $file) {
-        extract($pathinfo($file));
+        extract(pathinfo($file));
         $results["/$filename"] = $filename;
     }
     return $results;
