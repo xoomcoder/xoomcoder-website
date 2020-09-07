@@ -1,4 +1,15 @@
 <article>
+    <h2>Sous-domaines</h2>
+    <p>
+    Quand on loue un nom de domaine, il est généralement inclus dans les packs de pouvoir créer des adresses emails et aussi de créer des milliers de sous-domaines. 
+    Un sous-domaine, permet de séparer les contenus qui seront considérés par les moteurs de recherche comme des sites différents.
+    </p>
+    <p>
+    Pour XoomCoder.com, comme il y aura beaucoup de tutoriels, il faudra aussi pouvoir montrer les résultats sur des pages de demo. Ce sera ainsi mieux organisé et plus simple de séparer tous ces dossiers dans un sous-domaine, par exemple: demo.xoomcoder.com qui sera plus simple que le site principal.    
+    </p>
+</article>
+
+<article>
     <h2>Composer, Packagist et GitHub</h2>
     <p>
     Le projet XoomCoder avance bien en termes de code. Le nombre de classes augmente régulièrement. Pour permettre une meilleur réutilisation des classes, le système avec composer et packagist est très répandu dans le monde PHP.
