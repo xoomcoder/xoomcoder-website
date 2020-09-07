@@ -20,6 +20,8 @@ function buildPages ($root)
     return $results;
 }
 
+if ($uri == "/") $uri = "/index.php";
+
 $pageas     = buildPages(__DIR__);
 $template   = $pageas[$uri] ?? false;
 
