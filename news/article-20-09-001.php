@@ -1,5 +1,5 @@
 <article>
-    <h2>LeafletJS pour affihcer une carte interactive</h2>
+    <h2>LeafletJS pour afficher une carte interactive</h2>
     <p>
     Pour afficher très simplement une carte avec JS, il y a la librairie LeafletJS.
     Vraiment très simple d'utilisation, avec une documentation bien faite, on peut obtenir en quelques minutes une carte animée et interactive.
@@ -12,6 +12,11 @@
     </p>
     <p>
     https://leafletjs.com/    
+    </p>
+    <p>
+    VueJS v3 et LeafletJS peuvent se combiner et se charger en module.
+    Créer un composant VueJS pour intégrer une carte LeafletJS se code assez rapidement.
+    Il y a quelques surprises si on détruit et recrée le composant, car il faut aussi réinitialiser la carte LeafletJS.
     </p>
 </article>
 
