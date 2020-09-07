@@ -10,8 +10,12 @@ if (!empty($_REQUEST)) {
     file_put_contents(__DIR__ . "/log/request-$today.log", "$logdata\n", FILE_APPEND);    
 }
 
-// git pull
-if ($uri == "/gitpull") {
-    $commande = "git pull";
-    passthru($commande);
+$pageas = [
+    "/gitpull"  => "gitpull",
+    "/info"     => "info",
+];
+$template = $pageas[$uri] ?? false;
+
+if ($template) {
+    require "templates/$template.php";
 }
