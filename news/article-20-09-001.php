@@ -1,5 +1,5 @@
 <article>
-    <h2>Level5: marketplace</h2>
+    <h2>Level5: marketplacepour publier des annonces géolocalisées</h2>
     <p>
     le site permet maintenant aux membres agréés de pouvoir publier des annonces géolocalisées.
     Le membre peut se connecter à son espace membre, qui est appelé "Le Studio". 
@@ -12,6 +12,9 @@
     <p>
     L'utilisation combinée de VueJS v3 et de LeafetJS permet de coder rapidement et en moins de 1000 lignes de code, un résultat bien cool.
     La mise en oeuvre des "components" du VueJS sépare bien les codes, mais il y a toujours des interactions entre le container applicatif et les composants.
+    </p>
+    <p>
+    Les modules javascript permettent aussi d'isoler les codes, mais il faut aussi pouvoir partager des variables entre les modules. Bonne surprise, VueJS et LeafletJS proposent tous deux des versions en module JS.    
     </p>
 </article>
 
