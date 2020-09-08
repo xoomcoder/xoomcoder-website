@@ -1,4 +1,21 @@
 <article>
+    <h2>Level5: marketplace</h2>
+    <p>
+    le site permet maintenant aux membres agréés de pouvoir publier des annonces géolocalisées.
+    Le membre peut se connecter à son espace membre, qui est appelé "Le Studio". 
+    Ensuite, il peut publier une annonce avec une géolocalisation.
+    L'annonce apparaît ensuite sur le site, sur la page des annonces d'emploi.
+    </p>
+    <p>
+    https://xoomcoder.com/emploi    
+    </p>
+    <p>
+    L'utilisation combinée de VueJS v3 et de LeafetJS permet de coder rapidement et en moins de 1000 lignes de code, un résultat bien cool.
+    La mise en oeuvre des "components" du VueJS sépare bien les codes, mais il y a toujours des interactions entre le container applicatif et les composants.
+    </p>
+</article>
+
+<article>
     <h2>LeafletJS pour afficher une carte interactive</h2>
     <p>
     Pour afficher très simplement une carte avec JS, il y a la librairie LeafletJS.
