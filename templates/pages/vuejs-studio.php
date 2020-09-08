@@ -149,7 +149,7 @@ img.action {
                     <article v-for="article in section.articles">
                         <h3>{{ article.title }}</h3>
                         <p>{{ article.content }}</p>
-                        <component v-if="article.compo" :is="article.compo"></component>
+                        <component v-if="article.compo" :is="article.compo" :name="article.name" v-model="forms[article.name]"></component>
                     </article>
                 </section>
             </template>
@@ -184,9 +184,35 @@ const mymethods = {
 };
 
 const appconf = {
+    mounted () {
+        let loginToken = sessionStorage.getItem('loginToken');
+        if (loginToken) {
+            let infos = loginToken.split(',');
+            // console.log(infos);
+            this.loginToken = loginToken;
+            this.username = infos[0];
+        }
+        else {
+            // location.replace('login');
+        }
+
+    },
     methods: mymethods,
     data() {
         return {
+            data: {}, 
+            loginToken: '',
+            username: '',
+            forms: {
+                test: {
+                    title: 'ajouter un bloc-note',
+                    fields: [
+                        { label: 'titre' },
+                        { label: 'contenu', type: 'textarea' },
+                    ],
+                    submit: sendAjaxForm
+                }
+            },
             hide: { options: true },
             sections: [
                 { title: 'Projets', class: 's1', articles: [
@@ -215,7 +241,7 @@ const appconf = {
                 { title: 'CodeMap', class: 's4', articles: [
                     { title: 'carte', compo: 'xmap'},
                     { title: 'liste', compo: 'xlist' },
-                    { title: 'formulaire', compo: 'xform' },
+                    { title: 'formulaire', compo: 'xform', name: 'test' },
                 ]},
             ],
             debug: 'xoomcoder.com'
@@ -315,13 +341,33 @@ app.component('xmap', {
 });
 
 app.component('xform', {
+    methods: {
+        title (name) {
+            console.log(app);
+            return 'hello';
+            //return app.forms[name].title;
+        }
+    },
     data() {
         return {
             count: 0
         }
     },
+    props: [ 'name', 'modelValue' ],
     template: `
-    <button @click="count++">{{ count }}</button>
+    <form @submit.prevent="modelValue.submit"> 
+        <h4>{{ modelValue.title }}</h4>
+        <template v-for="field in modelValue.fields">
+            <label>
+                <span>{{ field.label }}</span>
+                <textarea v-if="field.type=='textarea'" required cols="60" rows="10"></textarea>
+                <input v-else type="text" required>
+            </label>
+        </template>   
+        <input type="hidden" name="classApi" value="Member">
+        <input type="hidden" name="methodApi" value="run">
+        <button type="submit">{{ count }}</button>
+    </form>
     `
 });
 app.component('xlist', {
@@ -337,6 +383,24 @@ app.component('xlist', {
 
 app.mount('.page');
 
+
+// custom functions
+async function sendAjaxForm(event)
+{
+    let fd          = new FormData(event.target);
+    let loginToken  = sessionStorage.getItem('loginToken');
+    fd.append('loginToken', loginToken);
+
+    let response = await fetch('api', {
+        method: 'POST',
+        body: fd
+    });
+    let json     = await response.json();
+
+    console.log(json);
+
+    if (json.data) app.data = json.data;
+}
     </script>
 </body>
 </html>
