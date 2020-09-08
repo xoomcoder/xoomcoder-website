@@ -1,5 +1,5 @@
 <article>
-    <h2>Level5: marketplace pour publier des annonces géolocalisées</h2>
+    <h2>Level 5: marketplace pour publier des annonces géolocalisées</h2>
     <p>
     le site permet maintenant aux membres agréés de pouvoir publier des annonces géolocalisées.
     Le membre peut se connecter à son espace membre, qui est appelé "Le Studio". 
