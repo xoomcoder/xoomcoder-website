@@ -2,6 +2,7 @@
 <section>
     <h1>Recherche et Offres d'Emploi</h1>
     <p>Sur cette page, vous pourrez trouver des offres d'emploi géolocalisées et aussi publier votre annonce de recherche d'emploi.</p>
+    <a class="cta w100" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
 </section>
 
 <section>
@@ -29,5 +30,24 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     tileSize: 512,
     zoomOffset: -1
 }).addTo(mymap);
+
+for(let a=0; a <annonces.length; a++) {
+    let note = annonces[a];
+    if (note.json) {
+        let info = JSON.parse(note.json);
+        if ((info != null) && ('lat' in info) && ('lng' in info)) {
+
+            let nmark = L.marker({ 'lat': info.lat, 'lng': info.lng },{draggable: true});
+                let nhtml = `
+                <h3>${note.title}</h3>
+                <pre>${note.code}</pre> 
+                `;
+                nmark
+                    .addTo(mymap)
+                    .bindPopup(nhtml);
+        }
+    }
+
+}
 
 </script>
