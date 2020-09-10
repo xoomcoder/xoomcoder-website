@@ -1,8 +1,4 @@
 <article>
-    <?php View::showMD("article-markdown")?>
-</article>    
-
-<article>
     <h2>Coronavirus, Data et analyses</h2>
     <p>
     L'Open Data permet de créer des analyses précises si les outils sont déjà disponibles.
