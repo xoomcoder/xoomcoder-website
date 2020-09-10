@@ -174,5 +174,3 @@ Et actuellement, la POO reste toujours le standard de développement pour des pr
         </pre>
     </article>
 </section>
-
-<?php require "section-contact.php" ?>
