@@ -1,4 +1,4 @@
-## ParseDown et CommonMark
+## MarkDown en PHP avec ParseDown et CommonMark
 
 Le format MarkDown est devenu vraiment populaire et incontournable. Plus simple que le code HTML, il permet aux rédacteurs d'écrire un texte lisible.
 En effet, il n'y a pas les balises HTML qui défigurent le contenu. Et pour faire de la mise en page, le code à rajouter reste discret.
