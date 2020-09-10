@@ -13,5 +13,9 @@ Il y a plusieurs bibliothèques disponibles:
 * PHP Markdown
 * ...
 
+https://github.com/erusev/parsedown
+
+https://github.com/thephpleague/commonmark
+
 ParseDown concentre tout le code dans une seule classe.
 CommonMark va ajouter plus de 200 fichiers avec composer.
