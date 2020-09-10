@@ -1,4 +1,36 @@
 <article>
+    <h2>Coronavirus, Data et analyses</h2>
+    <p>
+    L'Open Data permet de créer des analyses précises si les outils sont déjà disponibles.
+    La France a découvert en temps de crise l'utilité des ces outils qui expliquent et éclairent sur l'évolution rapide d'une épidémie. L'article retrace comment ce sont des volontaires qui ont réussi à développer des outils pour mieux capter les données journalières.
+    </p>
+    <p>Comme extraits révélateurs de la situation:</p>
+    <p>
+    "En France, on a une culture du communiqué de presse, pas une culture de la donnée. Pourtant, c'est essentiel pour éclairer la décision publique et l'opinion", estime-t-il. Un autre, agent d'une ARS, témoignait anonymement auprès de Mediapart : "On travaille avec des outils archaïques, on a beaucoup bricolé à base d’Excel et de copier-coller, on a perdu des journées et des soirées à refaire nos tableaux à la main. Nous sommes bien loin de la start-up nation."
+    </p>
+    <p>https://www.francetvinfo.fr/sante/maladie/coronavirus/urgence-cafouillages-mille-feuille-d-indicateurs-dans-les-coulisses-des-donnees-tres-strategiques-sur-le-covid-19_4099757.html</p>
+    <p>
+    Le code source est sur GitHub.com
+    </p>
+    <p>
+    https://github.com/etalab/covid19-dashboard
+    </p>
+</article>
+
+<article>
+    <h2>Level 2: header avec nav</h2>
+    <p>
+    Pour utiliser Grid CSS, une des limitations de la structure HTML est d'avoir un container. Et seulement les balises enfants pourront être disposés suivant un layout grid.
+    L'entête de page est une zone où la structure HTML est souvent composée d'un logo, d'un titre, d'un slogan et d'un menu qui propose plusieurs liens.
+    Si on utilise la balise sémantique nav comme container des liens de menus, on ne peut plus disposer les menus avec le même grid que le logo et les autres éléments.
+    Pour combiner les 2 contraintes, c'est assez étonnant mais le validateur HTML, autorise à mettre dans une balise nav n'importe quelle balise.
+    On peut donc créer un structure header > nav > tous les éléments au même niveau.
+    C'est plus pratique pour répartir tous les éléments comme on veut dans le header.
+    A suivre pour évaluer l'impact en SEO ?    
+    </p>
+</article>
+
+<article>
     <h2>Level 2: URLs canoniques</h2>
     <p>
     Pour éviter les problèmes de duplicate content sur les différentes pages qui affichent le même contenu, il est possible d'ajouter une balise meta "canonical" qui fournit l'URL de la page "officielle". Ainsi, les moteurs de recherche savent que les autres pages sont des duplicata et ne gardent pour le référencement que la page de l'URL canonique.   
