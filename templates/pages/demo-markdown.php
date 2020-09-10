@@ -1,3 +1,5 @@
 <?php
 
-View::showMD("readme");
+// View::showMD("readme");
+
+News::getPhotos('people');

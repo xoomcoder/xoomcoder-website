@@ -1,3 +1,5 @@
+PhotoLoad?tag=people
+
 @bloc meta
 { 
     "class" : "w67" 
@@ -6,7 +8,7 @@
 
 @bloc markdown
 
-![time # cover](/assets/img/time.jpg)
+![time # cover](/assets/square/people.jpg)
 
 ## MarkDown en PHP avec ParseDown et CommonMark
 
