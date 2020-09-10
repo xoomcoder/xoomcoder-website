@@ -18,4 +18,6 @@ Il est ainsi possible de chercher des photos par mot-clé.
 
 Dans XoomCoder, il y a une commande qui permet de lancer une requête vers l'API de Pexels et de récupérer une photo suivant un mot-clé.
 
+Et si l'image n'est pas satisfaisante, il y aussi une API publique qui permet de supprimer l'image...
+
 @bloc
