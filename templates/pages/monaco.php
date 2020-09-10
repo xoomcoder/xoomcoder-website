@@ -33,7 +33,7 @@ require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-e
 // a web worker through a same-domain script
 window.MonacoEnvironment = {
 	getWorkerUrl: function(workerId, label) {
-        return 'https://workodin.com/assets/js/monaco-editor-worker-loader-proxy';
+        return '/monaco-editor-worker-loader-proxy';
 	}
 };
 
