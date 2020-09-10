@@ -1,4 +1,19 @@
 <article>
+    <h2>Level 2: URLs canoniques</h2>
+    <p>
+    Pour éviter les problèmes de duplicate content sur les différentes pages qui affichent le même contenu, il est possible d'ajouter une balise meta "canonical" qui fournit l'URL de la page "officielle". Ainsi, les moteurs de recherche savent que les autres pages sont des duplicata et ne gardent pour le référencement que la page de l'URL canonique.   
+    </p>
+    <p>
+    Sur Xoomcoder, la page qui contient le plus de contenu est la page "news", mais Google l'a déréfencé car il a préféré d'autres pages qui proposaient la même URL canonical ?!
+    On va voir combien de temps Google va prendre pour ré-indexer les pages.    
+    </p>
+    <p>
+    Quand on utilise PHP pour créer un site vitrine, il est ainsi important de bien mettre en place cette balise meta "canonical". Souvent il y a un seul fichier PHP, header.php, qui sert de template commun pour le haut de la page. Cela permet de garder la même identité visuelle avec la balise header.
+    Mais la balise head, non visible, doit intégrer beaucoup d'informations spécifiques à chaque page. En pratique, si on n'utilise pas de BDD, mais des fichiers plats, si on veut seulement un seul fichier par page; ce fichier doit aussi contenir les informations meta pour la balise head et les contenus pour la balise main. Autrement, il faut 2 fichiers par page: un pour la partie head et un 2e pour la partie main. 
+    </p>
+</article>
+
+<article>
     <h2>Level 5: marketplace pour publier des annonces géolocalisées</h2>
     <p>
     le site permet maintenant aux membres agréés de pouvoir publier des annonces géolocalisées.
