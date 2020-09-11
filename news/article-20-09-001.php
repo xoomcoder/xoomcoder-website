@@ -1,4 +1,5 @@
 <article>
+    <img src="assets/square/head.jpg" alt="head, cover">
     <h2>Level 2: header avec nav</h2>
     <p>
     Pour utiliser Grid CSS, une des limitations de la structure HTML est d'avoir un container. Et seulement les balises enfants pourront être disposés suivant un layout grid.
