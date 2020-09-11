@@ -28,9 +28,14 @@ html, body {
 </head>
 <body>
     <div class="page">
-        <mycompo1></mycompo1>
-        <mycompo2></mycompo2>
-        <mycompo3></mycompo3>
+        <header>
+            <h1>{{ h1 }}</h1>
+        </header>
+        <main>
+            <mycompo1></mycompo1>
+            <mycompo2></mycompo2>
+            <mycompo3></mycompo3>
+        </main>
     </div>
 
     <script type="module">
@@ -61,7 +66,11 @@ let myloader = function (name, url)
 {
     let interload = async function (resolve, reject) {
         let response    = await fetch(url); 
-        let json        = await response.json();
+        // json can't have methods so we keep js code 
+        // and eval this code...
+        let text = await response.text();
+        let code = `Object.assign({}, ${text});`;
+        let json = eval(code);
         resolve(json);
     }
     let asyncComp = Vue.defineAsyncComponent(() => new Promise(interload));

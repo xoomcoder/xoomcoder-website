@@ -1,11 +1,14 @@
-<?php
-
-$tajson = [];
-$tajson["template"] = 
-<<<x
+{
+    template: `
     <footer>
-        <h1>FOOTER</h1>
-    </footer>  
-x;
+        <h1 @click="count++">FOOTER {{ count }}</h1>
+    </footer>
+    `,
+    data() {
+        return {
+            count:0
+        }
+    }
+}
 
-echo json_encode($tajson);
+
