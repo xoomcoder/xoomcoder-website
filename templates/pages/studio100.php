@@ -31,7 +31,13 @@ html, body {
         <header>
             <h1>{{ h1 }}</h1>
         </header>
+        <main>
+            <mycompo1></mycompo1>
+            <mycompo2></mycompo2>
+            <mycompo3></mycompo3>
+        </main>
     </div>
+
     <script type="module">
 // load Vue from module        
 import * as Vue from 'https://cdn.jsdelivr.net/npm/vue@3.0.0-rc.1/dist/vue.esm-browser.js';
@@ -46,7 +52,30 @@ let appconf = {
     }
 };
 
+let mycompo = {
+    mycompo1 : './vue-mycompo1.vjs', 
+    mycompo2 : './vue-mycompo2.vjs', 
+    mycompo3 : './vue-mycompo3.vjs', 
+};
+
 const app = Vue.createApp(appconf);
+
+// dynamic loading of components
+// https://v3.vuejs.org/guide/component-dynamic-async.html#async-components
+let myloader = function (name, url)
+{
+    let interload = async function (resolve, reject) {
+        let response    = await fetch(url); 
+        let json        = await response.json();
+        resolve(json);
+    }
+    let asyncComp = Vue.defineAsyncComponent(() => new Promise(interload));
+    app.component(name, asyncComp);
+}
+// load the components
+for(let c in mycompo) {
+    myloader(c, mycompo[c]);
+}
 
 app.mount('.page');
 
