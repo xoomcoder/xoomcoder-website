@@ -65,7 +65,12 @@ const app = Vue.createApp(appconf);
 let myloader = function (name, url)
 {
     let interload = async function (resolve, reject) {
-        let response    = await fetch(url); 
+        let fd = new FormData;
+        fd.append('loginToken', sessionStorage.getItem('loginToken')); 
+        let response    = await fetch(url, {
+            method: 'POST',
+            body: fd
+        }); 
         // json can't have methods so we keep js code 
         // and eval this code...
         let text = await response.text();

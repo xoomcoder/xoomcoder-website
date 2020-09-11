@@ -1,3 +1,8 @@
+<?php
+$debug = [];
+$debug["request"] = $_REQUEST;
+$json = json_encode($debug);
+?>
 {
     template: `
     <header>
@@ -8,5 +13,6 @@
         return {
             count:0
         }
-    }
+    },
+    debug: <?php echo $json ?> 
 }
