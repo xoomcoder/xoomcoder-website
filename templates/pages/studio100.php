@@ -69,7 +69,11 @@ let myloader = function (name, url)
         // json can't have methods so we keep js code 
         // and eval this code...
         let text = await response.text();
-        let code = `Object.assign({}, ${text});`;
+        let code = `
+            Object.assign({}, 
+            ${text}
+            );
+        `;
         let json = eval(code);
         resolve(json);
     }
