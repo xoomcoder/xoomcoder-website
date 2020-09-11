@@ -28,14 +28,7 @@ html, body {
 </head>
 <body>
     <div class="page">
-        <header>
-            <h1>{{ h1 }}</h1>
-        </header>
-        <main>
-            <mycompo1></mycompo1>
-            <mycompo2></mycompo2>
-            <mycompo3></mycompo3>
-        </main>
+        <mypage></mypage>
     </div>
 
     <script type="module">
@@ -53,9 +46,7 @@ let appconf = {
 };
 
 let mycompo = {
-    mycompo1 : './vue-mycompo1.vjs', 
-    mycompo2 : './vue-mycompo2.vjs', 
-    mycompo3 : './vue-mycompo3.vjs', 
+    mypage : './vue-mypage.vjs', 
 };
 
 const app = Vue.createApp(appconf);
@@ -80,10 +71,15 @@ let myloader = function (name, url)
             );
         `;
         let json = eval(code);
-        
+
         // server debug
         if (json.debug) console.log(json.debug);
-
+        // add new components
+        if (json.xcompo) {
+            for(let c in json.xcompo) {
+                myloader(c, json.xcompo[c]);
+            }
+        }
         resolve(json);
     }
     let asyncComp = Vue.defineAsyncComponent(() => new Promise(interload));
@@ -95,6 +91,8 @@ for(let c in mycompo) {
 }
 
 app.mount('.page');
+
+myloader('mycompo4', './vue-mycompo3.vjs');
 
     </script>
 </body>
