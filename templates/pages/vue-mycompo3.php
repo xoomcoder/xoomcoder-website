@@ -3,7 +3,9 @@
 $tajson = [];
 $tajson["template"] = 
 <<<x
-    <h1>FOOTER</h1>  
+    <footer>
+        <h1>FOOTER</h1>
+    </footer>  
 x;
 
 echo json_encode($tajson);
