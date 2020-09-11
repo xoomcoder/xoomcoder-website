@@ -28,14 +28,9 @@ html, body {
 </head>
 <body>
     <div class="page">
-        <header>
-            <h1>{{ h1 }}</h1>
-        </header>
-        <main>
-            <mycompo1></mycompo1>
-            <mycompo2></mycompo2>
-            <mycompo3></mycompo3>
-        </main>
+        <mycompo1></mycompo1>
+        <mycompo2></mycompo2>
+        <mycompo3></mycompo3>
     </div>
 
     <script type="module">

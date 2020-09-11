@@ -1,3 +1,9 @@
-{
-    "template" : "<h1>MY COMPO 3</h1>"
-}
+<?php
+
+$tajson = [];
+$tajson["template"] = 
+<<<x
+    <h1>FOOTER</h1>  
+x;
+
+echo json_encode($tajson);
