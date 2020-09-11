@@ -290,16 +290,16 @@
     </p>
 </article>
 <script type="text/xoomcoder">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/jLHhr8Xc4AM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="youtube" width="100%" height="315" src="https://www.youtube.com/embed/jLHhr8Xc4AM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </script>
 <script type="text/xoomcoder">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/WCJxd6rZnZM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="youtube" width="100%" height="315" src="https://www.youtube.com/embed/WCJxd6rZnZM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </script>
 <script type="text/xoomcoder">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/er416Ad3R1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="youtube" width="100%" height="315" src="https://www.youtube.com/embed/er416Ad3R1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </script>
 <script type="text/xoomcoder">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/wSc0c5S00xY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe title="youtube" width="100%" height="315" src="https://www.youtube.com/embed/wSc0c5S00xY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </script>
 
 
