@@ -1,5 +1,3 @@
-PhotoLoad?tag=people
-
 @bloc meta
 { 
     "class" : "w67" 
