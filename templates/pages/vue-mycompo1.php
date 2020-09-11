@@ -1,7 +1,10 @@
 <?php
-$debug = [];
-$debug["request"] = $_REQUEST;
-$json = json_encode($debug);
+if (Controller::checkMemberToken()) {
+    extract(Controller::$user);
+    $debug = [];
+    $debug["request"] = $_REQUEST;
+    $json = json_encode($debug);
+}
 ?>
 {
     template: `
@@ -14,5 +17,5 @@ $json = json_encode($debug);
             count:0
         }
     },
-    debug: <?php echo $json ?> 
+    debug: <?php echo $json ?? 'null' ?>
 }

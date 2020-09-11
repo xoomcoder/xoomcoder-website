@@ -80,6 +80,10 @@ let myloader = function (name, url)
             );
         `;
         let json = eval(code);
+        
+        // server debug
+        if (json.debug) console.log(json.debug);
+
         resolve(json);
     }
     let asyncComp = Vue.defineAsyncComponent(() => new Promise(interload));
