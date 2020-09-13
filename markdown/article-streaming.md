@@ -20,6 +20,8 @@ Et même une page HTML est composée aussi de plusieurs fichiers (css, js, image
 
 ![animation # cover](/assets/square/animation.jpg)
 
+### WebApp (Web Application)
+
 Avec l'augmentation progressive de la puissance des processeurs, notamment sur smartphones, les sites internautes deviennent de plus en plus interactifs et animés. C'est le langage Javascript qui permet de coder ces interactions et animations. Javascript a beaucoup évolué et est devenu un langage incontournable pour les développeurs front. Un site internet se transforme alors en application, on parle de WebApp. 
 
 Souvent on met en opposition les WebApps contre les applications mobiles "natives", qu'on télécharge des AppStores ou GooglePlay et qu'on installe sur notre smartphone. Mais en réalité, plus d'un tiers des applications mobiles ne sont que des coquilles "hybrides" qui affichent une WebApp ! (En utilisant un module WebView, qui propose un navigateur simplifié). Les développeurs web sont aussi des développeurs mobiles.
@@ -34,6 +36,8 @@ Avec une WebApp, qui se décompose en écrans, on parle de streaming applicatif,
 En pratique, ce sera la technologie AJAX (Asynchronous Javascript And XML) qui permet au navigateur d'envoyer des requêtes à un serveur web, sans changer de page. On a parlé de Web2.0 quand cette technologie est devenue populaire. Le monde JS évolue rapidement et on n'utilise plus XML maintenant, mais le format JSON est devenu très populaire.
 
 ![team # cover](/assets/square/team.jpg)
+
+### Framwork Front (React, ANgular, Vue)
 
 Des frameworks front ont été développés pour aider à construire ces WebApps. En 2020, Les 3 frameworks front les plus populaires sont React, Angular et Vue. React est mis en avant par Facebook avec le langage JSX, Angular est mis en avant par Google avec le langage TypeScript (développé par Microsoft). VueJS propose une variante sur le JS "classique".
 
