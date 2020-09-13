@@ -42,11 +42,14 @@ En pratique, ce sera la technologie AJAX (Asynchronous Javascript And XML) qui p
 Des frameworks front ont été développés pour aider à construire ces WebApps. En 2020, Les 3 frameworks front les plus populaires sont React, Angular et Vue. React est mis en avant par Facebook avec le langage JSX, Angular est mis en avant par Google avec le langage TypeScript (développé par Microsoft). VueJS propose une variante sur le JS "classique".
 
 Si vous débutez avec les frameworks front, Vue est le choix le plus simple et rapide. En effet, VueJS propose une version en un seul fichier, qui contient en plus un compilateur. Vous pouvez donc créer une WebApp très rapidement en ajoutant un seul fichier JS dans votre page web.
-Ce qui est très impressionnant, c'est que ce fichier avec compilateur fait environ 100Ko (minifié). Ce qui est comparable au code de jQuery (un peu moins de 90Ko). Et la version Vue "runtime", sans le compilateur, pèse autour de 65Ko. Prendre la version "global" avec le compilateur est donc tout à fait acceptable, si on se souvient que beaucoup de sites depuis 10ans chargent le code de jQuery.
+Ce qui est très impressionnant, c'est que ce fichier avec compilateur fait environ 100Ko (minifié). Ce qui est comparable au code de jQuery (un peu moins de 90Ko). Et la version Vue "runtime", sans le compilateur, pèse autour de 65Ko. Prendre la version "global" avec le compilateur est donc tout à fait acceptable, si on se souvient que beaucoup de sites depuis 10 ans chargent le code de jQuery.
 
 Si vous voulez vous lancer dans des applications plus complexes, votre code Vue devra aussi se diviser en composants. Et VueJS v3 propose un chargement asynchrone de ces composants. Si vous combinez ce streaming applicatif de composants avec le compilateur en front, on obtient un environnement simplifié qui permet de coder une WebApp très rapidement. Et il est possible de mettre en oeuvre PHP côté serveur pour aider à gérer le code JS des composants Vue.
 
-Naturellement, VueJS propose aussi de nombreux environnements de développements similaires à React ou Angular. Vous pouvez mettre en oeuvre côté serveur des modules npm pour compiler le code de votre WebApp. Comme React, Angular et Vue sont des communautés très actives et en concurrence, n'hésitez pas à comparer les différentes possibilités. Souvent Vue proposera la technique la plus simple et efficace.
+Naturellement, VueJS propose aussi de nombreux environnements de développements similaires à React ou Angular. Vous pouvez mettre en oeuvre côté serveur des modules npm pour compiler le code de votre WebApp. Vos composants Vue seront séparés dans des fichiers .vue, appelés Single File Component (SFC).
+Chaque fichier SFC .vue peut contenir le code HTML, JS et CSS d'un composant.
+
+Comme React, Angular et Vue sont des communautés très actives et en concurrence, n'hésitez pas à comparer les différentes possibilités. Souvent Vue proposera la technique la plus simple et efficace.
 
 @bloc
 
