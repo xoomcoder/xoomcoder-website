@@ -27,7 +27,17 @@ html, body {
     </style>
 </head>
 <body>
+    <div>
+        <h1>out of app</h1>
+        <div class="container">
+            <h3>ANCIEN CONTENU</h3>
+        </div>
+        <div class="container3">
+            <h3>TEST CONTENU</h3>
+        </div>
+    </div>
     <div class="page">
+        <mybox></mybox>
         {{ h1 }}
         <button @click="addTest()">add</button>
         <button @click="removeTest()">remove</button>
@@ -71,6 +81,10 @@ let appconf = {
 const app = Vue.createApp(appconf);
 
 app.component('button-counter', {
+    created() {
+        let ct = document.querySelector(".container");
+        ct.innerHTML = '';
+    },
     inject: [ 'user' ],
     data() {
         return {
@@ -78,9 +92,25 @@ app.component('button-counter', {
         }
     },
     template: `
+        <teleport to=".container">
+            TELEPORT OK
+            <h3>{{ user.value }} clicked me {{ count }} times.</h3> 
+            <input type="text" v-model="count">
+        </teleport>
         <button @click="count++;">
             {{ user.value }} clicked me {{ count }} times.
         </button>`
+})
+
+app.component('mybox', {
+    template: `
+    <teleport to=".container3">
+    <div>
+        <h4>this is my box</h4>
+        <div class="container">hello</div> 
+    </div>
+    </teleport>
+    `
 })
 
 app.mount('.page');
