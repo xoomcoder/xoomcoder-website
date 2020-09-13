@@ -27,7 +27,7 @@ En pratique, on pourrait créer des composants dynamiquement en reprenant une st
 
 Dans un CMS comme WordPress, cela ouvre la possibilité d'ajouter une extension avec VueJS et d'agir sur le contenu du site déjà existant. Les risques de conflits sont très réduits, car VueJS n'agirait que sur certaines parties bien délimitées.
 
-### Exemple: avec composition API setup et teleport
+### Exemple 1: avec composition API setup et teleport
 
 
 ```js
@@ -54,7 +54,7 @@ app.component('myset', {
 })
 ```
 
-### Exemple: avec composition API setup, teleport et propriétés
+### Exemple 2: avec composition API setup, teleport et propriétés
 
 
 ```js
