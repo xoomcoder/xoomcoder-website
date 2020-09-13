@@ -80,7 +80,7 @@ app.component('myset', {
             count: 0
         }
     },
-     setup() {
+    setup() {
         function build() {
             if (this.html == null) {
                 // get innerHTML from container
