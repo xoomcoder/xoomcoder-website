@@ -17,10 +17,71 @@ https://v3.vuejs.org/guide/teleport.html#teleport
 Par exemple, si vous avez déjà une page existante sans VueJS et qui contient beaucoup de contenu pour gagner un bon référencement SEO. Et que vous avez envie de rajouter quelques composants VueJS sur certaines parties de cette page. Avant la version v3, il fallait soit créer plusieurs instances Vue pour chaque partie ou bien créer un container pour toute la page et ajouter une seule instance de Vue, qui se retrouve à manipuler beaucoup de balises HTML.
 Avec la version 3 de VueJS, vous pouvez créer une seule instance de VueJS, relié à une balise HTML à part. Mais en plus, cette instance pourra téléporter du HTML vers d'autres containers dans le reste de la page, même si ces containers ne sont pas dans l'instance #app.
 
-Par défaut, le code téléporté se rajoute à la fin du container.
-Il faut rajouter du code JS si on veut enlever le code HTML déjà présent dans le container.
+Par défaut, le code téléporté se rajoute à la fin du container. Il faut rajouter du code JS si on veut enlever le code HTML déjà présent dans le container.
 
 La migration de pages, publiées initialement sans VueJS, et qui veulent ajouter des composants VueJS est ainsi beaucoup plus facile et rapide. Car on peut faire cohabiter les 2 codes et les faire interagir. Pour le SEO, c'est un grand avantage de pouvoir conserver à part une version HTML sans JS.
+
+En pratique, on pourrait créer des composants dynamiquement en reprenant une structure HTML en dehors de VueJS. La composition API permet de créer une méthode setup, mais ne permet pas de renvoyer dynamiquement le code du template. Comme workaround, Il faut créer un template qui va utiliser la directive v-html qui va activer une méthode du composant. Cette méthode pourra être produite par la méthode setup. Cela impose d'avoir une balise container HTML pour cette directive v-html.
+
+### exemple: avec composition API setup et teleport
+
+```js
+app.component('myset', {
+    template: `
+        <teleport to=".container">
+            <div v-html="build()"></div>
+        </teleport>
+    `,
+    setup() {
+        function build() {
+            // retrieve innerHTML from .container
+            // and embed in component template
+            let ct = document.querySelector('.container');
+            return `
+                <h1>YES IT WORKS</h1>
+                <ul>
+                    <li>${ct.innerHTML}</li>
+                </ul>
+                `;
+        }
+        return { build };
+    }
+})
+```
+
+### exemple: avec composition API setup, teleport et propriétés
+
+```js
+app.component('myset', {
+    template: `
+        <teleport to=".container3">
+            <h1 @click="count++">YES IT WORKS {{ count }}</h1>
+            <div v-html="build()"></div>
+        </teleport>
+    `,
+    data() {
+        return {
+            html: '',
+            count: 0
+        }
+    },
+     setup() {
+        function build() {
+            if (this.html == '') {
+                let ct = document.querySelector('.container3');
+                this.html = ct.innerHTML;
+            }
+            return `
+                <ul>
+                    <li>${this.html}</li>
+                </ul>
+                `;
+        }
+        return { build };
+        // return () => Vue.h('div');
+    }
+})
+```
 
 ![wordpress # cover](/assets/square/wordpress.jpg)
 

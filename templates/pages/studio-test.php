@@ -37,6 +37,8 @@ html, body {
         </div>
     </div>
     <div class="page">
+        <myset></myset>
+
         <mybox></mybox>
         {{ h1 }}
         <button @click="addTest()">add</button>
@@ -111,6 +113,36 @@ app.component('mybox', {
     </div>
     </teleport>
     `
+})
+
+app.component('myset', {
+    template: `
+        <teleport to=".container3">
+            <h1 @click="count++">YES IT WORKS {{ count }}</h1>
+            <div v-html="build()"></div>
+        </teleport>
+    `,
+    data() {
+        return {
+            html: '',
+            count: 0
+        }
+    },
+     setup() {
+        function build() {
+            if (this.html == '') {
+                let ct = document.querySelector('.container3');
+                this.html = ct.innerHTML;
+            }
+            return `
+                <ul>
+                    <li>${this.html}</li>
+                </ul>
+                `;
+        }
+        return { build };
+        // return () => Vue.h('div');
+    }
 })
 
 app.mount('.page');
