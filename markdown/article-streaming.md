@@ -37,7 +37,7 @@ En pratique, ce sera la technologie AJAX (Asynchronous Javascript And XML) qui p
 
 ![team # cover](/assets/square/team.jpg)
 
-### Framwork Front (React, Angular, Vue)
+### Framework Front (React, Angular, Vue)
 
 Des frameworks front ont été développés pour aider à construire ces WebApps. En 2020, Les 3 frameworks front les plus populaires sont React, Angular et Vue. React est mis en avant par Facebook avec le langage JSX, Angular est mis en avant par Google avec le langage TypeScript (développé par Microsoft). VueJS propose une variante sur le JS "classique".
 
