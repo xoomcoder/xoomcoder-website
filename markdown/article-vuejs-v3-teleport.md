@@ -1,6 +1,6 @@
 @bloc meta
 { 
-    "class" : "" 
+    "class" : "w67" 
 }
 @bloc
 
