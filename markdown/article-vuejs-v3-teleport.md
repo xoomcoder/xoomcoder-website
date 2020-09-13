@@ -10,6 +10,11 @@
 
 ## VueJS v3: teleport et composition API
 
+Dans les nouveautés de VueJS v3, les API permettent d'aller plus loin dans les composants dynamiques.
+Et VueJS v3 peut agir sur l'ensemble de la page HTML, tout en gardant son code séparé, ce qui améliore le SEO, car le contenu à référencer reste bien structuré.
+
+### teleport
+
 VueJS v3 propose un composant teleport qui permet de déplacer le code HTML inséré, dans une autre balise container. Ce qui est très intéressant, c'est que cette balise peut être en dehors du container racine #app. VueJS v3 peut ainsi agir sur l'ensemble de la page HTML.
 
 https://v3.vuejs.org/guide/teleport.html#teleport
@@ -20,6 +25,10 @@ Avec la version 3 de VueJS, vous pouvez créer une seule instance de VueJS, reli
 Par défaut, le code téléporté se rajoute à la fin du container. Il faut rajouter du code JS si on veut enlever le code HTML déjà présent dans le container.
 
 La migration de pages, publiées initialement sans VueJS, et qui veulent ajouter des composants VueJS est ainsi beaucoup plus facile et rapide. Car on peut faire cohabiter les 2 codes et les faire interagir. Pour le SEO, c'est un grand avantage de pouvoir conserver à part une version HTML sans JS.
+
+### teleport et composition API
+
+https://v3.vuejs.org/guide/composition-api-introduction.html#basics-of-composition-api
 
 En pratique, on pourrait créer des composants dynamiquement en reprenant une structure HTML en dehors de VueJS. La composition API permet de créer une méthode setup, mais ne permet pas de renvoyer dynamiquement le code du template. Comme workaround, Il faut créer un template qui va utiliser la directive v-html qui va activer une méthode du composant. Cette méthode pourra être produite par la méthode setup. Cela impose d'avoir une balise container HTML pour cette directive v-html.
 
