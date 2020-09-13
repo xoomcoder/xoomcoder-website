@@ -6,7 +6,7 @@
 
 @bloc markdown
 
-![time # cover](/assets/square/stardust.jpg)
+![time # cover](/assets/square/spock.jpg)
 
 ## VueJS v3: teleport et composition API
 
