@@ -49,6 +49,8 @@ Si vous voulez vous lancer dans des applications plus complexes, votre code Vue 
 Documentation de Vue.defineAsyncComponent:
 https://v3.vuejs.org/guide/component-dynamic-async.html
 
+Techniquement, les composants VueJS sont des objets complexes, avec beaucoup de méthodes. Le format JSON ne permet de transférer que des propriétés et aucune méthode. Il faut contourner le problème en utilisant le format JSON pour transporter du code JS, comme un simple texte d'une propriété. Et c'est dans le navigateur que ce code JS sera transformé en objet JS proposant des méthodes, en passant par "eval" ou bien "new Function" (utilisé par VueJS).
+
 Naturellement, VueJS propose aussi de nombreux environnements de développements similaires à React ou Angular. Vous pouvez mettre en oeuvre côté serveur des modules npm pour compiler le code de votre WebApp. Vos composants Vue seront séparés dans des fichiers .vue, appelés Single File Component (SFC).
 Chaque fichier SFC .vue peut contenir le code HTML, JS et CSS d'un composant.
 
