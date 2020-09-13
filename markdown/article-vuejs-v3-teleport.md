@@ -6,7 +6,7 @@
 
 @bloc markdown
 
-![time # cover](/assets/square/spock.jpg)
+![time # cover](/assets/square/race.jpg)
 
 ## VueJS v3: teleport et composition API
 
@@ -32,7 +32,7 @@ https://v3.vuejs.org/guide/composition-api-introduction.html#basics-of-compositi
 
 En pratique, on pourrait créer des composants dynamiquement en reprenant une structure HTML en dehors de VueJS. La composition API permet de créer une méthode setup, mais ne permet pas de renvoyer dynamiquement le code du template. Comme workaround, Il faut créer un template qui va utiliser la directive v-html qui va activer une méthode du composant. Cette méthode pourra être produite par la méthode setup. Cela impose d'avoir une balise container HTML pour cette directive v-html.
 
-![wordpress # cover](/assets/square/star-trek.jpg)
+![wordpress # cover](/assets/square/sky.jpg)
 
 Dans un CMS comme WordPress, cela ouvre la possibilité d'ajouter une extension avec VueJS et d'agir sur le contenu du site déjà existant. Les risques de conflits sont très réduits, car VueJS n'agirait que sur certaines parties bien délimitées.
 
