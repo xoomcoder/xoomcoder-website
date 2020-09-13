@@ -60,21 +60,22 @@ app.component('myset', {
 ```js
 app.component('myset', {
     template: `
-        <teleport to=".container3">
+        <teleport to=".container">
             <h1 @click="count++">YES IT WORKS {{ count }}</h1>
             <div v-html="build()"></div>
         </teleport>
     `,
     data() {
         return {
-            html: '',
+            html: null,
             count: 0
         }
     },
      setup() {
         function build() {
-            if (this.html == '') {
-                let ct = document.querySelector('.container3');
+            if (this.html == null) {
+                // get innerHTML from container
+                let ct = document.querySelector('.container');
                 this.html = ct.innerHTML;
             }
             return `
