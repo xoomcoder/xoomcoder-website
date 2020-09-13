@@ -48,10 +48,12 @@ Des frameworks front ont été développés pour aider à construire ces WebApps
 Si vous débutez avec les frameworks front, Vue est le choix le plus simple et rapide. En effet, VueJS propose une version en un seul fichier, qui contient en plus un compilateur. Vous pouvez donc créer une WebApp très rapidement en ajoutant un seul fichier JS dans votre page web.
 Ce qui est très impressionnant, c'est que ce fichier avec compilateur fait environ 100Ko (minifié). Ce qui est comparable au code de jQuery (un peu moins de 90Ko). Et la version Vue "runtime", sans le compilateur, pèse autour de 65Ko. Prendre la version "global" avec le compilateur est donc tout à fait acceptable, si on se souvient que beaucoup de sites depuis 10 ans chargent le code de jQuery. VueJS est un véritable successeur de jQuery, qui est maintenant à la retraite.
 
-Si vous voulez vous lancer dans des applications plus complexes, votre code Vue devra aussi se diviser en composants. Et VueJS v3 propose un chargement asynchrone de ces composants. Si vous combinez ce streaming applicatif de composants avec le compilateur en front, on obtient un environnement simplifié qui permet de coder une WebApp très rapidement. Et il est possible de mettre en oeuvre PHP côté serveur pour aider à gérer le code JS des composants Vue.
+Si vous voulez vous lancer dans des applications plus complexes, votre code Vue devra aussi se diviser en composants. Et VueJS v3 propose un chargement asynchrone de ces composants. Si vous combinez ce streaming applicatif de composants avec le compilateur en front, on obtient un environnement simplifié qui permet de coder une WebApp très rapidement. 
 
 Documentation de Vue.defineAsyncComponent:
 https://v3.vuejs.org/guide/component-dynamic-async.html
+
+Et il est possible de mettre en oeuvre PHP côté serveur pour aider à gérer le code JS des composants Vue. VueJS peut ainsi être utilisé dynamiquement, dans un environnement LAMP, très répandu pour les sites internet, sans avoir besoin de passer par une étape de compilation avec npm.
 
 Techniquement, les composants VueJS sont des objets complexes, avec beaucoup de méthodes. Le format JSON ne permet de transférer, du serveur web, seulement des propriétés et aucune méthode. Il faut contourner le problème en utilisant le format JSON pour transporter du code JS, comme un simple texte d'une propriété. Et c'est dans le navigateur que ce code JS sera finalement transformé en objet JS proposant des méthodes, en passant par "eval" ou bien "new Function" (utilisé par VueJS).
 
