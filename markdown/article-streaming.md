@@ -40,7 +40,7 @@ Si vous voulez vous lancer des des applications plus complexes, votre code Vue d
 
 Naturellement, VueJS propose aussi de nombreux environnements de développements similaires à React ou Angular. Vous pouvez mettre en oeuvre côté serveur des modules npm pour compiler le code de votre WebApp. Comme React, Angular et Vue sont des communautés très actives et en concurrence, n'hésitez pas à comparer les différentes possibilités. Souvent Vue proposera la technique la plus simple et efficace.
 
-
+@bloc
 
 
 
