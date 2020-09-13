@@ -39,7 +39,7 @@ En pratique, ce sera la technologie AJAX (Asynchronous Javascript And XML) qui p
 
 ### Framework Front (React, Angular, Vue)
 
-Des frameworks front ont été développés pour aider à construire ces WebApps. En 2020, Les 3 frameworks front les plus populaires sont React, Angular et Vue. React est mis en avant par Facebook avec le langage JSX, Angular est mis en avant par Google avec le langage TypeScript (développé par Microsoft). VueJS propose une variante sur le JS "classique".
+Des frameworks front ont été développés pour aider à construire ces WebApps. En 2020, Les 3 frameworks front les plus populaires sont React, Angular et Vue. React est mis en avant par Facebook avec le langage JSX, Angular est mis en avant par Google avec le langage TypeScript (développé par Microsoft). VueJS propose une variante très proche du JS "classique".
 
 Si vous débutez avec les frameworks front, Vue est le choix le plus simple et rapide. En effet, VueJS propose une version en un seul fichier, qui contient en plus un compilateur. Vous pouvez donc créer une WebApp très rapidement en ajoutant un seul fichier JS dans votre page web.
 Ce qui est très impressionnant, c'est que ce fichier avec compilateur fait environ 100Ko (minifié). Ce qui est comparable au code de jQuery (un peu moins de 90Ko). Et la version Vue "runtime", sans le compilateur, pèse autour de 65Ko. Prendre la version "global" avec le compilateur est donc tout à fait acceptable, si on se souvient que beaucoup de sites depuis 10 ans chargent le code de jQuery.
