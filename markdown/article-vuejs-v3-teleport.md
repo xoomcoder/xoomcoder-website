@@ -8,7 +8,7 @@
 
 ![time # cover](/assets/square/travel.jpg)
 
-## VueJS v3: teleport
+## VueJS v3: teleport et composition API
 
 VueJS v3 propose un composant teleport qui permet de déplacer le code HTML inséré, dans une autre balise container. Ce qui est très intéressant, c'est que cette balise peut être en dehors du container racine #app. VueJS v3 peut ainsi agir sur l'ensemble de la page HTML.
 
