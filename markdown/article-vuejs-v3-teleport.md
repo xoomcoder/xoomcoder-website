@@ -94,7 +94,6 @@ app.component('myset', {
                 `;
         }
         return { build };
-        // return () => Vue.h('div');
     }
 })
 ```
