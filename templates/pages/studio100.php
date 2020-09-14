@@ -58,29 +58,36 @@ let myloader = function (name, url)
     let interload = async function (resolve, reject) {
         let fd = new FormData;
         fd.append('loginToken', sessionStorage.getItem('loginToken')); 
-        let response    = await fetch(url, {
+        fd.append('classApi', 'Member');
+        fd.append('methodApi', 'runVue');
+        fd.append('compoName', name);
+        fd.append('compoUrl', url);
+
+        let response    = await fetch('api', {
             method: 'POST',
             body: fd
         }); 
-        // json can't have methods so we keep js code 
-        // and eval this code...
-        let text = await response.text();
-        let code = `
-            Object.assign({}, 
-            ${text}
-            );
-        `;
-        let json = eval(code);
-
+        let json = await response.json();
         // server debug
         if (json.debug) console.log(json.debug);
-        // add new components
-        if (json.xcompo) {
-            for(let c in json.xcompo) {
-                myloader(c, json.xcompo[c]);
-            }
+
+        if(name in json) {
+            let code = `
+            Object.assign({}, 
+            ${json[name]}
+            );
+            `;
+            let compocode = eval(code);
+
+            // // add new components
+            // if (json.xcompo) {
+            //     for(let c in json.xcompo) {
+            //         myloader(c, json.xcompo[c]);
+            //     }
+            // }
+
+            resolve(compocode);
         }
-        resolve(json);
     }
     let asyncComp = Vue.defineAsyncComponent(() => new Promise(interload));
     app.component(name, asyncComp);
