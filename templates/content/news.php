@@ -10,8 +10,6 @@
 
     <?php News::showCms() ?>
 
-    <?php News::showBloc() ?>
-
     <nav class="w100">
         <a href="news">page 1</a>
         <a href="news-02">page 2</a>
