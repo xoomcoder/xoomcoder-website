@@ -23,7 +23,9 @@ html, body {
     width:100%;
     /* transition: all 0.5s ease-out; */ /* TOO BIG */
 }
-
+header nav a {
+    display: inline-block;
+}
     </style>
 </head>
 <body>
