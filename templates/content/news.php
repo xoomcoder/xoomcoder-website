@@ -8,6 +8,8 @@
         <a href="news-02">page 2</a>
     </nav>
 
+    <?php News::showCms() ?>
+
     <?php News::showBloc() ?>
 
     <nav class="w100">
