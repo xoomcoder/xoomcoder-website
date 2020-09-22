@@ -76,6 +76,7 @@
             viewer: true,
             height: '500px',
             initialValue: '',
+            usageStatistics: false,
             plugins: [
                 [chart, chartOptions], codeSyntaxHighlight, tableMergedCell, uml
             ]
