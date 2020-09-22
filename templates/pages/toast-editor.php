@@ -66,6 +66,7 @@
             previewStyle: 'vertical',
             height: '500px',
             initialValue: '',
+            usageStatistics: false,
             plugins: [
                 [chart, chartOptions], codeSyntaxHighlight, colorSyntax, tableMergedCell, uml
             ]
