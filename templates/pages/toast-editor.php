@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css" />
+    <link rel="stylesheet" href="assets/toastui/codemirror.min.css" />
     <!-- Editor's Style -->
-    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <link rel="stylesheet" href="assets/toastui/toastui-editor.min.css" />
 
 </head>
 
@@ -21,12 +21,12 @@
     <h2>Viewer</h2>
     <div id="viewer"></div>
 
-    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-    <script src="https://uicdn.toast.com/editor-plugin-chart/latest/toastui-editor-plugin-chart.min.js"></script>
-    <script src="https://uicdn.toast.com/editor-plugin-code-syntax-highlight/latest/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
-    <script src="https://uicdn.toast.com/editor-plugin-color-syntax/latest/toastui-editor-plugin-color-syntax.min.js"></script>
-    <script src="https://uicdn.toast.com/editor-plugin-table-merged-cell/latest/toastui-editor-plugin-table-merged-cell.min.js"></script>
-    <script src="https://uicdn.toast.com/editor-plugin-uml/latest/toastui-editor-plugin-uml.min.js"></script>
+    <script src="assets/toastui/toastui-editor-all.min.js"></script>
+    <script src="assets/toastui/toastui-editor-plugin-chart.min.js"></script>
+    <script src="assets/toastui/toastui-editor-plugin-code-syntax-highlight.min.js"></script>
+    <script src="assets/toastui/toastui-editor-plugin-color-syntax.min.js"></script>
+    <script src="assets/toastui/toastui-editor-plugin-table-merged-cell.min.js"></script>
+    <script src="assets/toastui/toastui-editor-plugin-uml.min.js"></script>
 
     <script>
         // https://github.com/nhn/tui.editor/blob/master/apps/editor/docs/getting-started.md
