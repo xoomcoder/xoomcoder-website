@@ -61,6 +61,13 @@
             maxHeight: 300
         };
 
+        // http://www.plantuml.com/plantuml/uml/
+        const umlOptions = {
+            rendererURL: 'http://www.plantuml.com/plantuml/png/'
+//            rendererURL: 'http://www.plantuml.com/plantuml/svg/'
+//            rendererURL: 'http://www.plantuml.com/plantuml/txt/'
+        };
+
         const editor = new Editor({
             el: document.querySelector('#editor'),
             previewStyle: 'vertical',
@@ -68,7 +75,7 @@
             initialValue: '',
             usageStatistics: false,
             plugins: [
-                [chart, chartOptions], codeSyntaxHighlight, colorSyntax, tableMergedCell, uml
+                [chart, chartOptions], codeSyntaxHighlight, colorSyntax, tableMergedCell, [uml, umlOptions]
             ]
         });
 
@@ -79,7 +86,7 @@
             initialValue: '',
             usageStatistics: false,
             plugins: [
-                [chart, chartOptions], codeSyntaxHighlight, tableMergedCell, uml
+                [chart, chartOptions], codeSyntaxHighlight, colorSyntax, tableMergedCell, [uml, umlOptions]
             ]
         });
     </script>
