@@ -63,8 +63,8 @@
 
         // http://www.plantuml.com/plantuml/uml/
         const umlOptions = {
-            rendererURL: 'http://www.plantuml.com/plantuml/png/'
-//            rendererURL: 'http://www.plantuml.com/plantuml/svg/'
+//            rendererURL: 'http://www.plantuml.com/plantuml/png/'
+              rendererURL: 'http://www.plantuml.com/plantuml/svg/'
 //            rendererURL: 'http://www.plantuml.com/plantuml/txt/'
         };
 
