@@ -19,7 +19,7 @@
         let res = Vue.compile(code1.innerHTML);
         let serial = res.toString();
         console.log(serial);
-        let render2 = new Function('_Vue', 'return ' + serial.toString())(Vue);
+        let render2 = new Function('_Vue', 'return ' + serial)(Vue);
 
         console.log(render2);
         Vue.createApp({
