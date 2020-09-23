@@ -45,5 +45,3 @@
         <p>tutoriel pour coder un site Marketplace</p>
     </article>
 </section>
-
-<?php require "section-contact.php" ?>
