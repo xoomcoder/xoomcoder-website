@@ -16,12 +16,12 @@
         </button>
     </script>
     <script>
-        let res = Vue.compile(code1.innerHTML);
-        let serial = res.toString();
-        console.log(serial);
-        let render2 = new Function('_Vue', 'return ' + serial)(Vue);
+        let renderFun = Vue.compile(code1.innerHTML);
+        let renderTxt = renderFun.toString();
+        console.log(renderTxt);
+        let renderFun2 = new Function('_Vue', 'return ' + renderTxt)(Vue);
 
-        console.log(render2);
+        console.log(renderFun2);
         Vue.createApp({
             data: function() {
                 return {
@@ -35,7 +35,7 @@
                     this.count++;
                 }
             },
-            render: render2
+            render: renderFun2
         }).mount('#app')
     </script>
 </body>
