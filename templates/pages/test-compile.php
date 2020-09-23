@@ -7,7 +7,6 @@
 <body>
     <div id="app">
     </div>
-    <!-- Add the following at the end of your body tag -->
     <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0/dist/vue.global.prod.js"></script>
 
     <script id="code1" type="text/x-template">
