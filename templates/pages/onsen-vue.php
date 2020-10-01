@@ -27,13 +27,25 @@
 
         <template id="tab1.html">
             <ons-page id="tab1">
-                <div class="c2">TAB1</div>
+                <div class="c3">
+                    <h1 class="center">TAB1</h1>
+                </div>
             </ons-page>
         </template>
 
         <template id="tab2.html">
             <ons-page id="tab2">
-                <div class="c2">TAB1</div>
+                <div class="c4">
+                    <h1 class="center">TAB2</h1>
+                </div>
+            </ons-page>
+        </template>
+
+        <template id="tab3.html">
+            <ons-page id="tab3">
+                <div class="c5">
+                    <h1 class="center">TAB3</h1>
+                </div>
             </ons-page>
         </template>
 
@@ -49,6 +61,30 @@
             <ons-button @click="act1">
                 Goto Page2
             </ons-button>
+
+            <ons-card>
+                <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
+                <div class="title">
+                    Awesome framework
+                </div>
+                <div class="content">
+                    <div>
+                        <ons-button>
+                            <ons-icon icon="ion-thumbsup"></ons-icon>
+                        </ons-button>
+                        <ons-button>
+                            <ons-icon icon="ion-share"></ons-icon>
+                        </ons-button>
+                    </div>
+                    <ons-list>
+                        <ons-list-header>Bindings</ons-list-header>
+                        <ons-list-item>Vue</ons-list-item>
+                        <ons-list-item>Angular</ons-list-item>
+                        <ons-list-item>React</ons-list-item>
+                    </ons-list>
+                </div>
+            </ons-card>
+
             <ons-list-item expandable v-for="article in articles" :key="article.id">
                 {{ article.title }}
                 <div class="expandable-content">
@@ -76,12 +112,31 @@
         </teleport>
 
         <teleport v-if="curPage == 'page2'" to=".c2">
+            <ons-splitter>
+                <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+                    <ons-page>
+                        <ons-list>
+                            <ons-list-item @click="actLoad('tab1.html')" tappable>
+                                Home
+                            </ons-list-item>
+                            <ons-list-item @click="actLoad('tab2.html')" tappable>
+                                Settings
+                            </ons-list-item>
+                            <ons-list-item @click="actLoad('tab3.html')" tappable>
+                                About
+                            </ons-list-item>
+                        </ons-list>
+                    </ons-page>
+                </ons-splitter-side>
+                <ons-splitter-content id="content" page="tab1.html"></ons-splitter-content>
+            </ons-splitter>
+
             <div class="bottom-bar">
 
                 <ons-toolbar>
                     <div class="left">
                         <ons-back-button>Page 1</ons-back-button>
-                        <ons-toolbar-button icon="md-face"></ons-toolbar-button>
+                        <ons-toolbar-button icon="md-face" @click="actMenu"></ons-toolbar-button>
                     </div>
 
                     <div class="center">Title</div>
@@ -181,6 +236,17 @@
                             title: 'Page 2'
                         }
                     });
+                },
+                actMenu () {
+                    if (menu.isOpen)
+                        menu.close();
+                    else
+                        menu.open()
+                },
+                actLoad(target) {
+                    content.load(target);
+                    menu.close();
+
                 }
             },
             created() {
