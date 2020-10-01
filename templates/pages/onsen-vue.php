@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui-core.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.min.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
 
 </head>
@@ -62,6 +63,24 @@
                 Goto Page2
             </ons-button>
 
+            <ons-carousel fullscreen swipeable auto-scroll overscrollable id="carousel">
+                <ons-carousel-item style="background-color: #085078;">
+                    <div style="text-align: center; font-size: 30px; margin-top: 20px; color: #fff;">
+                        BLUE
+                    </div>
+                </ons-carousel-item>
+                <ons-carousel-item style="background-color: #373B44;">
+                    <div style="text-align: center; font-size: 30px; margin-top: 20px; color: #fff;">
+                        DARK
+                    </div>
+                </ons-carousel-item>
+                <ons-carousel-item style="background-color: #D38312;">
+                    <div style="text-align: center; font-size: 30px; margin-top: 20px; color: #fff;">
+                        ORANGE
+                    </div>
+                </ons-carousel-item>
+            </ons-carousel>
+
             <ons-card>
                 <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">
                 <div class="title">
@@ -109,6 +128,20 @@
                     </label>
                 </div>
             </ons-list-item>
+            <ons-speed-dial position="bottom right" direction="up">
+                <ons-fab>
+                    <ons-icon icon="md-share"></ons-icon>
+                </ons-fab>
+                <ons-speed-dial-item>
+                    <ons-icon icon="md-twitter"></ons-icon>
+                </ons-speed-dial-item>
+                <ons-speed-dial-item>
+                    <ons-icon icon="md-facebook"></ons-icon>
+                </ons-speed-dial-item>
+                <ons-speed-dial-item>
+                    <ons-icon icon="md-google-plus"></ons-icon>
+                </ons-speed-dial-item>
+            </ons-speed-dial>
         </teleport>
 
         <teleport v-if="curPage == 'page2'" to=".c2">
@@ -237,7 +270,7 @@
                         }
                     });
                 },
-                actMenu () {
+                actMenu() {
                     if (menu.isOpen)
                         menu.close();
                     else
