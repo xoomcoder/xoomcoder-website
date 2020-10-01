@@ -12,15 +12,67 @@
 
 <body>
     <ons-navigator swipeable id="myNavigator"></ons-navigator>
+    <div class="templates">
+        <template id="page1.html">
+            <ons-page id="page1">
+                <div class="c1"></div>
+            </ons-page>
+        </template>
+
+        <template id="page2.html">
+            <ons-page id="page2">
+                <div class="c2"></div>
+            </ons-page>
+        </template>
+
+        <template id="tab1.html">
+            <ons-page id="tab1">
+                <div class="c2">TAB1</div>
+            </ons-page>
+        </template>
+
+        <template id="tab2.html">
+            <ons-page id="tab2">
+                <div class="c2">TAB1</div>
+            </ons-page>
+        </template>
+
+    </div>
+
     <div id="app">
+        <teleport to=".templates">
+
+        </teleport>
+
         <teleport v-if="curPage == 'page1'" to=".c1">
             <ons-button @click="counter++">This is page1.{{ counter }}</ons-button>
             <ons-button @click="act1">
                 Goto Page2
             </ons-button>
-            <ons-button v-for="article in articles" :key="article.id">
+            <ons-list-item expandable v-for="article in articles" :key="article.id">
                 {{ article.title }}
-            </ons-button>
+                <div class="expandable-content">
+                    Expandable content
+                    <ons-row style="margin-top: 20px;">
+                        <ons-col width="40px" style="text-align: center; line-height: 31px;">
+                            <ons-icon icon="md-brightness-low"></ons-icon>
+                        </ons-col>
+                        <ons-col>
+                            <ons-range style="width: 100%;" value="50"></ons-range>
+                        </ons-col>
+                        <ons-col width="40px" style="text-align: center; line-height: 31px;">
+                            <ons-icon icon="md-brightness-high"></ons-icon>
+                        </ons-col>
+                    </ons-row>
+                    <label class="switch switch--material">
+                        <input type="checkbox" class="switch__input switch--material__input" checked>
+                        <div class="switch__toggle switch--material__toggle">
+                            <div class="switch__handle switch--material__handle">
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </ons-list-item>
         </teleport>
 
         <teleport v-if="curPage == 'page2'" to=".c2">
@@ -43,19 +95,9 @@
 
             <p style="text-align: center">Some content.</p>
         </teleport>
+
     </div>
 
-    <template id="page1.html">
-        <ons-page id="page1">
-            <div class="c1"></div>
-        </ons-page>
-    </template>
-
-    <template id="page2.html">
-        <ons-page id="page2">
-            <div class="c2"></div>
-        </ons-page>
-    </template>
 
     <template id="t1">
         <ons-page>
@@ -152,12 +194,9 @@
                     this.curPage = event.enterPage.id;
                 });
             },
-            mounted() {
+            async mounted() {
                 let push1 = this.nav.resetToPage("page1.html");
-                push1.then((data) => {
-                    console.log(data);
-                    this.do1 = true;
-                })
+
             }
         }
 
