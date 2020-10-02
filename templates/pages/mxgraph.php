@@ -34,6 +34,7 @@
         section.artbox > article {
             margin: 0.5rem;
             width: calc(100% / 4 - 1rem);
+            min-width:200px;
         }
         section.dashboard {
             display: none;
@@ -62,8 +63,8 @@
             justify-content: center;
             background-color: #66aa66;
             cursor: pointer;
-            min-width:80px;
-            min-height:80px;
+            min-width:40px;
+            min-height:40px;
         }
 
         article {
