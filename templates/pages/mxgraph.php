@@ -138,9 +138,11 @@
         .page article {
             background-color: #ffffff;
         }
+
         pre {
             white-space: pre-wrap;
         }
+
         form {
             display: flex;
         }
@@ -176,6 +178,52 @@
             width: 80px;
             height: 2rem;
         }
+
+        .page section .w100 {
+            width: calc(100% - 1rem);
+        }
+        .page section .w90 {
+            width: calc(90% - 1rem);
+        }
+        .page section .w80 {
+            width: calc(80% - 1rem);
+        }
+        .page section .w75 {
+            width: calc(75% - 1rem);
+        }
+        .page section .w70 {
+            width: calc(70% - 1rem);
+        }
+        .page section .w60 {
+            width: calc(60% - 1rem);
+        }
+        .page section .w50 {
+            width: calc(50% - 1rem);
+        }
+        .page section .w40 {
+            width: calc(40% - 1rem);
+        }
+        .page section .w30 {
+            width: calc(30% - 1rem);
+        }
+        .page section .w25 {
+            width: calc(25% - 1rem);
+        }
+        .page section .w20 {
+            width: calc(20% - 1rem);
+        }
+        .page section .w10 {
+            width: calc(10% - 1rem);
+        }
+        .page section .w0 {
+            width: 0%;
+        }
+        .page section .w1o3 {
+            width: calc(1 * 100% / 3 - 1rem);
+        }
+        .page section .w2o3 {
+            width: calc(2 * 100% / 3 - 1rem);
+        }
     </style>
 </head>
 
@@ -192,13 +240,12 @@
                 <section v-for="section in sections" :style="sectionStyle(section)" :class="sectionClass(section)">
                     <h2 v-if="section.title">{{ section.title }}</h2>
                     <template v-for="article in articles">
-                        <article v-if="article.section==section.name">
+                        <article v-if="article.section==section.name" :class="articleClass(article)">
                             <h3>{{ article.title }}</h3>
                             <pre>{{ article.code }}</pre>
                         </article>
                     </template>
                 </section>
-
             </div>
         </section>
 
@@ -210,7 +257,7 @@
                 <input type="range" step="100" v-model="pageWidth" min="100" max="2000">
                 <h3>ajouter une section</h3>
                 <form @submit.prevent="actAddSection">
-                    <input ref="inSection" type="text" name="section" value="s1">
+                    <input ref="inSection" type="text" name="section" value="s1" placeholder="section name">
                     <button>➕</button>
                 </form>
                 <h3>liste des sections</h3>
@@ -229,7 +276,7 @@
             <article title="Articles" class="ct3 window">
                 <h3>ajouter un article</h3>
                 <form @submit.prevent="actAddArticle">
-                    <input ref="inArticleSection" type="text" name="article">
+                    <input ref="inArticleSection" type="text" placeholder="section" name="article">
                     <button>➕</button>
                 </form>
                 <h3>liste des articles</h3>
@@ -239,6 +286,7 @@
                             <input type="checkbox" title="selected" v-model="article.selected">
                             <input type="text" title="title" v-model="article.title">
                             <input type="text" title="section" v-model="article.section">
+                            <input type="text" title="cssClass" v-model="article.cssClass">
                         </div>
                     </li>
                 </ol>
@@ -248,8 +296,9 @@
                 <template v-for="article in articles">
                     <article v-if="article.selected" :class="'a' + article.id">
                         <div class="row">
-                            <input type="text" v-model="article.title">
-                            <input type="text" v-model="article.section">
+                            <input type="text" title="title" v-model="article.title">
+                            <input type="text" title="section" v-model="article.section">
+                            <input type="text" title="cssClass" v-model="article.cssClass">
                             <textarea name="" id="" cols="30" rows="10" v-model="article.code"></textarea>
                             <button v-if="!article.isWindow" @click="addWindow(article)">window me</button>
                         </div>
@@ -258,7 +307,9 @@
             </section>
 
             <div title="Bloc Notes" id="" class="window">
+                <h3>Bloc Notes</h3>
                 <textarea name="" id="" cols="30" rows="10"></textarea>
+                <h3>Code CSS</h3>
                 <textarea name="css" id="" cols="30" rows="10" v-model="cssCode"></textarea>
             </div>
 
@@ -319,6 +370,12 @@
                 lorem() {
                     return `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsum quaerat unde fuga neque nam odit repellat placeat ex tempora nobis culpa repudiandae, architecto dolore in cum! A, tempora tempore.`;
                 },
+                articleClass(article) {
+                    let cssclass = {};
+                    let cname = article.cssClass;
+                    cssclass[cname] = true;
+                    return cssclass;
+                },
                 sectionClass(section) {
                     let cssclass = {};
                     let cname = 'colx' + section.colx;
@@ -374,6 +431,7 @@
                         code: this.lorem(),
                         section: sectionName,
                         selected: true,
+                        cssClass: ''
                     };
                     this.articles.push(newArticle);
                 },
