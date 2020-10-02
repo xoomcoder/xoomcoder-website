@@ -2,8 +2,8 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Studio</title>
 
@@ -49,7 +49,7 @@
 
         .fab {
             position: fixed;
-            bottom: 5vmin;
+            top: 5vmin;
             right: 5vmin;
             width: 4vmin;
             height: 4vmin;
@@ -89,9 +89,6 @@
         }
     </style>
 </head>
-
-<!-- Page passes the container for the graph to the program -->
-
 <body>
 
     <div id="app">
@@ -131,8 +128,6 @@
     <!-- Loads and initializes the library -->
     <script type="text/javascript" src="assets/mxgraph/mxClient.js"></script>
 
-
-    <!-- Example code -->
     <script type="text/javascript">
         //https://jgraph.github.io/mxgraph/docs/js-api/files/util/mxWindow-js.html
 
@@ -197,9 +192,6 @@
 
         var app = Vue.createApp(appConfig).mount('#app');
 
-        // Program starts here. Creates a sample graph in the
-        // DOM node with the specified ID. This function is invoked
-        // from the onLoad event handler of the document (see below).
         function main(container) {
             // Checks if the browser is supported
             if (!mxClient.isBrowserSupported()) {
@@ -232,34 +224,6 @@
                     // Updates the display
                     graph.getModel().endUpdate();
                 }
-
-                // Note that we're using the container scrollbars for the graph so that the
-                // container extends to the parent div inside the window
-                // var wnd = new mxWindow('Scrollable, resizable, given height', container, 50, 50, 220, 224, true, true);
-                // wnd.setMaximizable(true);
-                // wnd.setResizable(true);
-                // wnd.setVisible(true);
-
-                // var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ';
-                // var content = document.createElement('div');
-                // mxUtils.write(content, lorem + lorem + lorem);
-
-                // let ct2 = document.querySelector('.ct2');
-                // wnd = new mxWindow('Scrollable, resizable, auto height', ct2, 300, 50, 200, null, true, true);
-                // wnd.setMaximizable(true);
-                // wnd.setScrollable(true);
-                // wnd.setResizable(true);
-                // wnd.setVisible(true);
-
-                // content = content.cloneNode(true)
-                // content.style.width = '400px';
-
-                // let ct3 = document.querySelector('.ct3');
-                // wnd = new mxWindow('Scrollable, resizable, fixed content', ct3, 520, 50, 220, 200, true, true);
-                // wnd.setMaximizable(true);
-                // wnd.setScrollable(true);
-                // wnd.setResizable(true);
-                // wnd.setVisible(true);
 
                 // mxLog.show();
             }
