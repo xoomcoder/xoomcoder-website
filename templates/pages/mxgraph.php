@@ -15,8 +15,29 @@
             padding: 0;
             margin: 0;
             font-size: 12px;
+            background-color: #004D40;
+            box-sizing: border-box;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+        section {
+            width:100%;
+            padding:0;
+            margin:0;
+        }
+        section.artbox {
+            display: flex;
+            flex-wrap:wrap;
+        }
+        section.artbox > article {
+            margin: 0.5rem;
+            width: calc(100% / 4 - 1rem);
+        }
+        section.dashboard {
+            display: none;
+        }
         #graphbox {
             overflow: auto;
             position: absolute;
@@ -44,7 +65,27 @@
         }
 
         article {
-            padding:1rem;
+            padding: 1rem;
+            background-color: #dddddd;
+        }
+        input, textarea, button {
+            padding:0.5rem !important;
+            display: inline-block;
+            width:100%;
+            margin-top: 0.5rem;
+        } 
+
+        div.mxWindow {
+            box-shadow: 3px 3px 12px rgba(0,0,0,0.5) !important;
+        }
+        .mxWindowTitle {
+            display: none;
+        }
+
+        .mxWindow:hover .mxWindowTitle,
+        .mxWindow:focus .mxWindowTitle {
+            display: block;
+            box-sizing: content-box;
         }
     </style>
 </head>
@@ -54,21 +95,27 @@
 <body>
 
     <div id="app">
-        <div id="graphbox">
-        </div>
 
-        <article v-for="article in articles" :class="'a' + article.id">
-            <h3>{{ article.title }}</h3>
-            <button v-if="!article.isWindow" @click="addWindow(article)">window me</button>
-        </article>
+        <section class="artbox">
+            <article v-for="article in articles" :class="'a' + article.id">
+                <input type="text" v-model="article.title">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <button v-if="!article.isWindow" @click="addWindow(article)">window me</button>
+            </article>
+        </section>
 
-        <div class="ct2">
-            <h1 @click="count1++">CONTENU2 {{ test }} {{ count1 }}</h1>
-        </div>
+        <section class="dashboard">
+            <article title="dashboard 1" class="ct2 window">
+                <h1 @click="count1++">CONTENU2 {{ test }} {{ count1 }}</h1>
+            </article>
 
-        <div class="ct3">
-            <h1 @click="count1++">CONTENU2 {{ test }} {{ count1 }}</h1>
-        </div>
+            <article title="dashboard 2" class="ct3 window">
+                <h1 @click="count1++">CONTENU2 {{ test }} {{ count1 }}</h1>
+            </article>
+
+            <div title="Graph" id="graphbox" class="window">
+            </div>
+        </section>
 
         <div class="fab" @click="actFab">😇</div>
     </div>
@@ -87,6 +134,8 @@
 
     <!-- Example code -->
     <script type="text/javascript">
+        //https://jgraph.github.io/mxgraph/docs/js-api/files/util/mxWindow-js.html
+
         // https://v3.vuejs.org/guide/introduction.html#getting-started
         const appConfig = {
             data() {
@@ -110,13 +159,14 @@
                     };
                     this.articles.push(newArticle);
                 },
-                addWindow(article, event) {
-                    article.isWindow = true; 
+                addWindow(article) {
+                    article.isWindow = true;
                     let art = document.querySelector('article.a' + article.id);
                     let wnd = new mxWindow(article.title, art, 20 * article.id, 20 * article.id, 300, null, true, true);
                     wnd.setMaximizable(true);
                     wnd.setScrollable(true);
                     wnd.setResizable(true);
+                    wnd.setClosable(true);
                     wnd.setVisible(true);
 
                 }
@@ -124,6 +174,24 @@
             mounted() {
                 let graphbox = document.querySelector('#graphbox');
                 main(graphbox);
+
+                let articles = document.querySelectorAll('.window');
+                for (let a = 0; a < articles.length; a++) {
+                    let percent = Math.round(100 * a / articles.length);
+                    let article = articles[a];
+                    if (!article.title) article.title = 'window';
+                    article.id2 = a;
+                    let special = null;
+                    // force height as graph is empty
+                    if (article.id == 'graphbox') special = 200;
+                    let wnd = new mxWindow(article.title, article, 100 + screen.availWidth * percent / 300 , 100 * (a +1), 300, special, true, true);
+                    wnd.setMaximizable(true);
+                    wnd.setScrollable(true);
+                    wnd.setResizable(true);
+                    wnd.setClosable(true);
+                    wnd.setVisible(true);
+
+                }
             }
         };
 
@@ -138,9 +206,6 @@
                 // Displays an error message if the browser is not supported.
                 mxUtils.error('Browser is not supported!', 200, false);
             } else {
-                // Note that we're using the container scrollbars for the graph so that the
-                // container extends to the parent div inside the window
-                var wnd = new mxWindow('Scrollable, resizable, given height', container, 50, 50, 220, 224, true, true);
 
                 // Creates the graph inside the given container
                 var graph = new mxGraph(container);
@@ -168,30 +233,33 @@
                     graph.getModel().endUpdate();
                 }
 
-                wnd.setMaximizable(true);
-                wnd.setResizable(true);
-                wnd.setVisible(true);
+                // Note that we're using the container scrollbars for the graph so that the
+                // container extends to the parent div inside the window
+                // var wnd = new mxWindow('Scrollable, resizable, given height', container, 50, 50, 220, 224, true, true);
+                // wnd.setMaximizable(true);
+                // wnd.setResizable(true);
+                // wnd.setVisible(true);
 
                 // var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ';
                 // var content = document.createElement('div');
                 // mxUtils.write(content, lorem + lorem + lorem);
 
-                let ct2 = document.querySelector('.ct2');
-                wnd = new mxWindow('Scrollable, resizable, auto height', ct2, 300, 50, 200, null, true, true);
-                wnd.setMaximizable(true);
-                wnd.setScrollable(true);
-                wnd.setResizable(true);
-                wnd.setVisible(true);
+                // let ct2 = document.querySelector('.ct2');
+                // wnd = new mxWindow('Scrollable, resizable, auto height', ct2, 300, 50, 200, null, true, true);
+                // wnd.setMaximizable(true);
+                // wnd.setScrollable(true);
+                // wnd.setResizable(true);
+                // wnd.setVisible(true);
 
                 // content = content.cloneNode(true)
                 // content.style.width = '400px';
 
-                let ct3 = document.querySelector('.ct3');
-                wnd = new mxWindow('Scrollable, resizable, fixed content', ct3, 520, 50, 220, 200, true, true);
-                wnd.setMaximizable(true);
-                wnd.setScrollable(true);
-                wnd.setResizable(true);
-                wnd.setVisible(true);
+                // let ct3 = document.querySelector('.ct3');
+                // wnd = new mxWindow('Scrollable, resizable, fixed content', ct3, 520, 50, 220, 200, true, true);
+                // wnd.setMaximizable(true);
+                // wnd.setScrollable(true);
+                // wnd.setResizable(true);
+                // wnd.setVisible(true);
 
                 // mxLog.show();
             }
