@@ -62,6 +62,8 @@
             justify-content: center;
             background-color: #66aa66;
             cursor: pointer;
+            min-width:80px;
+            min-height:80px;
         }
 
         article {
