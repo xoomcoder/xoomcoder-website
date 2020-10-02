@@ -29,7 +29,7 @@
             margin: 0;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: space-evenly;
         }
 
         h2,
@@ -182,47 +182,73 @@
         .page section .w100 {
             width: calc(100% - 1rem);
         }
+
         .page section .w90 {
             width: calc(90% - 1rem);
         }
+
         .page section .w80 {
             width: calc(80% - 1rem);
         }
+
         .page section .w75 {
             width: calc(75% - 1rem);
         }
+
         .page section .w70 {
             width: calc(70% - 1rem);
         }
+
         .page section .w60 {
             width: calc(60% - 1rem);
         }
+
         .page section .w50 {
             width: calc(50% - 1rem);
         }
+
         .page section .w40 {
             width: calc(40% - 1rem);
         }
+
         .page section .w30 {
             width: calc(30% - 1rem);
         }
+
         .page section .w25 {
             width: calc(25% - 1rem);
         }
+
         .page section .w20 {
             width: calc(20% - 1rem);
         }
+
         .page section .w10 {
             width: calc(10% - 1rem);
         }
+
         .page section .w0 {
             width: 0%;
         }
+
         .page section .w1o3 {
             width: calc(1 * 100% / 3 - 1rem);
         }
+
         .page section .w2o3 {
             width: calc(2 * 100% / 3 - 1rem);
+        }
+
+        .page section article {
+            min-width:300px;
+        }
+
+        article img {
+            width:100%;
+            object-fit:cover;
+        }
+        article img {
+            height: 15vmin;
         }
     </style>
 </head>
@@ -242,6 +268,7 @@
                     <template v-for="article in articles">
                         <article v-if="article.section==section.name" :class="articleClass(article)">
                             <h3>{{ article.title }}</h3>
+                            <img src="assets/square/happy.jpg" alt="">
                             <pre>{{ article.code }}</pre>
                         </article>
                     </template>
@@ -254,13 +281,13 @@
             <article title="Sections" class="ct2 window">
                 <h3>page</h3>
                 <input type="number" step="100" v-model="pageWidth">
-                <input type="range" step="100" v-model="pageWidth" min="100" max="2000">
+                <input type="range" step="100" v-model="pageWidth" min="300" max="2000">
                 <h3>ajouter une section</h3>
                 <form @submit.prevent="actAddSection">
                     <input ref="inSection" type="text" name="section" value="s1" placeholder="section name">
                     <button>➕</button>
                 </form>
-                <h3>liste des sections</h3>
+                <h3>liste des sections ({{ sections.length }})</h3>
                 <ol>
                     <li v-for="section in sections">
                         <div class="row">
@@ -279,7 +306,7 @@
                     <input ref="inArticleSection" type="text" placeholder="section" name="article">
                     <button>➕</button>
                 </form>
-                <h3>liste des articles</h3>
+                <h3>liste des articles ({{ articles.length }})</h3>
                 <ol>
                     <li v-for="article in articles">
                         <div class="row">
@@ -333,6 +360,60 @@
     <script type="text/javascript" src="assets/mxgraph/mxClient.js"></script>
 
     <script type="text/javascript">
+        // UTILS
+        // https://css-tricks.com/converting-color-spaces-in-javascript/
+        function hsl2hex(h, s, l) {
+            s /= 100;
+            l /= 100;
+
+            let c = (1 - Math.abs(2 * l - 1)) * s,
+                x = c * (1 - Math.abs((h / 60) % 2 - 1)),
+                m = l - c / 2,
+                r = 0,
+                g = 0,
+                b = 0;
+
+            if (0 <= h && h < 60) {
+                r = c;
+                g = x;
+                b = 0;
+            } else if (60 <= h && h < 120) {
+                r = x;
+                g = c;
+                b = 0;
+            } else if (120 <= h && h < 180) {
+                r = 0;
+                g = c;
+                b = x;
+            } else if (180 <= h && h < 240) {
+                r = 0;
+                g = x;
+                b = c;
+            } else if (240 <= h && h < 300) {
+                r = x;
+                g = 0;
+                b = c;
+            } else if (300 <= h && h < 360) {
+                r = c;
+                g = 0;
+                b = x;
+            }
+            // Having obtained RGB, convert channels to hex
+            r = Math.round((r + m) * 255).toString(16);
+            g = Math.round((g + m) * 255).toString(16);
+            b = Math.round((b + m) * 255).toString(16);
+
+            // Prepend 0s, if necessary
+            if (r.length == 1)
+                r = "0" + r;
+            if (g.length == 1)
+                g = "0" + g;
+            if (b.length == 1)
+                b = "0" + b;
+
+            return "#" + r + g + b;
+        }
+
         //https://jgraph.github.io/mxgraph/docs/js-api/files/util/mxWindow-js.html
 
         // https://v3.vuejs.org/guide/introduction.html#getting-started
@@ -368,7 +449,8 @@
             },
             methods: {
                 lorem() {
-                    return `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsum quaerat unde fuga neque nam odit repellat placeat ex tempora nobis culpa repudiandae, architecto dolore in cum! A, tempora tempore.`;
+                    let l = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsum quaerat unde fuga neque nam odit repellat placeat ex tempora nobis culpa repudiandae, architecto dolore in cum! A, tempora tempore.`;
+                    return l + ' ' + l + ' ' + l;
                 },
                 articleClass(article) {
                     let cssclass = {};
@@ -408,10 +490,14 @@
                 },
                 actAddSection(event) {
                     let sectionName = this.$refs.inSection.value;
+                    let c = 10 * Math.round(Math.random() * 36);
+                    // let bgcolor = `hsl(${c}, 100%, 50%)`;
+                    let bgcolor = hsl2hex(c, 100, 50);
+                    console.log(bgcolor);
                     this.sections.push({
                         name: sectionName,
                         title: sectionName,
-                        bgcolor: '#cccccc',
+                        bgcolor: bgcolor,
                         colx: '4'
                     });
                     // set the next section name
