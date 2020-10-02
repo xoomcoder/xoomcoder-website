@@ -8,9 +8,44 @@
     <title>Studio</title>
 
     <style>
-#graphbox {
-    overflow:auto;position:absolute;width:100%;height:100%;background:lightyellow;cursor:default;
-}
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+        }
+
+        #graphbox {
+            overflow: auto;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: lightyellow;
+            cursor: default;
+        }
+
+        .fab {
+            position: fixed;
+            bottom: 5vmin;
+            right: 5vmin;
+            width: 4vmin;
+            height: 4vmin;
+            border: 1px solid #aaffaa;
+            border-radius: 50%;
+            font-size: 2vmin;
+            text-align: center;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            background-color: #66aa66;
+            cursor: pointer;
+        }
+
+        article {
+            padding:1rem;
+        }
     </style>
 </head>
 
@@ -22,6 +57,11 @@
         <div id="graphbox">
         </div>
 
+        <article v-for="article in articles" :class="'a' + article.id">
+            <h3>{{ article.title }}</h3>
+            <button v-if="!article.isWindow" @click="addWindow(article)">window me</button>
+        </article>
+
         <div class="ct2">
             <h1 @click="count1++">CONTENU2 {{ test }} {{ count1 }}</h1>
         </div>
@@ -29,6 +69,8 @@
         <div class="ct3">
             <h1 @click="count1++">CONTENU2 {{ test }} {{ count1 }}</h1>
         </div>
+
+        <div class="fab" @click="actFab">😇</div>
     </div>
 
 
@@ -42,34 +84,52 @@
     <!-- Loads and initializes the library -->
     <script type="text/javascript" src="assets/mxgraph/mxClient.js"></script>
 
-    
+
     <!-- Example code -->
     <script type="text/javascript">
+        // https://v3.vuejs.org/guide/introduction.html#getting-started
+        const appConfig = {
+            data() {
+                return {
+                    // add Here your JS properties to sync with HTML
+                    count1: 0,
+                    test: 'XoomCoder',
+                    articles: [],
+                }
+            },
+            methods: {
+                doEx1() {
+                    // we can manipulate properties here
+                    this.count1++;
+                },
+                actFab() {
+                    this.count1++;
+                    let newArticle = {
+                        id: this.count1,
+                        title: 'article ' + this.count1,
+                    };
+                    this.articles.push(newArticle);
+                },
+                addWindow(article, event) {
+                    article.isWindow = true; 
+                    let art = document.querySelector('article.a' + article.id);
+                    let wnd = new mxWindow(article.title, art, 20 * article.id, 20 * article.id, 300, null, true, true);
+                    wnd.setMaximizable(true);
+                    wnd.setScrollable(true);
+                    wnd.setResizable(true);
+                    wnd.setVisible(true);
 
-// https://v3.vuejs.org/guide/introduction.html#getting-started
-const appConfig = {
-    data() {
-        return {
-            // add Here your JS properties to sync with HTML
-            count1: 0,
-            test: 'XoomCoder'
-        }
-    },
-    methods: {
-        doEx1() {
-            // we can manipulate properties here
-            this.count1++;
-        }
-    },
-    mounted() {
-        let graphbox = document.querySelector('#graphbox');
-        main(graphbox);
-    }
-};
+                }
+            },
+            mounted() {
+                let graphbox = document.querySelector('#graphbox');
+                main(graphbox);
+            }
+        };
 
-var app = Vue.createApp(appConfig).mount('#app');
+        var app = Vue.createApp(appConfig).mount('#app');
 
-    // Program starts here. Creates a sample graph in the
+        // Program starts here. Creates a sample graph in the
         // DOM node with the specified ID. This function is invoked
         // from the onLoad event handler of the document (see below).
         function main(container) {
