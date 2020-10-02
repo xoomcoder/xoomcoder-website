@@ -182,7 +182,7 @@
                     let special = null;
                     // force height as graph is empty
                     if (article.id == 'graphbox') special = 200;
-                    let wnd = new mxWindow(article.title, article, 100 + screen.availWidth * percent / 300 , 100 * (a +1), 300, special, true, true);
+                    let wnd = new mxWindow(article.title, article, 100 + screen.availWidth * percent / 300 , 100 * (a +1), screen.availWidth / 2, special, true, true);
                     wnd.setMaximizable(true);
                     wnd.setScrollable(true);
                     wnd.setResizable(true);
