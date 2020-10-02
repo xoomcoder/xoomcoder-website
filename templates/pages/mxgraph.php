@@ -22,23 +22,25 @@
         * {
             box-sizing: border-box;
         }
+
         section {
-            width:100%;
-            padding:0;
-            margin:0;
-        }
-        section.artbox {
+            width: 100%;
+            padding: 0;
+            margin: 0;
             display: flex;
-            flex-wrap:wrap;
+            flex-wrap: wrap;
         }
-        section.artbox > article {
+
+        section>article {
             margin: 0.5rem;
             width: calc(100% / 4 - 1rem);
-            min-width:200px;
+            min-width: 200px;
         }
+
         section.dashboard {
             display: none;
         }
+
         #graphbox {
             overflow: auto;
             position: absolute;
@@ -63,24 +65,32 @@
             justify-content: center;
             background-color: #66aa66;
             cursor: pointer;
-            min-width:40px;
-            min-height:40px;
+            min-width: 40px;
+            min-height: 40px;
         }
 
         article {
             padding: 1rem;
             background-color: #dddddd;
         }
-        input, textarea, button {
-            padding:0.5rem !important;
+
+        form {
+            display: flex;
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 0.5rem !important;
             display: inline-block;
-            width:100%;
+            width: 100%;
             margin-top: 0.5rem;
-        } 
+        }
 
         div.mxWindow {
-            box-shadow: 3px 3px 12px rgba(0,0,0,0.5) !important;
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.5) !important;
         }
+
         .mxWindowTitle {
             display: none;
         }
@@ -92,25 +102,52 @@
         }
     </style>
 </head>
+
 <body>
 
     <div id="app">
 
+        <section v-for="section in sections">
+            <template v-for="article in articles">
+                <article v-if="article.section==section.name">
+                    <h3>{{ article.title }}</h3>
+                    <pre>{{ article.code }}</pre>
+                </article>
+            </template>
+        </section>
+
         <section class="artbox">
             <article v-for="article in articles" :class="'a' + article.id">
                 <input type="text" v-model="article.title">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <input type="text" v-model="article.section">
+                <textarea name="" id="" cols="30" rows="10" v-model="article.code"></textarea>
                 <button v-if="!article.isWindow" @click="addWindow(article)">window me</button>
             </article>
         </section>
 
         <section class="dashboard">
-            <article title="dashboard 1" class="ct2 window">
-                <h1 @click="count1++">CONTENU2 {{ test }} {{ count1 }}</h1>
+            <article title="Sections" class="ct2 window">
+                <form @submit.prevent="actAddSection">
+                    <input ref="inSection" type="text" name="section">
+                    <button>➕</button>
+                </form>
+                <ol>
+                    <li v-for="section in sections">
+                        <input v-model="section.name">
+                    </li>
+                </ol>
             </article>
 
-            <article title="dashboard 2" class="ct3 window">
-                <h1 @click="count1++">CONTENU2 {{ test }} {{ count1 }}</h1>
+            <article title="Articles" class="ct3 window">
+                <form @submit.prevent="actAddArticle">
+                    <input ref="inArticle" type="text" name="article">
+                    <button>➕</button>
+                </form>
+                <ol>
+                    <li v-for="article in articles">
+                        <input v-model="article.title">
+                    </li>
+                </ol>
             </article>
 
             <div title="Graph" id="graphbox" class="window">
@@ -142,6 +179,7 @@
                     count1: 0,
                     test: 'XoomCoder',
                     articles: [],
+                    sections: []
                 }
             },
             methods: {
@@ -150,24 +188,41 @@
                     this.count1++;
                 },
                 actFab() {
-                    this.count1++;
-                    let newArticle = {
-                        id: this.count1,
-                        title: 'article ' + this.count1,
-                    };
-                    this.articles.push(newArticle);
+                    this.actAddArticle();
                 },
                 addWindow(article) {
                     article.isWindow = true;
                     let art = document.querySelector('article.a' + article.id);
-                    let wnd = new mxWindow(article.title, art, 20 * article.id, 20 * article.id, 300, null, true, true);
+                    let width = Math.min(300, screen.availWidth / 2);
+                    let wnd = new mxWindow(article.title, art, 20 * article.id, 20 * article.id, width, null, true, true);
                     wnd.setMaximizable(true);
                     wnd.setScrollable(true);
                     wnd.setResizable(true);
                     wnd.setClosable(true);
                     wnd.setVisible(true);
 
-                }
+                },
+                actAddSection(event) {
+                    let sectionName = this.$refs.inSection.value;
+                    this.sections.push({
+                        name: sectionName
+                    })
+                },
+                actAddArticle() {
+                    this.count1++;
+                    let sectionName = '';
+                    if (this.sections.length > 0)
+                        sectionName = this.sections[this.sections.length - 1].name;
+
+                    let newArticle = {
+                        id: this.count1,
+                        title: 'article ' + this.count1,
+                        code: '',
+                        section: sectionName
+                    };
+                    this.articles.push(newArticle);
+                },
+
             },
             mounted() {
                 let graphbox = document.querySelector('#graphbox');
@@ -179,10 +234,10 @@
                     let article = articles[a];
                     if (!article.title) article.title = 'window';
                     article.id2 = a;
-                    let special = null;
                     // force height as graph is empty
-                    if (article.id == 'graphbox') special = 200;
-                    let wnd = new mxWindow(article.title, article, 100 + screen.availWidth * percent / 300 , 100 * (a +1), screen.availWidth / 2, special, true, true);
+                    let height = Math.min(400, screen.availWidth / 2);;
+                    let width = Math.min(300, screen.availWidth / 2);
+                    let wnd = new mxWindow(article.title, article, 100 + screen.availWidth * percent / 300, 100 * (a + 1), width, height, true, true);
                     wnd.setMaximizable(true);
                     wnd.setScrollable(true);
                     wnd.setResizable(true);
