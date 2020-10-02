@@ -29,12 +29,67 @@
             margin: 0;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        h2,
+        h3 {
+            text-align: center;
+            width: 100%;
         }
 
         section>article {
             margin: 0.5rem;
             width: calc(100% / 4 - 1rem);
-            min-width: 200px;
+            min-width: 80px;
+        }
+
+        section.colx1>article {
+            width: calc(100% - 1rem);
+        }
+
+        section.colx2>article {
+            width: calc(100% / 2 - 1rem);
+        }
+
+        section.colx3>article {
+            width: calc(100% / 3 - 1rem);
+        }
+
+        section.colx4>article {
+            width: calc(100% / 4 - 1rem);
+        }
+
+        section.colx5>article {
+            width: calc(100% / 5 - 1rem);
+        }
+
+        section.colx6>article {
+            width: calc(100% / 6 - 1rem);
+        }
+
+        section.colx7>article {
+            width: calc(100% / 7 - 1rem);
+        }
+
+        section.colx8>article {
+            width: calc(100% / 8 - 1rem);
+        }
+
+        section.colx9>article {
+            width: calc(100% / 9 - 1rem);
+        }
+
+        section.colx10>article {
+            width: calc(100% / 10 - 1rem);
+        }
+
+        section.colx11>article {
+            width: calc(100% / 11 - 1rem);
+        }
+
+        section.colx12>article {
+            width: calc(100% / 12 - 1rem);
         }
 
         section.dashboard {
@@ -69,11 +124,23 @@
             min-height: 40px;
         }
 
-        article {
-            padding: 1rem;
-            background-color: #dddddd;
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
 
+        article {
+            padding: 1rem;
+            background-color: #eeeeee;
+        }
+
+        .page article {
+            background-color: #ffffff;
+        }
+        pre {
+            white-space: pre-wrap;
+        }
         form {
             display: flex;
         }
@@ -85,6 +152,10 @@
             display: inline-block;
             width: 100%;
             margin-top: 0.5rem;
+        }
+
+        input[type=checkbox] {
+            width: 2rem;
         }
 
         div.mxWindow {
@@ -100,58 +171,100 @@
             display: block;
             box-sizing: content-box;
         }
+
+        ol li input {
+            width: 80px;
+            height: 2rem;
+        }
     </style>
 </head>
 
 <body>
+    <style class="cssInline">
+    </style>
 
     <div id="app">
+        <teleport to=".cssInline">
+            {{ cssCode }}
+        </teleport>
+        <section>
+            <div class="page" :style="pageStyle">
+                <section v-for="section in sections" :style="sectionStyle(section)" :class="sectionClass(section)">
+                    <h2 v-if="section.title">{{ section.title }}</h2>
+                    <template v-for="article in articles">
+                        <article v-if="article.section==section.name">
+                            <h3>{{ article.title }}</h3>
+                            <pre>{{ article.code }}</pre>
+                        </article>
+                    </template>
+                </section>
 
-        <section v-for="section in sections">
-            <template v-for="article in articles">
-                <article v-if="article.section==section.name">
-                    <h3>{{ article.title }}</h3>
-                    <pre>{{ article.code }}</pre>
-                </article>
-            </template>
+            </div>
         </section>
 
-        <section class="artbox">
-            <article v-for="article in articles" :class="'a' + article.id">
-                <input type="text" v-model="article.title">
-                <input type="text" v-model="article.section">
-                <textarea name="" id="" cols="30" rows="10" v-model="article.code"></textarea>
-                <button v-if="!article.isWindow" @click="addWindow(article)">window me</button>
-            </article>
-        </section>
 
         <section class="dashboard">
             <article title="Sections" class="ct2 window">
+                <h3>page</h3>
+                <input type="number" step="100" v-model="pageWidth">
+                <input type="range" step="100" v-model="pageWidth" min="100" max="2000">
+                <h3>ajouter une section</h3>
                 <form @submit.prevent="actAddSection">
-                    <input ref="inSection" type="text" name="section">
+                    <input ref="inSection" type="text" name="section" value="s1">
                     <button>➕</button>
                 </form>
+                <h3>liste des sections</h3>
                 <ol>
                     <li v-for="section in sections">
-                        <input v-model="section.name">
+                        <div class="row">
+                            <input type="text" title="name" v-model="section.name">
+                            <input type="text" title="title" v-model="section.title">
+                            <input type="number" title="colx" min="1" max="20" v-model="section.colx">
+                            <input type="color" v-model="section.bgcolor">
+                        </div>
                     </li>
                 </ol>
             </article>
 
             <article title="Articles" class="ct3 window">
+                <h3>ajouter un article</h3>
                 <form @submit.prevent="actAddArticle">
-                    <input ref="inArticle" type="text" name="article">
+                    <input ref="inArticleSection" type="text" name="article">
                     <button>➕</button>
                 </form>
+                <h3>liste des articles</h3>
                 <ol>
                     <li v-for="article in articles">
-                        <input v-model="article.title">
+                        <div class="row">
+                            <input type="checkbox" title="selected" v-model="article.selected">
+                            <input type="text" title="title" v-model="article.title">
+                            <input type="text" title="section" v-model="article.section">
+                        </div>
                     </li>
                 </ol>
             </article>
 
+            <section title="Articles Editor" class="artbox window">
+                <template v-for="article in articles">
+                    <article v-if="article.selected" :class="'a' + article.id">
+                        <div class="row">
+                            <input type="text" v-model="article.title">
+                            <input type="text" v-model="article.section">
+                            <textarea name="" id="" cols="30" rows="10" v-model="article.code"></textarea>
+                            <button v-if="!article.isWindow" @click="addWindow(article)">window me</button>
+                        </div>
+                    </article>
+                </template>
+            </section>
+
+            <div title="Bloc Notes" id="" class="window">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="css" id="" cols="30" rows="10" v-model="cssCode"></textarea>
+            </div>
+
             <div title="Graph" id="graphbox" class="window">
             </div>
+
         </section>
 
         <div class="fab" @click="actFab">😇</div>
@@ -179,10 +292,44 @@
                     count1: 0,
                     test: 'XoomCoder',
                     articles: [],
-                    sections: []
+                    sections: [],
+                    pageStyle: {
+                        'width': '1366' + 'px',
+                        'background-color': '#ffffff',
+                        'border': '1px solid #ffffff'
+                    },
+                    page: {
+                        width: 1366
+                    },
+                    cssCode: ''
+                }
+            },
+            computed: {
+                pageWidth: {
+                    get() {
+                        return this.page.width;
+                    },
+                    set(v) {
+                        this.page.width = v;
+                        this.pageStyle.width = v + 'px';
+                    }
                 }
             },
             methods: {
+                lorem() {
+                    return `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsum quaerat unde fuga neque nam odit repellat placeat ex tempora nobis culpa repudiandae, architecto dolore in cum! A, tempora tempore.`;
+                },
+                sectionClass(section) {
+                    let cssclass = {};
+                    let cname = 'colx' + section.colx;
+                    cssclass[cname] = true;
+                    return cssclass;
+                },
+                sectionStyle(section) {
+                    return {
+                        'background-color': section.bgcolor,
+                    };
+                },
                 doEx1() {
                     // we can manipulate properties here
                     this.count1++;
@@ -205,24 +352,31 @@
                 actAddSection(event) {
                     let sectionName = this.$refs.inSection.value;
                     this.sections.push({
-                        name: sectionName
-                    })
+                        name: sectionName,
+                        title: sectionName,
+                        bgcolor: '#cccccc',
+                        colx: '4'
+                    });
+                    // set the next section name
+                    this.$refs.inSection.value = 's' + (this.sections.length + 1);
                 },
                 actAddArticle() {
                     this.count1++;
                     let sectionName = '';
-                    if (this.sections.length > 0)
+                    if (this.$refs.inArticleSection.value)
+                        sectionName = this.$refs.inArticleSection.value;
+                    else if (this.sections.length > 0)
                         sectionName = this.sections[this.sections.length - 1].name;
 
                     let newArticle = {
                         id: this.count1,
                         title: 'article ' + this.count1,
-                        code: '',
-                        section: sectionName
+                        code: this.lorem(),
+                        section: sectionName,
+                        selected: true,
                     };
                     this.articles.push(newArticle);
                 },
-
             },
             mounted() {
                 let graphbox = document.querySelector('#graphbox');
@@ -236,7 +390,7 @@
                     article.id2 = a;
                     // force height as graph is empty
                     let height = Math.min(400, screen.availWidth / 2);;
-                    let width = Math.min(300, screen.availWidth / 2);
+                    let width = Math.min(400, screen.availWidth / 2);
                     let wnd = new mxWindow(article.title, article, 100 + screen.availWidth * percent / 300, 100 * (a + 1), width, height, true, true);
                     wnd.setMaximizable(true);
                     wnd.setScrollable(true);
