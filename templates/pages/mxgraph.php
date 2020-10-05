@@ -240,19 +240,42 @@
         }
 
         .page section article {
-            min-width:300px;
+            min-width: 300px;
         }
 
         article img {
-            width:100%;
-            object-fit:cover;
+            width: 100%;
+            object-fit: cover;
         }
+
         article img {
             height: 15vmin;
         }
 
         .dropok {
-            border:2px dashed yellow;
+            border: 2px dashed yellow;
+        }
+
+        .bounce-enter-active {
+            animation: bounce-in 0.5s;
+        }
+
+        .bounce-leave-active {
+            animation: bounce-in 0.5s reverse;
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -270,11 +293,13 @@
                 <section v-for="section in sections" :style="sectionStyle(section)" :class="sectionClass(section)" @drop="actDragDrop($event, section)" @dragover.prevent="actDragOver($event,section)" @dragenter.self.prevent="actDragEnter($event,section)" @dragleave.self="actDragLeave($event,section)">
                     <h2 v-if="section.title">{{ section.title }}</h2>
                     <template v-for="article in articles">
-                        <article v-if="article.section==section.name" :class="articleClass(article)" draggable="true" @dragstart="actDragStart($event,article)">
-                            <h3>{{ article.title }}</h3>
-                            <img src="assets/square/happy.jpg" alt="">
-                            <pre>{{ article.code }}</pre>
-                        </article>
+                        <transition name="bounce">
+                            <article v-if="article.section==section.name" :class="articleClass(article)" draggable="true" @dragstart="actDragStart($event,article)">
+                                <h3>{{ article.title }}</h3>
+                                <img src="assets/square/happy.jpg" alt="">
+                                <pre>{{ article.code }}</pre>
+                            </article>
+                        </transition>
                     </template>
                 </section>
             </div>
