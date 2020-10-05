@@ -252,10 +252,6 @@
             height: 15vmin;
         }
 
-        .dropok {
-            /* border: 2px dashed yellow; */
-        }
-
         .bounce-enter-active {
             animation: bounce-in 1s;
         }
