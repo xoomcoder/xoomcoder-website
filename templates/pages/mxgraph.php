@@ -253,15 +253,15 @@
         }
 
         .dropok {
-            border: 2px dashed yellow;
+            /* border: 2px dashed yellow; */
         }
 
         .bounce-enter-active {
-            animation: bounce-in 0.5s;
+            animation: bounce-in 1s;
         }
 
         .bounce-leave-active {
-            animation: bounce-in 0.5s reverse;
+            animation: bounce-in 0.2s reverse;
         }
 
         @keyframes bounce-in {
@@ -277,6 +277,15 @@
                 transform: scale(1);
             }
         }
+
+        .drop2 {
+            width: 1rem;
+            background-color: white;
+        }
+
+        .drop2:hover {
+            background-color: lightgreen;
+        }
     </style>
 </head>
 
@@ -290,18 +299,31 @@
         </teleport>
         <section>
             <div class="page" :style="pageStyle">
-                <section v-for="section in sections" :style="sectionStyle(section)" :class="sectionClass(section)" @drop="actDragDrop($event, section)" @dragover.prevent="actDragOver($event,section)" @dragenter.self.prevent="actDragEnter($event,section)" @dragleave.self="actDragLeave($event,section)">
-                    <h2 v-if="section.title">{{ section.title }}</h2>
-                    <template v-for="article in articles">
-                        <transition name="bounce">
-                            <article v-if="article.section==section.name" :class="articleClass(article)" draggable="true" @dragstart="actDragStart($event,article)">
-                                <h3>{{ article.title }}</h3>
-                                <img src="assets/square/happy.jpg" alt="">
-                                <pre>{{ article.code }}</pre>
-                            </article>
-                        </transition>
+                <template v-for="section in sections">
+                    <template v-if="!hasArticles(section)">
+                        <section :style="sectionStyle(section)" :class="sectionClass(section)" @drop="actDragDrop($event, section)" @dragover.self.prevent="actDragOver($event,section)" @dragenter.self.prevent="actDragEnter($event,section)" @dragleave.self="actDragLeave($event,section)">
+                            <h2 v-if="section.title">{{ section.title }}</h2>
+                        </section>
                     </template>
-                </section>
+                    <template v-else>
+                        <section :style="sectionStyle(section)" :class="sectionClass(section)" @dragenter.prevent="actDragEnter($event,section)" @dragleave="actDragLeave($event,section)">
+                            <h2 v-if="section.title">{{ section.title }}</h2>
+                            <template v-for="article in articles">
+                                <div v-if="section.isDropTarget && article.section==section.name" class="drop2" @dragover.prevent @dragenter.prevent @drop="actDrop2($event, section)"></div>
+                                <transition name="bounce">
+                                    <article v-if="article.section==section.name" :class="articleClass(article)" draggable="true" @dragstart="actDragStart($event,article)">
+                                        <h3>{{ article.title }}</h3>
+                                        <img src="assets/square/happy.jpg" alt="">
+                                        <pre>{{ article.code }}</pre>
+                                    </article>
+                                </transition>
+                                <div v-if="section.isDropTarget && article.section==section.name" class="drop2" @dragover.prevent @dragenter.prevent @drop="actDrop2($event, section)"></div>
+                            </template>
+                        </section>
+
+                    </template>
+
+                </template>
             </div>
         </section>
 
@@ -464,6 +486,7 @@
                     },
                     cssCode: '',
                     curDrag: null,
+                    curDragSection: null,
                 }
             },
             computed: {
@@ -478,21 +501,54 @@
                 }
             },
             methods: {
-                actDragDrop(event, section) {
+                hasArticles(section) {
+                    let res = 0;
+                    for (let a = 0; a < this.articles.length; a++) {
+                        let article = this.articles[a];
+                        if (article.section == section.name) res++;
+                    }
+                    return res;
+                },
+                actDrop2(event, section) {
+                    console.log('DROP2');
                     if (this.curDrag) {
                         this.curDrag.section = section.name;
                     }
                     this.curDrag = null;
+                    section.isDropTarget = false;
+                },
+                actDragDrop(event, section) {
+                    console.log(event);
+                    console.log(section);
+                    // if no article
+                    if (this.curDrag) {
+                        this.curDrag.section = section.name;
+                    }
+                    this.curDrag = null;
+
                     event.target.classList.remove("dropok");
+                    section.isDropTarget = false;
                 },
                 actDragOver(event, section) {
                     event.dataTransfer.dropEffect = "move";
+                    section.isDropTarget = true;
                 },
                 actDragLeave(event, section) {
-                    event.target.classList.remove("dropok");
+                    console.log('LEAVE');
+                    //event.target.classList.remove("dropok");
+                    //section.isDropTarget = false;
                 },
                 actDragEnter(event, section) {
-                    event.target.classList.add("dropok");
+                    if (this.curDragSection) {
+                        console.log('leave');
+                        console.log(this.curDragSection);
+                        this.curDragSection.isDropTarget = false;
+                    }
+                    this.curDragSection = section;
+                    if(this.curDrag && (section.name != this.curDrag.section)) {
+                        event.target.classList.add("dropok");
+                        section.isDropTarget = true;
+                    }
                 },
                 actDragStart(event, article) {
                     event.dataTransfer.dropEffect = "copy";
