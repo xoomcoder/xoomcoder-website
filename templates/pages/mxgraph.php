@@ -308,17 +308,24 @@
                     <template v-else>
                         <section :style="sectionStyle(section)" :class="sectionClass(section)" @dragenter.prevent="actDragEnter($event,section)" @dragleave="actDragLeave($event,section)">
                             <h2 v-if="section.title">{{ section.title }}</h2>
-                            <template v-for="article in articles">
+                            <template v-for="(article, index) in articles">
                                 <div v-if="section.isDropTarget && article.section==section.name" class="drop2" @dragover.prevent @dragenter.prevent @drop="actDrop2($event, section)"></div>
-                                <transition name="bounce">
-                                    <article v-if="article.section==section.name" :class="articleClass(article)" draggable="true" @dragstart="actDragStart($event,article)">
+                                    <template v-if="article.noArticle && article.section==section.name">
                                         <h3>{{ article.title }}</h3>
-                                        <img src="assets/square/happy.jpg" alt="">
+                                        <img :src="'assets/square/happy-' + index + '.jpg'" alt="">
                                         <pre>{{ article.code }}</pre>
-                                    </article>
-                                </transition>
-                                <div v-if="section.isDropTarget && article.section==section.name" class="drop2" @dragover.prevent @dragenter.prevent @drop="actDrop2($event, section)"></div>
+                                    </template>
+                                    <template v-else>
+                                        <transition name="bounce">
+                                            <article v-if="article.section==section.name" :class="articleClass(article)" draggable="true" @dragstart="actDragStart($event,article)">
+                                                <h3>{{ article.title }}</h3>
+                                                <img :src="'assets/square/happy-' + index + '.jpg'" alt="">
+                                                <pre>{{ article.code }}</pre>
+                                            </article>
+                                        </transition>
+                                    </template>
                             </template>
+                            <div v-if="section.isDropTarget" class="drop2" @dragover.prevent @dragenter.prevent @drop="actDrop2($event, section)"></div>
                         </section>
 
                     </template>
@@ -365,6 +372,7 @@
                             <input type="text" title="title" v-model="article.title">
                             <input type="text" title="section" v-model="article.section">
                             <input type="text" title="cssClass" v-model="article.cssClass">
+                            <input type="checkbox" title="isArticle" v-model="article.noArticle">
                         </div>
                     </li>
                 </ol>
@@ -545,7 +553,7 @@
                         this.curDragSection.isDropTarget = false;
                     }
                     this.curDragSection = section;
-                    if(this.curDrag && (section.name != this.curDrag.section)) {
+                    if(this.curDrag) {
                         event.target.classList.add("dropok");
                         section.isDropTarget = true;
                     }
