@@ -250,6 +250,10 @@
         article img {
             height: 15vmin;
         }
+
+        .dropok {
+            border:2px dashed yellow;
+        }
     </style>
 </head>
 
@@ -263,10 +267,10 @@
         </teleport>
         <section>
             <div class="page" :style="pageStyle">
-                <section v-for="section in sections" :style="sectionStyle(section)" :class="sectionClass(section)">
+                <section v-for="section in sections" :style="sectionStyle(section)" :class="sectionClass(section)" @drop="actDragDrop($event, section)" @dragover.prevent="actDragOver($event,section)" @dragenter.self.prevent="actDragEnter($event,section)" @dragleave.self="actDragLeave($event,section)">
                     <h2 v-if="section.title">{{ section.title }}</h2>
                     <template v-for="article in articles">
-                        <article v-if="article.section==section.name" :class="articleClass(article)">
+                        <article v-if="article.section==section.name" :class="articleClass(article)" draggable="true" @dragstart="actDragStart($event,article)">
                             <h3>{{ article.title }}</h3>
                             <img src="assets/square/happy.jpg" alt="">
                             <pre>{{ article.code }}</pre>
@@ -433,7 +437,8 @@
                     page: {
                         width: 1366
                     },
-                    cssCode: ''
+                    cssCode: '',
+                    curDrag: null,
                 }
             },
             computed: {
@@ -448,6 +453,26 @@
                 }
             },
             methods: {
+                actDragDrop(event, section) {
+                    if (this.curDrag) {
+                        this.curDrag.section = section.name;
+                    }
+                    this.curDrag = null;
+                    event.target.classList.remove("dropok");
+                },
+                actDragOver(event, section) {
+                    event.dataTransfer.dropEffect = "move";
+                },
+                actDragLeave(event, section) {
+                    event.target.classList.remove("dropok");
+                },
+                actDragEnter(event, section) {
+                    event.target.classList.add("dropok");
+                },
+                actDragStart(event, article) {
+                    event.dataTransfer.dropEffect = "copy";
+                    this.curDrag = article;
+                },
                 lorem() {
                     let l = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi ipsum quaerat unde fuga neque nam odit repellat placeat ex tempora nobis culpa repudiandae, architecto dolore in cum! A, tempora tempore.`;
                     return l + ' ' + l + ' ' + l;
