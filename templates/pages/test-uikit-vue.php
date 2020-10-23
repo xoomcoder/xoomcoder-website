@@ -17,19 +17,19 @@
         </header>
         <main>
             <section class="uk-section">
-                <article class="uk-container">
+                <div class="uk-container">
                     <h2>sortable list</h2>
                     <div class="uk-child-width-1-3" uk-grid uk-sortable>
-                        <div class="uk-card" v-for="item in items" :key="item.id">
+                        <article class="uk-card" v-for="item in items" :key="item.id">
                             <div class="uk-card-header">
                                 <h3>{{ item.title }}</h3>
                             </div>
                             <div class="uk-card-body">
                                 <img src="assets/square/team.jpg" alt="team">
                             </div>
-                        </div>
+                        </article>
                     </div>
-                </article>
+                </div>
             </section>
 
         </main>
