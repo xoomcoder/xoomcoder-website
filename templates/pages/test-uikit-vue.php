@@ -7,6 +7,11 @@
     <meta name="description" content="UIKIT AND VUEJS">
     <title>UIKIT AND VUEJS</title>
 
+    <link rel="preload" href="assets/uikit/css/uikit.min.css" as="style">
+    <link rel="preload" href="assets/js/vue.global.prod.js" as="script">
+    <link rel="preload" href="assets/uikit/js/uikit.min.js" as="script">
+    <link rel="preload" href="assets/uikit/js/uikit-icons.min.js" as="script">
+
     <style>
     </style>
 </head>
