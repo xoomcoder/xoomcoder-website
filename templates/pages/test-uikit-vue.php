@@ -191,7 +191,7 @@
     <script src="assets/js/vue.global.prod.js"></script>
 
     <?php 
-    $initDelay = 50000;
+    $initDelay = 0;
     $ua = $_SERVER["HTTP_USER_AGENT"];
 
     if (mb_strpos($ua, "Lighthouse") > 0) {
