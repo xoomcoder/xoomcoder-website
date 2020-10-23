@@ -22,9 +22,32 @@
         <style>
             html, body {
                 font-size:16px;
+                width:100%;
+                height:100%;
+                margin:0;
+                padding:0;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            h1, h2 {
+                text-align: center;
+            }
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                width:100%;
+                list-style:none;
+                padding:0;
+                margin:0;
             }
             li {
                 padding:1rem;
+                width:50%;
+                margin:0;
+            }
+            section, footer {
+                padding: 1rem;
             }
         </style>
         <header>
@@ -168,7 +191,7 @@
     <script src="assets/js/vue.global.prod.js"></script>
 
     <?php 
-    $initDelay = 0;
+    $initDelay = 50000;
     $ua = $_SERVER["HTTP_USER_AGENT"];
 
     if (mb_strpos($ua, "Lighthouse") > 0) {
