@@ -21,9 +21,20 @@
     <div id="app">
         <header>
             <h1>titre1</h1>
+            <nav>
+                <ul>
+                    <li><a href="page1">page1</a></li>
+                    <li><a href="page2">page2</a></li>
+                    <li><a href="page3">page3</a></li>
+                    <li><a href="page4">page4</a></li>
+                    <li><a href="page5">page5</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
             <h1>titre1</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima excepturi eaque iusto suscipit eligendi, quis ex deserunt accusamus dolores quae temporibus incidunt molestias, alias, dolore laudantium omnis blanditiis. Unde, minima?</p>
+            <h2><?php echo $_SERVER["HTTP_USER_AGENT"] ?></h2>
         </main>
         <footer>
             <p>tous droits réservés</p>
