@@ -70,11 +70,13 @@
 
                         <ol>
                             <li v-for="item in items">
+                                <h4>{{ item.title }}</h4>
                                 <form>
                                     <input class="uk-input" v-model="item.title">
                                     <input class="uk-input" v-model="item.image">
                                     <textarea class="uk-textarea" v-model="item.code" rows="5"></textarea>
                                 </form>
+                                <hr class="uk-divider-icon">
                             </li>
                         </ol>
                     </div>
