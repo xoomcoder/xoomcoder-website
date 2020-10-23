@@ -26,7 +26,7 @@
                             </div>
                             <div class="uk-card-body" uk-lightbox>
                                 <a :href="'assets/square/team-' + index + '.jpg'">
-                                    <img :src="'assets/square/team-' + index + '.jpg'" alt="team">
+                                    <img loading="lazy" :src="'assets/square/team-' + index + '.jpg'" alt="team">
                                 </a>
                                 <p>{{ item.code }}</p>
                             </div>
