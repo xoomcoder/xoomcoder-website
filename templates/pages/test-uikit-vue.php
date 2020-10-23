@@ -22,7 +22,7 @@
         <main>
             <section class="uk-section">
                 <div class="uk-container">
-                    <h2>sortable list</h2>
+                    <h2>Articles ({{ items.length }})</h2>
                     <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small" uk-grid uk-sortable uk-lightbox>
                         <article class="uk-card" v-for="(item, index) in items" :key="item.id">
                             <div class="uk-card-header">
