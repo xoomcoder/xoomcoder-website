@@ -14,6 +14,9 @@
 
 <body>
     <div id="app">
+    </div>
+
+    <template id="apptemplate">
         <header class="uk-container">
             <h1>UIKIT AND VUEJS</h1>
             <a class="uk-button uk-button-primary" href="#my-id" uk-toggle uk-icon="icon: cog"></a>
@@ -110,13 +113,14 @@
         <footer class="uk-container">
             <p>tous droits réservés</p>
         </footer>
-    </div>
 
+    </template>
     <script src="assets/js/vue.global.prod.js"></script>
     <script src="assets/uikit/js/uikit.min.js"></script>
     <script src="assets/uikit/js/uikit-icons.min.js"></script>
     <script>
         const appconf = {
+            template: '#apptemplate',
             methods: {
                 actAddArticle() {
                     let nextItem = {};
