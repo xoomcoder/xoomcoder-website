@@ -19,6 +19,14 @@
 
 <body>
     <div id="app">
+        <style>
+            html, body {
+                font-size:16px;
+            }
+            li {
+                padding:1rem;
+            }
+        </style>
         <header>
             <h1>titre1</h1>
             <nav>
