@@ -12,7 +12,6 @@
     <link rel="preload" href="assets/uikit/js/uikit.min.js" as="script">
     <link rel="preload" href="assets/uikit/js/uikit-icons.min.js" as="script">
 
-    <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
 
     <style>
     </style>
@@ -32,6 +31,9 @@
     </div>
 
     <template id="apptemplate">
+
+        <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
+
         <header class="uk-container">
             <h1>UIKIT AND VUEJS</h1>
             <a class="uk-button uk-button-primary" href="#my-id" uk-toggle uk-icon="icon: cog"></a>
@@ -130,9 +132,11 @@
         </footer>
 
     </template>
-    <script src="assets/js/vue.global.prod.js"></script>
+
     <script src="assets/uikit/js/uikit.min.js"></script>
     <script src="assets/uikit/js/uikit-icons.min.js"></script>
+
+    <script src="assets/js/vue.global.prod.js"></script>
     <script>
         const appconf = {
             template: '#apptemplate',
@@ -229,14 +233,13 @@
         }
 
 
-    
-        let app = null;
-    
-function initVue () {
-    app = Vue.createApp(appconf).mount('#app');
-}
-setTimeout(initVue, 5000);
 
+        let app = null;
+
+        function initVue() {
+            app = Vue.createApp(appconf).mount('#app');
+        }
+        setTimeout(initVue, 3000);
     </script>
 </body>
 
