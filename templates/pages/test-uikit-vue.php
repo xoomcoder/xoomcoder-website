@@ -22,17 +22,23 @@
         <main>
             <section class="uk-section">
                 <div class="uk-container uk-container-expand">
-                    <h2>Articles ({{ items.length }})</h2>
+                    <h2>Articles ({{ items.length }})
+                        <button class="uk-button uk-button-primary uk-button-small" @click="actAddArticle">Ajouter Article</button>
+                    </h2>
                     <div uk-filter="target: .mylist">
 
-                        <ul class="uk-subnav uk-subnav-pill">
+
+                        <ul class="uk-subnav uk-subnav-pill" uk-margin>
                             <li uk-filter-control><a href="#">tous</a></li>
                             <li v-for="tag in tags" :key="tag.id" :uk-filter-control="'article[data-tag=' + tag.label + ']'"><a href="#">{{ tag.label + ' (' + tag.count + ')' }}</a></li>
 
+                            <li uk-filter-control="sort: data-id"><a href="#"><span uk-icon="icon: arrow-up"></span></a></li>
+                            <li uk-filter-control="sort: data-id; order: desc"><a href="#"><span uk-icon="icon: arrow-down"></span></a></li>
                         </ul>
 
+
                         <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-sortable uk-lightbox>
-                            <article class="uk-card" v-for="(item, index) in items" :key="item.id" :data-tag="item.tag">
+                            <article class="uk-card" v-for="(item, index) in items" :key="item.id" :data-tag="item.tag" :data-id="item.id">
                                 <div class="uk-card-header">
                                     <h3>{{ item.title }}</h3>
                                 </div>
@@ -122,16 +128,19 @@
                 }
             },
             computed: {
-                tags () {
-                    let res = { };
+                tags() {
+                    let res = {};
                     let count = 0;
-                    for(let a=0; a < this.items.length; a++) {
+                    for (let a = 0; a < this.items.length; a++) {
                         let item = this.items[a];
                         if (item.tag) {
-                            if (res[item.tag]) 
+                            if (res[item.tag])
                                 res[item.tag].count++;
-                            else 
-                                res[item.tag] = { label: item.tag, count:1};
+                            else
+                                res[item.tag] = {
+                                    label: item.tag,
+                                    count: 1
+                                };
                         }
                     }
                     return res;
