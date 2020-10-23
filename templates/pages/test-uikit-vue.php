@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="UIKIT AND VUEJS">
     <title>UIKIT AND VUEJS</title>
 
-    <link rel="stylesheet" href="assets/uikit/css/uikit.css">
+    <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
 </head>
 
 <body>
@@ -16,12 +17,12 @@
         </header>
         <main>
             <section class="uk-section">
-                <div class="uk-container">
+                <article class="uk-container">
                     <h2>sortable list</h2>
                     <div uk-sortable>
                         <div v-for="item in items" :key="item.id">{{ item.title }}</div>
                     </div>
-                </div>
+                </article>
             </section>
 
         </main>
@@ -30,9 +31,9 @@
         </footer>
     </div>
 
-    <script src="assets/js/vue.global.js"></script>
-    <script src="assets/uikit/js/uikit.js"></script>
-    <script src="assets/uikit/js/uikit-icons.js"></script>
+    <script src="assets/js/vue.global.prod.js"></script>
+    <script src="assets/uikit/js/uikit.min.js"></script>
+    <script src="assets/uikit/js/uikit-icons.min.js"></script>
     <script>
         const appconf = {
             data() {
