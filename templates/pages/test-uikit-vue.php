@@ -21,20 +21,30 @@
         </header>
         <main>
             <section class="uk-section">
-                <div class="uk-container">
+                <div class="uk-container uk-container-expand">
                     <h2>Articles ({{ items.length }})</h2>
-                    <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small" uk-grid uk-sortable uk-lightbox>
-                        <article class="uk-card" v-for="(item, index) in items" :key="item.id">
-                            <div class="uk-card-header">
-                                <h3>{{ item.title }}</h3>
-                            </div>
-                            <div class="uk-card-body">
-                                <a :href="item.image" :data-caption="'<h3>' + item.title + '</h3>' + item.code">
-                                    <img loading="lazy" :src="item.image" alt="team">
-                                </a>
-                                <p>{{ item.code }}</p>
-                            </div>
-                        </article>
+                    <div uk-filter="target: .mylist">
+
+                        <ul class="uk-subnav uk-subnav-pill">
+                            <li uk-filter-control><a href="#">tous</a></li>
+                            <li uk-filter-control="article[data-tag=bleu]"><a href="#">bleu</a></li>
+                            <li uk-filter-control="article[data-tag=jaune]"><a href="#">jaune</a></li>
+                            <li uk-filter-control="article[data-tag=vert]"><a href="#">vert</a></li>
+                        </ul>
+
+                        <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-sortable uk-lightbox>
+                            <article class="uk-card" v-for="(item, index) in items" :key="item.id" :data-tag="item.tag">
+                                <div class="uk-card-header">
+                                    <h3>{{ item.title }}</h3>
+                                </div>
+                                <div class="uk-card-body">
+                                    <a :href="item.image" :data-caption="'<h3>' + item.title + '</h3>' + item.code">
+                                        <img loading="lazy" :src="item.image" alt="team">
+                                    </a>
+                                    <p>{{ item.code }}</p>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                     <button class="uk-button uk-button-primary" @click="actAddArticle">Ajouter Article</button>
 
@@ -42,14 +52,14 @@
             </section>
 
             <!-- This is the off-canvas -->
-            <section id="my-id" uk-offcanvas>
+            <section id="my-id" uk-offcanvas="mode: push">
                 <div class="uk-offcanvas-bar">
                     <h3>{{ items.length }} articles</h3>
                     <button class="uk-button uk-button-primary" @click="actAddArticle">Ajouter Article</button>
 
                     <ol>
                         <li v-for="item in items">
-                            <h3>{{ item.title }}</h3>
+                            <h5>{{ item.title }}</h5>
                         </li>
                     </ol>
                     <button class="uk-offcanvas-close" type="button" uk-close></button>
@@ -74,6 +84,7 @@
                                 <form>
                                     <input class="uk-input" v-model="item.title">
                                     <input class="uk-input" v-model="item.image">
+                                    <input class="uk-input" v-model="item.tag">
                                     <textarea class="uk-textarea" v-model="item.code" rows="5"></textarea>
                                 </form>
                                 <hr class="uk-divider-icon">
