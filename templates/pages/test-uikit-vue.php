@@ -14,6 +14,15 @@
 
 <body>
     <div id="app">
+        <header>
+            <h1>titre1</h1>
+        </header>
+        <main>
+            <h1>titre1</h1>
+        </main>
+        <footer>
+            <p>tous droits réservés</p>
+        </footer>
     </div>
 
     <template id="apptemplate">
