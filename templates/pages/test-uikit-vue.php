@@ -228,7 +228,15 @@
             }
         }
 
-        let app = Vue.createApp(appconf).mount('#app');
+
+    
+        let app = null;
+    
+function initVue () {
+    app = Vue.createApp(appconf).mount('#app');
+}
+setTimeout(initVue, 5000);
+
     </script>
 </body>
 
