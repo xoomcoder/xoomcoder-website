@@ -32,6 +32,8 @@
                             </div>
                         </article>
                     </div>
+                    <button class="uk-button uk-button-primary" @click="actAddArticle">Ajouter Article</button>
+
                 </div>
             </section>
 
@@ -46,8 +48,18 @@
     <script src="assets/uikit/js/uikit-icons.min.js"></script>
     <script>
         const appconf = {
+            methods: {
+                actAddArticle () {
+                    let nextItem = {};
+                    nextItem.id = 1 + 1 * this.items.length;
+                    nextItem.title = 'title ' + nextItem.id;
+                    nextItem.code  = this.lorem;
+                    this.items.push(nextItem);
+                }
+            },
             data() {
                 return {
+                    lorem: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, doloribus recusandae alias nemo ducimus ratione doloremque necessitatibus eligendi quis. Omnis unde sapiente corrupti perferendis eius cum repellat odit deleniti illo.',
                     items: [
                         {
                             id: 1,
@@ -84,7 +96,7 @@
             }
         }
 
-        Vue.createApp(appconf).mount('#app')
+        let app = Vue.createApp(appconf).mount('#app');
     </script>
 </body>
 
