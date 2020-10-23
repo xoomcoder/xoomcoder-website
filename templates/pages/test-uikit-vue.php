@@ -27,9 +27,8 @@
 
                         <ul class="uk-subnav uk-subnav-pill">
                             <li uk-filter-control><a href="#">tous</a></li>
-                            <li uk-filter-control="article[data-tag=bleu]"><a href="#">bleu</a></li>
-                            <li uk-filter-control="article[data-tag=jaune]"><a href="#">jaune</a></li>
-                            <li uk-filter-control="article[data-tag=vert]"><a href="#">vert</a></li>
+                            <li v-for="tag in tags" :key="tag.id" :uk-filter-control="'article[data-tag=' + tag.label + ']'"><a href="#">{{ tag.label + ' (' + tag.count + ')' }}</a></li>
+
                         </ul>
 
                         <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-sortable uk-lightbox>
@@ -55,11 +54,14 @@
             <section id="my-id" uk-offcanvas="mode: push">
                 <div class="uk-offcanvas-bar">
                     <h3>{{ items.length }} articles</h3>
-                    <button class="uk-button uk-button-primary" @click="actAddArticle">Ajouter Article</button>
-
+                    <div class="uk-grid">
+                        <button class="uk-button uk-button-primary uk-button-small" @click="actAddArticle">Ajouter Article</button>
+                        <label><input class="uk-checkbox" type="checkbox" v-model="optionTag"> Tag</label>
+                    </div>
                     <ol>
                         <li v-for="item in items">
                             <h5>{{ item.title }}</h5>
+                            <input v-if="optionTag" class="uk-input" v-model="item.tag">
                         </li>
                     </ol>
                     <button class="uk-offcanvas-close" type="button" uk-close></button>
@@ -119,8 +121,25 @@
                     this.items.push(nextItem);
                 }
             },
+            computed: {
+                tags () {
+                    let res = { };
+                    let count = 0;
+                    for(let a=0; a < this.items.length; a++) {
+                        let item = this.items[a];
+                        if (item.tag) {
+                            if (res[item.tag]) 
+                                res[item.tag].count++;
+                            else 
+                                res[item.tag] = { label: item.tag, count:1};
+                        }
+                    }
+                    return res;
+                }
+            },
             data() {
                 return {
+                    optionTag: false,
                     lorem: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, doloribus recusandae alias nemo ducimus ratione doloremque necessitatibus eligendi quis. Omnis unde sapiente corrupti perferendis eius cum repellat odit deleniti illo.',
                     items: [{
                             id: 1,
