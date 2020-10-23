@@ -32,6 +32,9 @@
             }
             h1, h2, nav li {
                 text-align: center;
+                background-color: #000000;
+                color: #ffffff;
+                padding:1rem;
             }
             ul {
                 display: flex;
@@ -40,11 +43,14 @@
                 list-style:none;
                 padding:0;
                 margin:0;
+                background-color: #000000;
             }
             li {
-                padding:1rem;
                 width:50%;
                 margin:0;
+            }
+            li a {
+                color: #ffffff;
             }
             section, footer {
                 padding: 1rem;
