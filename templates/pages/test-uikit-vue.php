@@ -30,7 +30,7 @@
             * {
                 box-sizing: border-box;
             }
-            h1, h2 {
+            h1, h2, nav li {
                 text-align: center;
             }
             ul {
