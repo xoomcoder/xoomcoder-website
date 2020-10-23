@@ -239,7 +239,7 @@
         function initVue() {
             app = Vue.createApp(appconf).mount('#app');
         }
-        setTimeout(initVue, 2000);
+        setTimeout(initVue, 1000);
     </script>
 </body>
 
