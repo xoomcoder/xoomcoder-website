@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>UIKIT AND VUEJS</title>
 
     <link rel="stylesheet" href="assets/uikit/css/uikit.css">
 </head>
@@ -16,8 +16,11 @@
         </header>
         <main>
             <section class="uk-section">
-                <div class="uk-container" uk-sortable>
-                    <div v-for="item in items" :key="item.id">{{ item.title }}</div>
+                <div class="uk-container">
+                    <h2>sortable list</h2>
+                    <div uk-sortable>
+                        <div v-for="item in items" :key="item.id">{{ item.title }}</div>
+                    </div>
                 </div>
             </section>
 
