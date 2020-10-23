@@ -19,13 +19,13 @@
             <section class="uk-section">
                 <div class="uk-container">
                     <h2>sortable list</h2>
-                    <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid uk-sortable>
+                    <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid uk-sortable uk-lightbox>
                         <article class="uk-card" v-for="(item, index) in items" :key="item.id">
                             <div class="uk-card-header">
                                 <h3>{{ item.title }}</h3>
                             </div>
-                            <div class="uk-card-body" uk-lightbox>
-                                <a :href="'assets/square/team-' + index + '.jpg'">
+                            <div class="uk-card-body">
+                                <a :href="'assets/square/team-' + index + '.jpg'" :data-caption="item.title">
                                     <img loading="lazy" :src="'assets/square/team-' + index + '.jpg'" alt="team">
                                 </a>
                                 <p>{{ item.code }}</p>
@@ -89,6 +89,21 @@
                         {
                             id: 6,
                             title: 'title 6',
+                            code: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis commodi maxime, accusantium unde necessitatibus aperiam ipsa ut voluptatem fugit. Cum exercitationem dolorem inventore nisi modi unde quaerat obcaecati minus animi.'
+                        },
+                        {
+                            id: 7,
+                            title: 'title 7',
+                            code: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis commodi maxime, accusantium unde necessitatibus aperiam ipsa ut voluptatem fugit. Cum exercitationem dolorem inventore nisi modi unde quaerat obcaecati minus animi.'
+                        },
+                        {
+                            id: 8,
+                            title: 'title 8',
+                            code: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis commodi maxime, accusantium unde necessitatibus aperiam ipsa ut voluptatem fugit. Cum exercitationem dolorem inventore nisi modi unde quaerat obcaecati minus animi.'
+                        },
+                        {
+                            id: 9,
+                            title: 'title 9',
                             code: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis commodi maxime, accusantium unde necessitatibus aperiam ipsa ut voluptatem fugit. Cum exercitationem dolorem inventore nisi modi unde quaerat obcaecati minus animi.'
                         },
                     ]
