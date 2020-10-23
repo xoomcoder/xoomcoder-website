@@ -85,7 +85,7 @@
                         </ul>
 
 
-                        <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-sortable uk-lightbox>
+                        <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-lightbox ref="boxdrag" :uk-sortable="sortable">
                             <article class="uk-card" v-for="(item, index) in items" :key="item.id" :data-tag="item.tag" :data-id="item.id">
                                 <div class="uk-card-header">
                                     <h3>{{ item.title }}</h3>
@@ -107,11 +107,12 @@
             <!-- This is the off-canvas -->
             <section id="my-id" uk-offcanvas="mode: push">
                 <div class="uk-offcanvas-bar">
-                    <h3>{{ items.length }} articles</h3>
                     <div class="uk-grid">
-                        <button class="uk-button uk-button-primary uk-button-small" @click="actAddArticle">Ajouter Article</button>
                         <label><input class="uk-checkbox" type="checkbox" v-model="optionTag"> Tag</label>
+                        <label><input class="uk-checkbox" type="checkbox" v-model="optionDraggable"> Drag</label>
                     </div>
+                    <h3>{{ items.length }} articles</h3>
+                    <button class="uk-button uk-button-primary uk-button-small" @click="actAddArticle">Ajouter Article</button>
                     <ol>
                         <li v-for="item in items">
                             <h5>{{ item.title }}</h5>
@@ -187,7 +188,13 @@
                     this.items.push(nextItem);
                 }
             },
+            watch: {
+            },
             computed: {
+                sortable() {
+                    if (!this.optionDraggable) return null;
+                    else return true;
+                },
                 tags() {
                     let res = {};
                     let count = 0;
@@ -208,6 +215,8 @@
             },
             data() {
                 return {
+                    option: {},
+                    optionDraggable: false,
                     optionTag: false,
                     lorem: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, doloribus recusandae alias nemo ducimus ratione doloremque necessitatibus eligendi quis. Omnis unde sapiente corrupti perferendis eius cum repellat odit deleniti illo.',
                     items: [{
