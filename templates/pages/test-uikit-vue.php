@@ -27,6 +27,7 @@
                 height: 100%;
                 margin: 0;
                 padding: 0;
+                background-color: #000000;
             }
 
             * {
@@ -52,18 +53,23 @@
                 background-color: #000000;
             }
 
-            li {
+            nav li {
                 width: 50%;
                 margin: 0;
+                max-width: 200px;
             }
 
-            li a {
+            nav li a {
                 color: #ffffff;
             }
 
-            section,
+            header,
+            main,
             footer {
                 padding: 1rem;
+                max-width:640px;
+                margin:0 auto;
+                background-color: #dddddd;
             }
         </style>
         <header>
@@ -116,12 +122,12 @@
                     <div uk-filter="target: .mylist">
                         <div class="uk-navbar-container" uk-navbar>
                             <div class="uk-navbar-center">
-                                    <ul class="uk-subnav uk-subnav-pill uk-margin">
-                                        <li uk-filter-control="sort: data-id"><a href="#"><span uk-icon="icon: arrow-up"></span></a></li>
-                                        <li uk-filter-control="sort: data-id; order: desc"><a href="#"><span uk-icon="icon: arrow-down"></span></a></li>
-                                        <li uk-filter-control><a href="#"><span uk-icon="icon: grid"></span></a></li>
-                                        <li v-for="tag in tags" :key="tag.id" :uk-filter-control="'article[data-tag=' + tag.label + ']'"><a href="#">{{ tag.label + ' (' + tag.count + ')' }}</a></li>
-                                    </ul>
+                                <ul class="uk-subnav uk-subnav-pill uk-margin">
+                                    <li uk-filter-control="sort: data-id"><a href="#"><span uk-icon="icon: arrow-up"></span></a></li>
+                                    <li uk-filter-control="sort: data-id; order: desc"><a href="#"><span uk-icon="icon: arrow-down"></span></a></li>
+                                    <li uk-filter-control><a href="#"><span uk-icon="icon: grid"></span></a></li>
+                                    <li v-for="tag in tags" :key="tag.id" :uk-filter-control="'article[data-tag=' + tag.label + ']'"><a href="#">{{ tag.label + ' (' + tag.count + ')' }}</a></li>
+                                </ul>
                             </div>
                         </div>
                         <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-lightbox ref="boxdrag" :uk-sortable="sortable" uk-height-match>
