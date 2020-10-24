@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="UIKIT AND VUEJS">
-    <title>UIKIT AND VUEJS</title>
+    <title>UIKIT + VUEJS</title>
 
     <link rel="preload" href="assets/uikit/css/uikit.min.css" as="style">
     <link rel="preload" href="assets/js/vue.global.prod.js" as="script">
@@ -102,30 +102,30 @@
         <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
 
         <header class="uk-container">
-            <h1>UIKIT AND VUEJS</h1>
-            <a class="uk-button uk-button-primary" href="#my-id" uk-toggle uk-icon="icon: cog"></a>
-            <a class="uk-button uk-button-primary" href="#modal-sections" uk-toggle><span uk-icon="icon: file-edit"></span></a>
+            <h1>{{ h1 }}</h1>
         </header>
         <main>
             <section class="uk-section">
-                <div class="uk-container uk-container-expand">
-                    <h2>Articles ({{ items.length }})
-                        <button class="uk-button uk-button-primary uk-button-small" @click="actAddArticle">Ajouter Article</button>
-                    </h2>
+                <div class="uk-container">
+                    <a class="uk-button uk-button-default disabled" href="#" @click.prevent><span>{{ items.length }}</span></a>
+                    <a class="uk-button uk-button-primary" @click.prevent="actAddArticle" href="#"><span uk-icon="icon: plus-circle"></span></a>
+                    <a class="uk-button uk-button-primary" href="#" uk-toggle><span uk-icon="icon: file-edit"></span></a>
+                    <a class="uk-button uk-button-primary" href="#my-id" uk-toggle uk-icon="icon: cog"></a>
+                </div>
+                <div class="uk-container uk-container-expand uk-padding-remove">
                     <div uk-filter="target: .mylist">
-
-
-                        <ul class="uk-subnav uk-subnav-pill" uk-margin>
-                            <li uk-filter-control="sort: data-id"><a href="#"><span uk-icon="icon: arrow-up"></span></a></li>
-                            <li uk-filter-control="sort: data-id; order: desc"><a href="#"><span uk-icon="icon: arrow-down"></span></a></li>
-                            <li uk-filter-control><a href="#">tous</a></li>
-                            <li v-for="tag in tags" :key="tag.id" :uk-filter-control="'article[data-tag=' + tag.label + ']'"><a href="#">{{ tag.label + ' (' + tag.count + ')' }}</a></li>
-
-                        </ul>
-
-
+                        <div class="uk-navbar-container" uk-navbar>
+                            <div class="uk-navbar-center">
+                                    <ul class="uk-subnav uk-subnav-pill uk-margin">
+                                        <li uk-filter-control="sort: data-id"><a href="#"><span uk-icon="icon: arrow-up"></span></a></li>
+                                        <li uk-filter-control="sort: data-id; order: desc"><a href="#"><span uk-icon="icon: arrow-down"></span></a></li>
+                                        <li uk-filter-control><a href="#"><span uk-icon="icon: grid"></span></a></li>
+                                        <li v-for="tag in tags" :key="tag.id" :uk-filter-control="'article[data-tag=' + tag.label + ']'"><a href="#">{{ tag.label + ' (' + tag.count + ')' }}</a></li>
+                                    </ul>
+                            </div>
+                        </div>
                         <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-lightbox ref="boxdrag" :uk-sortable="sortable" uk-height-match>
-                            <article class="uk-padding-remove-left uk-margin-remove-top uk-card uk-background-cover uk-dark" v-for="(item, index) in items" :key="item.id" :data-tag="item.tag" :data-id="item.id" uk-parallax="bgy: -200" :style="'background-image: url(' + item.image + ')'">
+                            <article class="uk-padding-remove-left uk-margin-remove-top uk-card uk-background-cover uk-dark" v-for="(item, index) in items" :key="item.id" :data-tag="item.tag" :data-id="item.id" uk-parallax="bgy: -160" :style="'background-image: url(' + item.image + ')'">
                                 <div class="uk-card-header uk-height-medium">
                                 </div>
                                 <div class="uk-card-body uk-overlay uk-overlay-primary">
@@ -139,7 +139,12 @@
                             </article>
                         </div>
                     </div>
-                    <button class="uk-button uk-button-primary" @click="actAddArticle">Ajouter Article</button>
+                    <div class="uk-container">
+                        <a class="uk-button uk-button-default" disabled href="#" @click.prevent><span>{{ items.length }}</span></a>
+                        <a class="uk-button uk-button-primary" @click.prevent="actAddArticle" href="#"><span uk-icon="icon: plus-circle"></span></a>
+                        <a class="uk-button uk-button-primary" href="#" uk-toggle><span uk-icon="icon: file-edit"></span></a>
+                        <a class="uk-button uk-button-primary" href="#my-id" uk-toggle uk-icon="icon: cog"></a>
+                    </div>
 
                 </div>
             </section>
@@ -151,8 +156,15 @@
                         <label><input class="uk-checkbox" type="checkbox" v-model="optionTag"> Tag</label>
                         <label><input class="uk-checkbox" type="checkbox" v-model="optionDraggable"> Drag</label>
                     </div>
-                    <h3>{{ items.length }} articles</h3>
-                    <button class="uk-button uk-button-primary uk-button-small" @click="actAddArticle">Ajouter Article</button>
+                    <hr>
+                    <input class="uk-input" v-model="h1">
+                    <hr>
+                    <input class="uk-input" v-model="footer">
+                    <h3>
+                        <span uk-icon="icon: album"></span> {{ items.length }} |
+                        <a class="" @click="actAddArticle" href="#"><span uk-icon="icon: plus-circle"></span></a>
+                    </h3>
+                    <hr>
                     <ol>
                         <li v-for="item in items">
                             <h5>{{ item.title }}</h5>
@@ -197,7 +209,7 @@
 
         </main>
         <footer class="uk-container">
-            <p>tous droits réservés</p>
+            <p>{{ footer }}</p>
         </footer>
 
     </template>
@@ -254,6 +266,8 @@
             },
             data() {
                 return {
+                    footer: 'tous droits réservés * 2020',
+                    h1: 'UiKit + Vue',
                     option: {},
                     optionDraggable: false,
                     optionTag: false,
