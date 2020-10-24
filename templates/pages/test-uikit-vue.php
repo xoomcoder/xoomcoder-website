@@ -109,7 +109,7 @@
                 <div class="uk-container">
                     <a class="uk-button uk-button-default disabled" href="#" @click.prevent><span>{{ items.length }}</span></a>
                     <a class="uk-button uk-button-primary" @click.prevent="actAddArticle" href="#"><span uk-icon="icon: plus-circle"></span></a>
-                    <a class="uk-button uk-button-primary" href="#" uk-toggle><span uk-icon="icon: file-edit"></span></a>
+                    <a class="uk-button uk-button-primary" href="#modal-edit" uk-toggle><span uk-icon="icon: file-edit"></span></a>
                     <a class="uk-button uk-button-primary" href="#my-id" uk-toggle uk-icon="icon: cog"></a>
                 </div>
                 <div class="uk-container uk-container-expand uk-padding-remove">
@@ -142,7 +142,7 @@
                     <div class="uk-container">
                         <a class="uk-button uk-button-default" disabled href="#" @click.prevent><span>{{ items.length }}</span></a>
                         <a class="uk-button uk-button-primary" @click.prevent="actAddArticle" href="#"><span uk-icon="icon: plus-circle"></span></a>
-                        <a class="uk-button uk-button-primary" href="#" uk-toggle><span uk-icon="icon: file-edit"></span></a>
+                        <a class="uk-button uk-button-primary" href="#modal-edit" uk-toggle><span uk-icon="icon: file-edit"></span></a>
                         <a class="uk-button uk-button-primary" href="#my-id" uk-toggle uk-icon="icon: cog"></a>
                     </div>
 
@@ -177,16 +177,17 @@
             </section>
 
 
-            <section id="modal-sections" uk-modal>
+            <section id="modal-edit" uk-modal>
                 <div class="uk-modal-dialog">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
                     <div class="uk-modal-header">
-                        <h2 class="uk-modal-title">Modifier Articles</h2>
+                        <h2 class="uk-modal-title">
+                            Modifier
+                            <span uk-icon="icon: album"></span> {{ items.length }} |
+                            <a class="" @click="actAddArticle" href="#"><span uk-icon="icon: plus-circle"></span></a>
+                        </h2>
                     </div>
                     <div class="uk-modal-body">
-                        <h3>{{ items.length }} articles</h3>
-                        <button class="uk-button uk-button-primary" @click="actAddArticle">Ajouter Article</button>
-
                         <ol>
                             <li v-for="item in items">
                                 <h4>{{ item.title }}</h4>
@@ -201,7 +202,7 @@
                         </ol>
                     </div>
                     <div class="uk-modal-footer uk-text-right">
-                        <button class="uk-button uk-button-primary" @click="actAddArticle">Ajouter Article</button>
+                        <button class="uk-button uk-button-primary" @click="actAddArticle"><span uk-icon="icon: plus-circle"></span></button>
                         <button class="uk-button uk-button-default uk-modal-close" type="button">Fermer</button>
                     </div>
                 </div>
