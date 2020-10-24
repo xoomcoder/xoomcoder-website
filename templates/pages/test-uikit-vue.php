@@ -116,11 +116,11 @@
 
 
                         <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                            <li uk-filter-control="sort: data-id"><a href="#"><span uk-icon="icon: arrow-up"></span></a></li>
+                            <li uk-filter-control="sort: data-id; order: desc"><a href="#"><span uk-icon="icon: arrow-down"></span></a></li>
                             <li uk-filter-control><a href="#">tous</a></li>
                             <li v-for="tag in tags" :key="tag.id" :uk-filter-control="'article[data-tag=' + tag.label + ']'"><a href="#">{{ tag.label + ' (' + tag.count + ')' }}</a></li>
 
-                            <li uk-filter-control="sort: data-id"><a href="#"><span uk-icon="icon: arrow-up"></span></a></li>
-                            <li uk-filter-control="sort: data-id; order: desc"><a href="#"><span uk-icon="icon: arrow-down"></span></a></li>
                         </ul>
 
 
