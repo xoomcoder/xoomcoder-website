@@ -20,39 +20,49 @@
 <body>
     <div id="app">
         <style>
-            html, body {
-                font-size:16px;
-                width:100%;
-                height:100%;
-                margin:0;
-                padding:0;
+            html,
+            body {
+                font-size: 16px;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
             }
+
             * {
                 box-sizing: border-box;
             }
-            h1, h2, nav li {
+
+            h1,
+            h2,
+            nav li {
                 text-align: center;
                 background-color: #000000;
                 color: #ffffff;
-                padding:1rem;
+                padding: 1rem;
             }
+
             ul {
                 display: flex;
                 flex-wrap: wrap;
-                width:100%;
-                list-style:none;
-                padding:0;
-                margin:0;
+                width: 100%;
+                list-style: none;
+                padding: 0;
+                margin: 0;
                 background-color: #000000;
             }
+
             li {
-                width:50%;
-                margin:0;
+                width: 50%;
+                margin: 0;
             }
+
             li a {
                 color: #ffffff;
             }
-            section, footer {
+
+            section,
+            footer {
                 padding: 1rem;
             }
         </style>
@@ -114,15 +124,16 @@
                         </ul>
 
 
-                        <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-lightbox ref="boxdrag" :uk-sortable="sortable">
-                            <article class="uk-card" v-for="(item, index) in items" :key="item.id" :data-tag="item.tag" :data-id="item.id">
-                                <div class="uk-card-header">
-                                    <h3>{{ item.title }}</h3>
+                        <div class="mylist uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-small" uk-grid uk-lightbox ref="boxdrag" :uk-sortable="sortable" uk-height-match>
+                            <article class="uk-padding-remove-left uk-margin-remove-top uk-card uk-background-cover uk-dark" v-for="(item, index) in items" :key="item.id" :data-tag="item.tag" :data-id="item.id" uk-parallax="bgy: -200" :style="'background-image: url(' + item.image + ')'">
+                                <div class="uk-card-header uk-height-medium">
                                 </div>
-                                <div class="uk-card-body">
-                                    <a :href="item.image" :data-caption="'<h3>' + item.title + '</h3>' + item.code">
-                                        <img loading="lazy" :src="item.image" alt="team">
-                                    </a>
+                                <div class="uk-card-body uk-overlay uk-overlay-primary">
+                                    <h3 class="">
+                                        <a :href="item.image" :data-caption="'<h3>' + item.title + '</h3>' + item.code">
+                                            {{ item.title }}
+                                        </a>
+                                    </h3>
                                     <p>{{ item.code }}</p>
                                 </div>
                             </article>
@@ -196,7 +207,7 @@
 
     <script src="assets/js/vue.global.prod.js"></script>
 
-    <?php 
+    <?php
     $initDelay = 0;
     $ua = $_SERVER["HTTP_USER_AGENT"];
 
@@ -217,8 +228,7 @@
                     this.items.push(nextItem);
                 }
             },
-            watch: {
-            },
+            watch: {},
             computed: {
                 sortable() {
                     if (!this.optionDraggable) return null;
