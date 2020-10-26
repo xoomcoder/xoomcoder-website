@@ -10,7 +10,7 @@
     <link rel="icon" href="assets/img/xoomcoder.svg">
 
     <!-- preload -->
-    <link rel="preload" href="assets/uikit/css/uikit.min.css" as="style">
+    <!-- <link rel="preload" href="assets/uikit/css/uikit.min.css" as="style"> -->
     <link rel="preload" href="assets/js/vue.global.prod.js" as="script">
     <link rel="preload" href="assets/uikit/js/uikit.min.js" as="script">
     <link rel="preload" href="assets/uikit/js/uikit-icons.min.js" as="script">
@@ -131,7 +131,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="assets/uikit/css/uikit-1.css">
 
     <script>
         let mypage = {};
