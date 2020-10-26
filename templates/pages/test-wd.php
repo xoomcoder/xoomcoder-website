@@ -29,6 +29,9 @@
             height: 2rem;
             object-fit: contain;
         }
+        .title {
+            font-size:2rem;
+        }
     </style>
     <script>
         let mypage = {};
@@ -43,9 +46,9 @@
         <header class="uk-section">
             <div class="uk-container">
                 <div class="uk-grid">
-                    <a class="" uk-navbar-toggle-icon href="#aside-panel" uk-toggle></a>
+                    <button class="" uk-navbar-toggle-icon href="#aside-panel" uk-toggle></button>
                     <img class="logo" src="assets/img/xoomcoder.svg" alt="logo">
-                    <div class="title"><a href="#">XoomCoder</a></div>
+                    <div class="title"><a href="#" class="uk-link-heading">XoomCoder</a></div>
                 </div>
             </div>
         </header>
@@ -66,7 +69,7 @@
             <section class="uk-section">
                 <article class="uk-container">
                     <h1 class="uk-heading-small"><a href="#">Formation Dev FullStack</a></h1>
-                    <img loading="lazy" src="assets/img/team-640.jpg" alt="team">
+                    <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="uk-height-small">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
                 </article>
                 <article class="uk-container">
