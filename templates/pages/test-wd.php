@@ -45,17 +45,22 @@
     <div class="page">
         <header class="uk-section">
             <div class="uk-container">
-                <div class="uk-grid">
-                    <button class="" uk-navbar-toggle-icon href="#aside-panel" uk-toggle></button>
-                    <img class="logo" src="assets/img/xoomcoder.svg" alt="logo">
+                <div uk-grid class="uk-grid-large uk-flex-between">
+                    <picture>
+                        <img class="logo" src="assets/img/xoomcoder.svg" alt="logo">
+                    </picture>
                     <div class="title"><a href="#" class="uk-link-heading">XoomCoder</a></div>
+                    <label for="">
+                        <span>menu</span>
+                        <button class="" uk-navbar-toggle-icon href="#aside-panel" uk-toggle></button>
+                    </label>
                 </div>
             </div>
         </header>
-        <aside id="aside-panel" uk-offcanvas>
+        <aside id="aside-panel" uk-offcanvas="flip: true">
             <div class="uk-offcanvas-bar">
 
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <div class="uk-offcanvas-close" type="button" uk-close></div>
                 <nav>
                     <a href="#">news</a>
                     <a href="#">tutoriels</a>
@@ -108,8 +113,10 @@
                 </article>
             </section>
         </main>
-        <footer>
-            <p>tous droits réservés</p>
+        <footer class="uk-section">
+            <div class="uk-container">
+                <p>tous droits réservés</p>
+            </div>
         </footer>
         <div id="debug"></div>
         <script src="assets/uikit/js/uikit.min.js"></script>
