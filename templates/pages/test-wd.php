@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="test web dev">
-    
+
     <title>XoomCoder.com Formation Dev FullStack</title>
     <link rel="icon" href="assets/img/xoomcoder.svg">
 
@@ -18,6 +18,8 @@
             --secondary: #ffeb3b;
             --secondary-dark: #c8b900;
             --secondary-light: #ffff72;
+            --light: #ffffff;
+            --dark: #000000;
         }
 
         html,
@@ -34,8 +36,9 @@
         header {
             position: relative;
         }
+
         header .title {
-            font-size:2rem;
+            font-size: 2rem;
             text-align: center;
             padding: 1rem;
         }
@@ -61,6 +64,10 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: #ffffff;
         }
 
         nav a {
@@ -78,17 +85,22 @@
             height: 50vmin;
             background-color: #666666;
         }
+
         .logo {
-    width: 4rem;
-    height: 4rem;
-    object-fit: contain;
-    position: absolute;
-    padding: 1rem;
-    background-color: transparent;
-}
+            width: 4rem;
+            height: 4rem;
+            object-fit: contain;
+            position: absolute;
+            padding: 1rem;
+            background-color: transparent;
+        }
+
         /* colors */
         header .title {
             background-color: var(--primary);
+        }
+        nav {
+            background-color: var(--light);
         }
 
         h2 {
