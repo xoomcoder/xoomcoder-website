@@ -29,7 +29,7 @@
             --grey: #aaaaaa;
         }
 
-        html,
+        /* html,
         body {
             font-size: 16px;
             margin: 0;
@@ -38,7 +38,7 @@
 
         * {
             box-sizing: border-box;
-        }
+        } */
 
         header {
             position: relative;
@@ -51,7 +51,7 @@
             font-weight: 900;
         }
 
-        h1,
+        /* h1,
         h2,
         h3,
         h4,
@@ -61,12 +61,12 @@
             text-align: center;
             margin: 0;
             padding: 1rem;
-        }
+        } */
 
-        a {
+        /* a {
             text-decoration: none;
             color: #333333;
-        }
+        } */
 
         nav {
             display: flex;
@@ -82,14 +82,14 @@
             padding: 1rem;
         }
 
-        p {
+        /* p {
             padding: 1rem;
-        }
+        } */
 
-        img {
+        img.h40 {
             object-fit: cover;
             width: 100%;
-            height: 50vmin;
+            height: 40vmax;
             background-color: #666666;
         }
 
@@ -145,7 +145,7 @@
     <div class="page">
         <header>
             <img class="logo" src="assets/img/xoomcoder.svg" alt="logo">
-            <div class="title"><a href="#">XoomCoder</a></div>
+            <a class="title" href="#">XoomCoder</a>
         </header>
         <nav>
             <a href="#">news</a>
@@ -157,7 +157,7 @@
         <main>
             <section>
                 <h1><a href="#">Formation Dev FullStack</a></h1>
-                <img loading="lazy" src="assets/img/team-640.jpg" alt="team">
+                <img class="h40" loading="lazy" src="assets/img/team-640.jpg" alt="team">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
                 <article>
                     <h2><a href="#">Formation à Distance</a></h2>
