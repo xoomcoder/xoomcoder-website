@@ -86,10 +86,10 @@
             padding: 1rem;
         } */
 
-        img.h40 {
+        img.h30 {
             object-fit: cover;
             width: 100%;
-            height: 40vmax;
+            height: 30vmax;
             background-color: #666666;
         }
 
@@ -157,7 +157,7 @@
         <main>
             <section>
                 <h1><a href="#">Formation Dev FullStack</a></h1>
-                <img class="h40" loading="lazy" src="assets/img/team-640.jpg" alt="team">
+                <img class="h30" loading="lazy" src="assets/img/team-640.jpg" alt="team">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
                 <article>
                     <h2><a href="#">Formation à Distance</a></h2>
@@ -195,6 +195,13 @@
             <p>tous droits réservés</p>
         </footer>
         <div id="debug"></div>
+
+        <script src="assets/js/vue.global.prod.js"></script>
+
+        <script src="assets/uikit/js/uikit.min.js"></script>
+        <script src="assets/uikit/js/uikit-icons.min.js"></script>
+
+
         <script>
             // debug.innerHTML = mypage.width + '/' + mypage.height;
         </script>
