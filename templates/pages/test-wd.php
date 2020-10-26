@@ -25,12 +25,13 @@
         }
 
         .logo {
-            width: 4rem;
+            width: 2rem;
             height: 2rem;
             object-fit: contain;
         }
         .title {
-            font-size:2rem;
+            font-size:1.5rem;
+            font-weight:700;
         }
     </style>
     <script>
@@ -50,23 +51,23 @@
                         <img class="logo" src="assets/img/xoomcoder.svg" alt="logo">
                     </picture>
                     <div class="title"><a href="#" class="uk-link-heading">XoomCoder</a></div>
-                    <label for="">
-                        <span>menu</span>
-                        <button class="" uk-navbar-toggle-icon href="#aside-panel" uk-toggle></button>
-                    </label>
+                    <div class="" uk-navbar-toggle-icon href="#aside-panel" uk-toggle></div>
                 </div>
             </div>
         </header>
-        <aside id="aside-panel" uk-offcanvas="flip: true">
+        <aside id="aside-panel" uk-offcanvas="flip: true; mode: push;">
             <div class="uk-offcanvas-bar">
 
                 <div class="uk-offcanvas-close" type="button" uk-close></div>
                 <nav>
-                    <a href="#">news</a>
-                    <a href="#">tutoriels</a>
-                    <a href="#">formation</a>
-                    <a href="#">offres d'emploi</a>
-                    <a href="#">contact</a>
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="#">news</a></li>
+                        <li><a href="#">tutoriels</a></li>
+                        <li><a href="#">formation</a></li>
+                        <li><a href="#">offres d'emploi</a></li>
+                        <li><a href="#">contact</a></li>
+                    </ul>         
                 </nav>
             </div>
         </aside>
