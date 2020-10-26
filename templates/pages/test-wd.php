@@ -29,9 +29,16 @@
             height: 2rem;
             object-fit: contain;
         }
+
         .title {
-            font-size:1.5rem;
-            font-weight:700;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .h300 {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
         }
     </style>
     <script>
@@ -67,22 +74,50 @@
                         <li><a href="#">formation</a></li>
                         <li><a href="#">offres d'emploi</a></li>
                         <li><a href="#">contact</a></li>
-                    </ul>         
+                    </ul>
                 </nav>
             </div>
         </aside>
         <main>
             <section class="uk-section">
-                <article class="uk-container">
-                    <h1 class="uk-heading-small"><a href="#">Formation Dev FullStack</a></h1>
-                    <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="uk-height-small">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
-                </article>
-                <article class="uk-container">
-                    <h2><a href="#">Formation à Distance</a></h2>
-                    <img loading="lazy" src="assets/img/code-640.jpg" alt="team">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
-                </article>
+                <div class="uk-container">
+                    <div class="uk-grid uk-child-width-1-2@s" uk-grid>
+                        <article>
+                            <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h300">
+                            <h1>Formation Dev FullStack</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
+                        </article>
+                        <article>
+                            <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h300">
+                            <h2>Formation à distance</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="uk-section">
+                <div class="uk-container">
+                    <div class="uk-grid uk-child-width-1-2@s" uk-grid>
+                        <article class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h300">
+                            </div>
+                            <div class="uk-card-body">
+                                <h1 class="uk-heading-small"><a href="#">Formation Dev FullStack</a></h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
+                            </div>
+                        </article>
+                        <article class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h300">
+                            </div>
+                            <div class="uk-card-body">
+                                <h2 class="uk-heading-small"><a href="#">Formation à distance</a></h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </section>
             <section class="uk-section">
                 <article class="uk-container">
