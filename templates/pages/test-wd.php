@@ -68,7 +68,7 @@
 
 <body>
     <div class="page">
-        <header class="uk-section uk-padding-remove-bottom">
+        <header class="uk-section uk-padding-small">
             <div class="uk-container">
                 <div class="uk-flex uk-flex-between">
                     <picture>
