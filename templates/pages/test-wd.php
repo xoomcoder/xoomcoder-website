@@ -96,7 +96,7 @@
             </div>
         </aside>
         <main>
-            <section class="uk-section">
+            <section class="uk-section uk-padding-small">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s" uk-grid>
                         <article>
