@@ -53,6 +53,7 @@
         /* COLORS */
         header {
             background-color: var(--secondary-light);
+            box-shadow: 2px 4px 8px var(--grey);
         }
         article h1 {
             color:var(--primary-dark);
@@ -96,7 +97,7 @@
             </div>
         </aside>
         <main>
-            <section class="uk-section uk-padding-small">
+            <section class="uk-section uk-padding-remove">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s" uk-grid>
                         <article>
