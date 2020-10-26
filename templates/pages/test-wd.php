@@ -112,13 +112,13 @@
             box-shadow: 2px 4px 8px var(--grey);
         }
 
-        h2 {
+        /* h2 {
             background-color: var(--secondary);
         }
 
         h3 {
             background-color: var(--secondary-light);
-        }
+        } */
 
         nav a {
             color: var(--primary-dark);
