@@ -53,7 +53,7 @@
         /* COLORS */
         header {
             background-color: var(--secondary-light);
-            box-shadow: 2px 4px 8px var(--grey);
+            box-shadow: 2px 4px 8px var(--dark);
         }
         article h1 {
             color:var(--primary-dark);
