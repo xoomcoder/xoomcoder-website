@@ -63,7 +63,7 @@
     <div class="page">
         <header class="uk-section">
             <div class="uk-container">
-                <div uk-grid class="uk-grid-large uk-flex-between">
+                <div class="uk-flex uk-flex-between">
                     <picture>
                         <img class="logo" src="assets/img/xoomcoder.svg" alt="logo">
                     </picture>
