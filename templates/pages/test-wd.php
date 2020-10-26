@@ -50,6 +50,13 @@
             height: 300px;
             object-fit: cover;
         }
+        /* COLORS */
+        header {
+            background-color: var(--secondary-light);
+        }
+        article h1 {
+            color:var(--primary-dark);
+        }
     </style>
     <script>
         let mypage = {};
