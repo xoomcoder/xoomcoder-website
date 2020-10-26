@@ -9,12 +9,6 @@
     <title>XoomCoder.com Formation Dev FullStack</title>
     <link rel="icon" href="assets/img/xoomcoder.svg">
 
-    <!-- preload -->
-    <link rel="preload" href="assets/uikit/css/uikit.min.css" as="style">
-    <link rel="preload" href="assets/js/vue.global.prod.js" as="script">
-    <link rel="preload" href="assets/uikit/js/uikit.min.js" as="script">
-    <link rel="preload" href="assets/uikit/js/uikit-icons.min.js" as="script">
-
     <style>
         /* variables */
         :root {
@@ -106,7 +100,6 @@
         header .title {
             background-color: var(--primary);
         }
-
         nav {
             background-color: var(--light);
             box-shadow: 2px 4px 8px var(--grey);
@@ -130,9 +123,6 @@
             left: 0;
         }
     </style>
-
-    <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
-
     <script>
         let mypage = {};
         // web.dev test screen: 360x640
