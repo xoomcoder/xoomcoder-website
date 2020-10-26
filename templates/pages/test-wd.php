@@ -35,6 +35,11 @@
             font-weight: 700;
         }
 
+        .h100 {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
         .h200 {
             width: 100%;
             height: 200px;
@@ -88,12 +93,12 @@
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s" uk-grid>
                         <article>
-                            <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
+                            <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h100">
                             <h1>Formation Dev FullStack</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
                         </article>
                         <article>
-                            <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
+                            <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h100">
                             <h2>Formation à distance</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
                         </article>
