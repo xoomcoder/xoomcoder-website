@@ -97,7 +97,7 @@
             width: 4rem;
             height: 4rem;
             object-fit: contain;
-            position: absolute;
+            /* position: absolute; */
             padding: 1rem;
             background-color: transparent;
         }
