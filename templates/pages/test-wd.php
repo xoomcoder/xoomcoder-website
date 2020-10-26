@@ -42,6 +42,7 @@
             font-size: 2rem;
             text-align: center;
             padding: 1rem;
+            font-weight: 900;
         }
 
         h1,
