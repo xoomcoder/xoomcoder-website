@@ -196,7 +196,7 @@
         </footer>
         <div id="debug"></div>
 
-        <script src="assets/js/vue.global.prod.js"></script>
+        <!-- <script src="assets/js/vue.global.prod.js"></script> -->
 
         <script src="assets/uikit/js/uikit.min.js"></script>
         <script src="assets/uikit/js/uikit-icons.min.js"></script>
