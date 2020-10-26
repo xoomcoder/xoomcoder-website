@@ -22,6 +22,7 @@
             --light: #ffffff;
             --dark: #000000;
             --grey: #aaaaaa;
+            --dark-grey:#666666;
         }
 
         .logo {
@@ -40,23 +41,32 @@
             height: 100px;
             object-fit: cover;
         }
+
         .h200 {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
+
         .h300 {
             width: 100%;
             height: 300px;
             object-fit: cover;
         }
+
+        @media (max-width:360px) {
+            .h200 {
+                object-fit: contain;
+            }
+        }
         /* COLORS */
         header {
             background-color: var(--secondary-light);
-            box-shadow: 2px 4px 8px var(--dark);
+            box-shadow: 2px 4px 8px var(--dark-grey);
         }
+
         article h1 {
-            color:var(--primary-dark);
+            color: var(--primary-dark);
         }
     </style>
     <script>
@@ -101,12 +111,18 @@
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s" uk-grid>
                         <article>
-                            <img loading="lazy" src="assets/img/xoomcoder.svg" alt="team" class="h200">
+                            <picture>
+                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
+                            </picture>
                             <h1>Formation Dev FullStack</h1>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
                         </article>
                         <article>
-                            <img loading="lazy" src="assets/img/xoomcoder.svg" alt="team" class="h200">
+                            <picture class="h200">
+                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
+                            </picture>
                             <h2>Formation à distance</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
                         </article>
@@ -118,7 +134,10 @@
                     <div class="uk-grid uk-child-width-1-2@s" uk-grid>
                         <article class="uk-card uk-card-default">
                             <div class="uk-card-media-top">
-                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h300">
+                                <picture>
+                                    <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                    <img loading="lazy" src="assets/img/xoomcoder.svg" alt="team" class="h200">
+                                </picture>
                             </div>
                             <div class="uk-card-body">
                                 <h1 class="uk-heading-small"><a href="#">Formation Dev FullStack</a></h1>
