@@ -20,6 +20,7 @@
             --secondary-light: #ffff72;
             --light: #ffffff;
             --dark: #000000;
+            --grey: #aaaaaa;
         }
 
         html,
@@ -67,7 +68,6 @@
             position: sticky;
             top: 0;
             left: 0;
-            background-color: #ffffff;
         }
 
         nav a {
@@ -101,6 +101,7 @@
         }
         nav {
             background-color: var(--light);
+            box-shadow: 2px 4px 8px var(--grey);
         }
 
         h2 {
