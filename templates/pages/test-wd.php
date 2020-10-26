@@ -103,9 +103,9 @@
         }
 
         /* colors */
-        header .title {
+        /* header .title {
             background-color: var(--primary);
-        }
+        } */
 
         nav {
             background-color: var(--light);
