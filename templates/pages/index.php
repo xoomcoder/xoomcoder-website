@@ -22,7 +22,7 @@
             --light: #ffffff;
             --dark: #000000;
             --grey: #aaaaaa;
-            --dark-grey: #666666;
+            --dark-grey: #333333;
         }
 
         .logo {
@@ -90,7 +90,7 @@
 
         /* COLORS */
         header {
-            background-color: var(--secondary-light);
+            background-color: var(--light);
             box-shadow: 2px 4px 8px var(--dark-grey);
             color: var(--primary-dark);
         }
