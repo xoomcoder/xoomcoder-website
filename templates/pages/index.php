@@ -131,7 +131,12 @@
         .bg-grey {
             background-color: var(--grey);
         }
-
+        .bg-dark-grey {
+            background-color: var(--dark-grey);
+        }
+        .bg-dark-grey pre {
+            color: var(--light);
+        }
         /* cyrillic-ext */
         @font-face {
             font-family: 'Roboto';
@@ -225,7 +230,7 @@
             </div>
         </header>
         <aside id="aside-panel" uk-offcanvas="flip: true; mode: push;">
-            <div class="uk-offcanvas-bar bg-grey">
+            <div class="uk-offcanvas-bar bg-dark-grey">
 
                 <div class="uk-offcanvas-close" type="button" uk-close></div>
                 <nav>
@@ -246,7 +251,7 @@
             </div>
         </aside>
         <main>
-            <section class="uk-section uk-padding-remove">
+            <section class="uk-section uk-padding-remove bg-dark-grey">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s" uk-grid="masonry: true" uk-scrollspy="target: > article pre; cls: uk-animation-scale-up; delay: 200; repeat: true;">
 
