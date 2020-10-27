@@ -2,11 +2,11 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="test web dev">
+    <meta name="description" content="xoomcoder formation à distance. Formation Développeur Web Fullstack.">
 
-    <title>XoomCoder.com Formation à Distance</title>
+    <title>XoomCoder Formation à Distance</title>
     <link rel="icon" href="assets/img/xoomcoder.svg">
 
     <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
@@ -664,9 +664,9 @@ PHP reste le langage serveur le plus populaire pour les projets web.
         </main>
         <footer class="uk-section bg-grey">
             <div class="uk-container">
-                <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+                <div class="uk-grid uk-flex-center uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
 
-                    <article class="uk-width-1-1@s">
+                    <article class="uk-width-1-2@s">
                         <h3 class="ta-cn">XoomCoder Formation à Distance</h3>
                         <pre>
 Tous droits réservés ©2020
