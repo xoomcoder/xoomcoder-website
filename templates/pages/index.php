@@ -94,9 +94,11 @@
             box-shadow: 2px 4px 8px var(--dark-grey);
             color: var(--primary-dark);
         }
+
         .title {
-            text-shadow: 1px 2px 4px var(--dark);
+            text-shadow: 1px 2px 4px var(--grey);
         }
+
         article h1 {
             color: var(--primary-dark);
             font-size: 2rem;
@@ -148,6 +150,7 @@
         .bg-dark-grey pre {
             color: var(--light);
         }
+
         article pre:hover {
             color: var(--dark-grey);
             border: 1px dashed var(--primary-light);
@@ -156,6 +159,16 @@
 
         .bdl-pm {
             border-left: 1px dashed var(--light);
+        }
+
+        @media (max-width:360px) {
+
+            .bg-dark-grey h1,
+            .bg-dark-grey h2,
+            .bg-dark-grey h3 {
+                color: var(--primary-dark);
+                text-shadow: 1px 2px 4px var(--dark);
+            }
         }
 
         /* cyrillic-ext */
