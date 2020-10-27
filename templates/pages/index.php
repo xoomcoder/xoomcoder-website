@@ -460,7 +460,7 @@ Content Management System ou Système de Gestion de Contenus. Avant d'ouvrir vot
                 </div>
             </section>
 
-            <section class="uk-section bg-grey">
+            <section class="uk-section bg-dark-grey">
                 <div class="uk-container">
                     <div class="uk-grid uk-flex-center uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
 
@@ -532,7 +532,7 @@ Pourquoi ré-inventer la roue ? Les retours d'expérience depuis des décennies 
                 </div>
             </section>
 
-            <section class="uk-section bg-grey">
+            <section class="uk-section bg-dark-grey">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
 
