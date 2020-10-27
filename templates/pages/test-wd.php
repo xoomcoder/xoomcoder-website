@@ -17,8 +17,8 @@
             --primary-dark: #ba000d;
             --primary-light: #ff7961;
             --secondary: #ffeb3b;
-            --secondary-dark: #c8b900;
-            --secondary-light: #ffff72;
+            --secondary-dark: #c6ff00;
+            --secondary-light: #f4ff81;
             --light: #ffffff;
             --dark: #000000;
             --grey: #aaaaaa;
@@ -64,11 +64,33 @@
             white-space: pre-wrap;
             font-family: 'Roboto', sans-serif;
             text-align: justify;
+            border: none;
+        }
+
+        .of-cn {
+            object-fit: contain;
+        }
+
+        .ob-cv {
+            object-fit: cover;
+        }
+
+        .ta-cn {
+            text-align: center;
+        }
+
+        article h3 {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .uk-grid article:first-child h3 {
+            padding: 2rem;
         }
 
         /* COLORS */
         header {
-            background-color: var(--secondary);
+            background-color: var(--secondary-light);
             box-shadow: 2px 4px 8px var(--dark-grey);
             color: var(--primary-dark);
         }
@@ -77,6 +99,37 @@
             color: var(--primary-dark);
             font-size: 2rem;
             line-height: 1.3;
+        }
+
+        article h2,
+        article h3 {
+            color: var(--primary-dark);
+        }
+
+        article pre {
+            border: 1px solid transparent;
+            background-color: transparent;
+        }
+
+        article pre:hover {
+            border: 1px solid var(--primary);
+            background-color: var(--light);
+        }
+
+        .bg-sl {
+            background-color: var(--secondary-light);
+        }
+
+        .bg-sm {
+            background-color: var(--secondary);
+        }
+
+        .bg-sd {
+            background-color: var(--secondary-dark);
+        }
+
+        .bg-grey {
+            background-color: var(--grey);
         }
 
         /* cyrillic-ext */
@@ -172,7 +225,7 @@
             </div>
         </header>
         <aside id="aside-panel" uk-offcanvas="flip: true; mode: push;">
-            <div class="uk-offcanvas-bar">
+            <div class="uk-offcanvas-bar bg-grey">
 
                 <div class="uk-offcanvas-close" type="button" uk-close></div>
                 <nav>
@@ -184,13 +237,18 @@
                         <li><a href="emploi">offres d'emploi</a></li>
                         <li><a href="contact">contact</a></li>
                     </ul>
+                    <h3>Votre compte</h3>
+                    <ul>
+                        <li><a href="inscription">inscription</a></li>
+                        <li><a href="login">login</a></li>
+                    </ul>
                 </nav>
             </div>
         </aside>
         <main>
             <section class="uk-section uk-padding-remove">
                 <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-2@s" uk-grid="masonry: true">
+                    <div class="uk-grid uk-child-width-1-2@s" uk-grid="masonry: true" uk-scrollspy="target: > article pre; cls: uk-animation-scale-up; delay: 200; repeat: true;">
 
                         <article>
                             <picture>
@@ -228,7 +286,7 @@ La formation est découpée en modules. Vous composez votre parcours progressive
                         <article>
                             <picture class="h200">
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200">
+                                <img loading="lazy" src="assets/img/coding-girl-640.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Qui est le formateur ?</h3>
                             <pre>
@@ -245,7 +303,7 @@ En 2020, les organismes de formation sont passés, pour la plupart, en formation
                         <article>
                             <picture class="h200">
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200">
+                                <img loading="lazy" src="assets/img/team-20.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Est-ce que la formation est adaptée à votre projet professionnel ?</h3>
                             <pre>
@@ -259,7 +317,7 @@ Il est naturellement important de rester bienveillant et solidaire, afin de part
                         <article>
                             <picture class="h200">
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200">
+                                <img loading="lazy" src="assets/img/team-21.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Quelle est la durée de la formation ?</h3>
                             <pre>
@@ -277,7 +335,7 @@ Vous pourrez ainsi progresser à votre rythme individuel.
                         <article>
                             <picture class="h200">
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200">
+                                <img loading="lazy" src="assets/img/team-22.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Quel est le coût de la formation ?</h3>
                             <pre>
@@ -305,38 +363,328 @@ Des modules supplémentaires sont aussi disponibles
                 </div>
             </section>
 
-            <section class="uk-section">
+            <section class="uk-section bg-sl">
                 <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-2@s" uk-grid>
-                        <article class="uk-card">
-                            <picture class="uk-card-media-top">
-                                <img loading="lazy" src="assets/img/xoomcoder.svg" alt="team">
+                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+
+                        <article class="uk-width-1-2@s">
+                            <picture class="h100">
+                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/team-23.jpg" alt="team" class="h100">
                             </picture>
-                            <div class="uk-card-body">
-                                <h1 class="uk-heading-small"><a href="#">Formation Dev FullStack</a></h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
-                            </div>
+                            <h3>Formation Progressive et Agile</h3>
+                            <pre>
+Suivez une formation axée sur des projets, de plus en plus complexes. Avancez comme une startup qui va créer une MarketPlace.
+                            </pre>
                         </article>
-                        <article class="uk-card">
-                            <picture class="uk-card-media-top">
-                                <img loading="lazy" src="assets/img/xoomcoder.svg" alt="team">
+
+                        <article class="uk-width-1-2@s">
+                            <picture class="h100">
+                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/team-24.jpg" alt="team" class="h100">
                             </picture>
-                            <div class="uk-card-body">
-                                <h2 class="uk-heading-small"><a href="#">Formation à distance</a></h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quo laboriosam obcaecati sint iure illo, nisi facilis nulla odit in error dicta sequi doloremque voluptas aliquam officia animi debitis reiciendis?</p>
-                            </div>
+                            <h3>Marketplace</h3>
+                            <pre>
+Depuis une quinzaine d'années, les sites les plus populaires sont basés sur une plateforme MarketPlace. La plateforme propose un hébergement et des fonctionnalités pour publier du contenu. La communauté d'internautes va créer du contenu et le publier sur la plateforme. On peut donner comme exemple: Gmail, YouTube, Facebook, Airbnb, LeBonCoin, Instagram, Twitter, TikTok, etc... De nombreuses startups surfent sur ce business plan et recherchent des développeurs fullstack qui pourront les aider à développer une plateforme MarketPlace.
+                            </pre>
                         </article>
+
+                        <article>
+                            <h3>Landing Page</h3>
+                            <pre>
+Une fois le nom de domaine réservé. On peut commencer à publier une Landing Page, pour démarrer le référencement avec les moteurs de recherche et aussi commencer à créer une communauté avec des early-adopters.
+                            </pre>
+                        </article>
+
+                        <article>
+                            <h3>Site Vitrine</h3>
+                            <pre>
+On a plus de contenus à publier et tout ce contenu ne tiendra pas sur une seule page. On répartit le contenu sur différentes pages.
+                            </pre>
+                        </article>
+
+                        <article>
+                            <h3>Blog</h3>
+                            <pre>
+La création de contenus prend du temps, mais il faut communiquer régulièrement pour construire sa communauté. Et les moteurs de recherche doivent référencer en priorité les sites d'actualités. Le Blog apporte ces bénéfices à votre projet web.                        
+                            </pre>
+                        </article>
+
+                        <article>
+                            <h3>CMS</h3>
+                            <pre>
+Content Management System ou Système de Gestion de Contenus. Avant d'ouvrir votre site aux contributeurs de votre communauté, c'est important de pouvoir disposer d'outils pour gérer efficacement le contenu de votre site.
+                            </pre>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="uk-section bg-grey">
+                <div class="uk-container">
+                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+
+                        <article class="uk-width-1-2@s">
+                            <picture class="h200">
+                                <source srcset="assets/img/youtube.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/youtube.svg" alt="team" class="h200 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">VIDEOS YOUTUBE</h3>
+                            <pre>
+Les Vidéos seront disponibles sur la chaine YouTube:
+<a href="https://www.youtube.com/channel/UCUDm9QajR-bh7I8NdSScR5A">Visitez la chaine YouTube pour XoomCoder</a>
+                            </pre>
+                        </article>
+
+                        <article class="uk-width-1-2@s">
+                            <picture class="h200">
+                                <source srcset="assets/img/github.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/github.svg" alt="team" class="h200 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">CODE GITHUB</h3>
+                            <pre>
+Les codes seront accessibles sur GitHub.com:
+<a href="https://github.com/xoomcoder">Explorez le Repository GitHub pour XoomCoder</a>
+                            </pre>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="uk-section bg-sl">
+                <div class="uk-container">
+                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+
+                        <article class="uk-width-1-1@s">
+                            <h3 class="ta-cn">Techniques de programmation</h3>
+                        </article>
+
+                        <article>
+                            <h3 class="ta-cn">Programmation Fonctionnelle</h3>
+                            <pre>
+Technique historique et fondamentale pour gérer des milliers de lignes de code.
+                            </pre>
+                        </article>
+
+                        <article>
+                            <h3 class="ta-cn">Programmation Orienté-Objet</h3>
+                            <pre>
+Devenue standard depuis les années 90 pour gérer des projets, en équipe et avec des millions de lignes de code.
+                            </pre>
+                        </article>
+
+                        <article class="ta-cn">
+                            <h3>Model View Controller (MVC)</h3>
+                            <pre>
+Cette organisation populaire du code aboutit à un framework qui sépare le code en 3 grandes parties: Model, View et Controller.
+                            </pre>
+                        </article>
+
+                        <article>
+                            <h3 class="ta-cn">Design Patterns</h3>
+                            <pre>
+Pourquoi ré-inventer la roue ? Les retours d'expérience depuis des décennies vous proposent des solutions robustes à la plupart des problèmes en programmation.
+                            </pre>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="uk-section bg-grey">
+                <div class="uk-container">
+                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+
+                        <article class="uk-width-1-1@s">
+                            <h3 class="ta-cn">Technologies Web (Front)</h3>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/html5.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/html5.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">HTML</h3>
+                            <pre>
+Hyper Text Markup Language
+                            </pre>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/css3.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/css3.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">CSS</h3>
+                            <pre>
+Cascading Style Sheets
+                            </pre>
+                        </article>
+
+                        <article class="ta-cn">
+                            <picture class="h100">
+                                <source srcset="assets/img/javascript-2.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/javascript-2.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3>JS</h3>
+                            <pre>
+JavaScript
+                            </pre>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/vuejs-3.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/vuejs-3.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">VueJS</h3>
+                            <pre>
+Vue est le meilleur framework Front pour démarrer et progresser rapidement.
+                            </pre>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="uk-section bg-sl">
+                <div class="uk-container">
+                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+
+                        <article class="uk-width-1-1@s">
+                            <h3 class="ta-cn">Technologies Web (Back)</h3>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/php.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/php.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">PHP</h3>
+                            <pre>
+PHP is a HyperText PreProcessor.
+                            </pre>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/mysql.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/mysql.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">SQL</h3>
+                            <pre>
+Structured Query Language.
+                            </pre>
+                        </article>
+
+                        <article class="ta-cn">
+                            <picture class="h100">
+                                <source srcset="assets/img/laravel-2.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/laravel-2.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3>Laravel</h3>
+                            <pre>
+Laravel est le Framework Back PHP le plus populaire.
+                            </pre>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/wordpress.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/wordpress.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">WordPress</h3>
+                            <pre>
+WordPress est le CMS le plus populaire.
+                            </pre>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="uk-section bg-sm">
+                <div class="uk-container">
+                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+
+                        <article class="uk-width-1-1@s">
+                            <h3 class="ta-cn">Serveur Web LAMP</h3>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/linux-tux.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/linux-tux.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">Linux</h3>
+                            <pre>
+Linux est le Système d'exploitation (OS) libre et robuste préféré pour les serveurs web.
+                            </pre>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/apache-feather.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/apache-feather.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">Apache (ou Nginx)</h3>
+                            <pre>
+Apache reste populaire pour les hébergements mutualisés, même si Nginx devient leader pour les serveurs web.
+                            </pre>
+                        </article>
+
+                        <article class="ta-cn">
+                            <picture class="h100">
+                                <source srcset="assets/img/mysql.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/mysql.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3>MySQL (ou MariaDB)</h3>
+                            <pre>
+Les Bases De Données (BDD) sont des outils très puissants et donc toujours très utilisés. La Base De Données MySQL, racheté par Oracle, a aussi comme alternative communautaire MariaDB.
+                            </pre>
+                        </article>
+
+                        <article>
+                            <picture class="h100">
+                                <source srcset="assets/img/php.svg" media="(max-width: 360px)">
+                                <img loading="lazy" src="assets/img/php.svg" alt="team" class="h100 of-cn">
+                            </picture>
+                            <h3 class="ta-cn">PHP</h3>
+                            <pre>
+PHP reste le langage serveur le plus populaire pour les projets web.
+                            </pre>
+                        </article>
+
                     </div>
                 </div>
             </section>
 
         </main>
-        <footer class="uk-section">
+        <footer class="uk-section bg-grey">
             <div class="uk-container">
-                <p>tous droits réservés</p>
+                <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+
+                    <article class="uk-width-1-1@s">
+                        <h3 class="ta-cn">XoomCoder Formation à Distance</h3>
+                        <pre>
+Tous droits réservés ©2020
+
+Ce site est géré et publié par Long Hai LH et le code est hébergé sur ionos.fr
+
+Des informations statistiques sur les visites sont stockées par l'hébergement et aussi par Google Analytics.
+
+Un grand merci à pexels.com                    
+                        </pre>
+                    </article>
+
+                </div>
             </div>
         </footer>
+
         <div id="debug"></div>
+
         <script src="assets/uikit/js/uikit.min.js"></script>
         <script src="assets/uikit/js/uikit-icons.min.js"></script>
 
