@@ -248,7 +248,7 @@
             </div>
         </header>
         <aside id="aside-panel" uk-offcanvas="flip: true; mode: push;">
-            <div class="uk-offcanvas-bar bg-dark-grey">
+            <div class="uk-offcanvas-bar bg-dark-grey bdl-pm">
 
                 <div class="uk-offcanvas-close" type="button" uk-close></div>
                 <nav>
