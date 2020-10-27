@@ -291,8 +291,8 @@
 
                         <article>
                             <picture>
-                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200 of-cn">
+                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)" sizes="100vw">
+                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200 of-cv">
                             </picture>
                             <h1>Formation Dev FullStack</h1>
                             <pre>
