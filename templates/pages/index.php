@@ -407,9 +407,9 @@ Des modules supplémentaires sont aussi disponibles
                     <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
 
                         <article class="uk-width-1-2@s">
-                            <picture class="h100">
+                            <picture class="h200">
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/team-23.jpg" alt="team" class="h100">
+                                <img loading="lazy" src="assets/img/team-23.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Formation Progressive et Agile</h3>
                             <pre>
@@ -424,7 +424,11 @@ Suivez une formation axée sur des projets, de plus en plus complexes. Avancez c
                             </picture>
                             <h3>Marketplace</h3>
                             <pre>
-Depuis une quinzaine d'années, les sites les plus populaires sont basés sur une plateforme MarketPlace. La plateforme propose un hébergement et des fonctionnalités pour publier du contenu. La communauté d'internautes va créer du contenu et le publier sur la plateforme. On peut donner comme exemple: Gmail, YouTube, Facebook, Airbnb, LeBonCoin, Instagram, Twitter, TikTok, etc... De nombreuses startups surfent sur ce business plan et recherchent des développeurs fullstack qui pourront les aider à développer une plateforme MarketPlace.
+Depuis une quinzaine d'années, les sites les plus populaires sont basés sur une plateforme MarketPlace. 
+La plateforme propose un hébergement et des fonctionnalités pour publier du contenu. 
+La communauté d'internautes va créer du contenu et le publier sur la plateforme. 
+On peut donner comme exemple: Gmail, YouTube, Facebook, Airbnb, LeBonCoin, Instagram, Twitter, TikTok, etc... 
+De nombreuses startups surfent sur ce business plan et recherchent des développeurs fullstack qui pourront les aider à développer une plateforme MarketPlace.
                             </pre>
                         </article>
 
