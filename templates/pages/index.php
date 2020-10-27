@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="test web dev">
 
-    <title>XoomCoder.com Formation Dev FullStack</title>
+    <title>XoomCoder.com Formation à Distance</title>
     <link rel="icon" href="assets/img/xoomcoder.svg">
 
     <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
@@ -216,9 +216,9 @@
             <div class="uk-container">
                 <div class="uk-flex uk-flex-between">
                     <picture>
-                        <img class="logo" src="assets/img/xoomcoder.svg" alt="logo">
+                        <a href="/"><img class="logo" src="assets/img/xoomcoder.svg" alt="logo"></a>
                     </picture>
-                    <div class="title"><a href="#" class="uk-link-heading">XoomCoder</a></div>
+                    <div class="title"><a href="/" class="uk-link-heading">XoomCoder</a></div>
                     <div class="title uk-visible@s">Formation à Distance</div>
                     <div class="" href="#aside-panel" uk-toggle uk-icon="icon: menu; ratio: 1.6"></div>
                 </div>
