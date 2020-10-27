@@ -80,13 +80,15 @@
         }
 
         article h1,
-        article h2,
-        article h3 {
+        article h2 {
+            font-size: 2rem;
+            line-height: 1.3;
             text-align: center;
         }
 
         article h3 {
             font-size: 1.2rem;
+            text-align: center;
         }
 
         .uk-grid article.uk-width-1-1\@s:first-child h3 {
