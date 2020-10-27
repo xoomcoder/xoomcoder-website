@@ -496,7 +496,7 @@ Les codes seront accessibles sur GitHub.com:
                 </div>
             </section>
 
-            <section class="uk-section bg-sl">
+            <section class="uk-section bg-sm">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
 
