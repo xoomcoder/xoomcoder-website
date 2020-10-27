@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="test web dev">
 
-    <title>XoomCoder.com Formation Dev FullStack</title>
+    <title>XoomCoder.com Formation à Distance</title>
     <link rel="icon" href="assets/img/xoomcoder.svg">
 
     <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
@@ -84,7 +84,7 @@
             text-align: center;
         }
 
-        .uk-grid article:first-child h3 {
+        .uk-grid article.uk-width-1-1\@s:first-child h3 {
             padding: 2rem;
         }
 
@@ -216,9 +216,9 @@
             <div class="uk-container">
                 <div class="uk-flex uk-flex-between">
                     <picture>
-                        <img class="logo" src="assets/img/xoomcoder.svg" alt="logo">
+                        <a href="/"><img class="logo" src="assets/img/xoomcoder.svg" alt="logo"></a>
                     </picture>
-                    <div class="title"><a href="#" class="uk-link-heading">XoomCoder</a></div>
+                    <div class="title"><a href="/" class="uk-link-heading">XoomCoder</a></div>
                     <div class="title uk-visible@s">Formation à Distance</div>
                     <div class="" href="#aside-panel" uk-toggle uk-icon="icon: menu; ratio: 1.6"></div>
                 </div>
@@ -253,7 +253,7 @@
                         <article>
                             <picture>
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
+                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200">
                             </picture>
                             <h1>Formation Dev FullStack</h1>
                             <pre>
@@ -266,7 +266,7 @@ Les techniques pour chaque projet vont, étape par étape, construire les outils
                         <article>
                             <picture class="h200">
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200">
+                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
                             </picture>
                             <h2>Formation à distance</h2>
                             <pre>

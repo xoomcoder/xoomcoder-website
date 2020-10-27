@@ -253,7 +253,7 @@
                         <article>
                             <picture>
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
+                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200">
                             </picture>
                             <h1>Formation Dev FullStack</h1>
                             <pre>
@@ -266,7 +266,7 @@ Les techniques pour chaque projet vont, étape par étape, construire les outils
                         <article>
                             <picture class="h200">
                                 <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200">
+                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
                             </picture>
                             <h2>Formation à distance</h2>
                             <pre>
