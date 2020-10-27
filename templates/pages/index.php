@@ -84,7 +84,7 @@
             text-align: center;
         }
 
-        .uk-grid article:first-child h3 {
+        .uk-grid article.uk-width-1-1\@s:first-child h3 {
             padding: 2rem;
         }
 
