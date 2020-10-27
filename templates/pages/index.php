@@ -161,12 +161,12 @@
             border-left: 1px dashed var(--light);
         }
 
-        @media (min-width:360px) {
+        @media (min-width:640px) {
 
             .bg-dark-grey h1,
             .bg-dark-grey h2,
             .bg-dark-grey h3 {
-                color: var(--primary-dark);
+                color: var(--primary);
                 text-shadow: 1px 2px 4px var(--dark);
             }
         }
