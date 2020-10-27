@@ -645,69 +645,66 @@ WordPress est le CMS le plus populaire.
             </section>
 
             <section class="uk-section bg-sm">
-                <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+                <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
 
-                        <article class="uk-width-1-1@s">
-                            <h3 class="ta-cn">Serveur Web LAMP</h3>
-                        </article>
+                    <article class="uk-width-1-1@s">
+                        <h3 class="ta-cn">Serveur Web LAMP</h3>
+                    </article>
 
-                        <article>
-                            <picture class="h100">
-                                <source srcset="assets/img/linux-tux.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/linux-tux.svg" alt="team" class="h100 of-cn">
-                            </picture>
-                            <h3 class="ta-cn">Linux</h3>
-                            <pre>
+                    <article>
+                        <picture class="h100">
+                            <source srcset="assets/img/linux-tux.svg" media="(max-width: 360px)">
+                            <img loading="lazy" src="assets/img/linux-tux.svg" alt="team" class="h100 of-cn">
+                        </picture>
+                        <h3 class="ta-cn">Linux</h3>
+                        <pre>
 Linux est le Système d'exploitation (OS) libre et robuste préféré pour les serveurs web.
                             </pre>
-                        </article>
+                    </article>
 
-                        <article>
-                            <picture class="h100">
-                                <source srcset="assets/img/apache-feather.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/apache-feather.svg" alt="team" class="h100 of-cn">
-                            </picture>
-                            <h3 class="ta-cn">Apache (ou Nginx)</h3>
-                            <pre>
+                    <article>
+                        <picture class="h100">
+                            <source srcset="assets/img/apache-feather.svg" media="(max-width: 360px)">
+                            <img loading="lazy" src="assets/img/apache-feather.svg" alt="team" class="h100 of-cn">
+                        </picture>
+                        <h3 class="ta-cn">Apache (ou Nginx)</h3>
+                        <pre>
 Apache reste populaire pour les hébergements mutualisés, même si Nginx devient leader pour les serveurs web.
                             </pre>
-                        </article>
+                    </article>
 
-                        <article class="ta-cn">
-                            <picture class="h100">
-                                <source srcset="assets/img/mysql.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/mysql.svg" alt="team" class="h100 of-cn">
-                            </picture>
-                            <h3>MySQL (ou MariaDB)</h3>
-                            <pre>
+                    <article class="ta-cn">
+                        <picture class="h100">
+                            <source srcset="assets/img/mysql.svg" media="(max-width: 360px)">
+                            <img loading="lazy" src="assets/img/mysql.svg" alt="team" class="h100 of-cn">
+                        </picture>
+                        <h3>MySQL (ou MariaDB)</h3>
+                        <pre>
 Les Bases De Données (BDD) sont des outils très puissants et donc toujours très utilisés. La Base De Données MySQL, racheté par Oracle, a aussi comme alternative communautaire MariaDB.
                             </pre>
-                        </article>
+                    </article>
 
-                        <article>
-                            <picture class="h100">
-                                <source srcset="assets/img/php.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/php.svg" alt="team" class="h100 of-cn">
-                            </picture>
-                            <h3 class="ta-cn">PHP</h3>
-                            <pre>
+                    <article>
+                        <picture class="h100">
+                            <source srcset="assets/img/php.svg" media="(max-width: 360px)">
+                            <img loading="lazy" src="assets/img/php.svg" alt="team" class="h100 of-cn">
+                        </picture>
+                        <h3 class="ta-cn">PHP</h3>
+                        <pre>
 PHP reste le langage serveur le plus populaire pour les projets web.
                             </pre>
-                        </article>
+                    </article>
 
-                    </div>
                 </div>
             </section>
 
         </main>
-        <footer class="uk-section bg-grey">
-            <div class="uk-container">
-                <div class="uk-grid uk-flex-center uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+        <footer class="uk-section bg-dark-grey">
+            <div class="uk-grid uk-flex-center uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
 
-                    <article class="uk-width-1-2@s">
-                        <h3 class="ta-cn">XoomCoder Formation à Distance</h3>
-                        <pre>
+                <article class="uk-width-1-2@s">
+                    <h3 class="ta-cn">XoomCoder Formation à Distance</h3>
+                    <pre>
 Tous droits réservés ©2020
 
 Ce site est géré et publié par Long Hai LH et le code est hébergé sur ionos.fr
@@ -716,9 +713,8 @@ Des informations statistiques sur les visites sont stockées par l'hébergement 
 
 Un grand merci à pexels.com                    
                         </pre>
-                    </article>
+                </article>
 
-                </div>
             </div>
         </footer>
 
