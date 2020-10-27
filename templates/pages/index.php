@@ -94,7 +94,9 @@
             box-shadow: 2px 4px 8px var(--dark-grey);
             color: var(--primary-dark);
         }
-
+        .title {
+            text-shadow: 1px 2px 4px var(--dark);
+        }
         article h1 {
             color: var(--primary-dark);
             font-size: 2rem;
@@ -139,7 +141,7 @@
         .bg-dark-grey h1,
         .bg-dark-grey h2,
         .bg-dark-grey h3 {
-            color: var(--primary-dark);
+            color: var(--secondary-dark);
             text-shadow: 1px 2px 4px var(--dark);
         }
 
