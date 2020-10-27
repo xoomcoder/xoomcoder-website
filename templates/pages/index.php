@@ -304,7 +304,7 @@ Les techniques pour chaque projet vont, étape par étape, construire les outils
 
                         <article>
                             <picture class="h200">
-                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <source srcset="assets/img/team-640.jpg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200">
                             </picture>
                             <h2>Formation à distance</h2>
@@ -324,7 +324,7 @@ La formation est découpée en modules. Vous composez votre parcours progressive
 
                         <article>
                             <picture class="h200">
-                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <source srcset="assets/img/coding-girl-640.jpg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/coding-girl-640.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Qui est le formateur ?</h3>
@@ -341,7 +341,7 @@ En 2020, les organismes de formation sont passés, pour la plupart, en formation
 
                         <article>
                             <picture class="h200">
-                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <source srcset="assets/img/team-20.jpg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/team-20.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Est-ce que la formation est adaptée à votre projet professionnel ?</h3>
@@ -355,7 +355,7 @@ Il est naturellement important de rester bienveillant et solidaire, afin de part
 
                         <article>
                             <picture class="h200">
-                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <source srcset="assets/img/team-21.jpg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/team-21.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Quelle est la durée de la formation ?</h3>
@@ -373,7 +373,7 @@ Vous pourrez ainsi progresser à votre rythme individuel.
 
                         <article>
                             <picture class="h200">
-                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <source srcset="assets/img/team-22.jpg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/team-22.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Quel est le coût de la formation ?</h3>
@@ -408,7 +408,7 @@ Des modules supplémentaires sont aussi disponibles
 
                         <article class="uk-width-1-2@s">
                             <picture class="h200">
-                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <source srcset="assets/img/team-23.jpg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/team-23.jpg" alt="team" class="h200">
                             </picture>
                             <h3>Formation Progressive et Agile</h3>
@@ -419,7 +419,7 @@ Suivez une formation axée sur des projets, de plus en plus complexes. Avancez c
 
                         <article class="uk-width-1-2@s">
                             <picture class="h100">
-                                <source srcset="assets/img/xoomcoder.svg" media="(max-width: 360px)">
+                                <source srcset="assets/img/team-24.jpg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/team-24.jpg" alt="team" class="h100">
                             </picture>
                             <h3>Marketplace</h3>
@@ -495,7 +495,7 @@ Les codes seront accessibles sur GitHub.com:
                     </div>
                 </div>
             </section>
-
+            
             <section class="uk-section bg-sm">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
