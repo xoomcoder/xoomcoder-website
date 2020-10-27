@@ -423,9 +423,9 @@ Content Management System ou Système de Gestion de Contenus. Avant d'ouvrir vot
 
             <section class="uk-section bg-grey">
                 <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
+                    <div class="uk-grid uk-flex-center uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
 
-                        <article class="uk-width-1-2@s">
+                        <article class="uk-width-1-3@s">
                             <picture class="h200">
                                 <source srcset="assets/img/youtube.svg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/youtube.svg" alt="team" class="h200 of-cn">
@@ -437,7 +437,7 @@ Les Vidéos seront disponibles sur la chaine YouTube:
                             </pre>
                         </article>
 
-                        <article class="uk-width-1-2@s">
+                        <article class="uk-width-1-3@s">
                             <picture class="h200">
                                 <source srcset="assets/img/github.svg" media="(max-width: 360px)">
                                 <img loading="lazy" src="assets/img/github.svg" alt="team" class="h200 of-cn">
