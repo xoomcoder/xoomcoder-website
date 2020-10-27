@@ -79,14 +79,20 @@
             text-align: center;
         }
 
+        article h1,
+        article h2,
+        article h3 {
+            text-align: center;
+        }
+
         article h3 {
             font-size: 1.2rem;
-            text-align: center;
         }
 
         .uk-grid article.uk-width-1-1\@s:first-child h3 {
             padding: 2rem;
         }
+
 
         /* COLORS */
         header {
@@ -101,8 +107,6 @@
 
         article h1 {
             color: var(--primary-dark);
-            font-size: 2rem;
-            line-height: 1.3;
         }
 
         article h2,
@@ -495,7 +499,7 @@ Les codes seront accessibles sur GitHub.com:
                     </div>
                 </div>
             </section>
-            
+
             <section class="uk-section bg-sm">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-4@l" uk-scrollspy="target: > article; cls: uk-animation-slide-top; delay: 200; repeat: true;">
