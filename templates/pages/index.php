@@ -145,10 +145,14 @@
         .bg-dark-grey pre {
             color: var(--light);
         }
+        article pre:hover {
+            color: var(--dark-grey);
+            border: 1px dashed var(--primary-light);
+            background-color: var(--light);
+        }
 
         .bdl-pm {
             border-left: 1px dashed var(--light);
-
         }
 
         /* cyrillic-ext */
