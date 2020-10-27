@@ -131,12 +131,26 @@
         .bg-grey {
             background-color: var(--grey);
         }
+
         .bg-dark-grey {
             background-color: var(--dark-grey);
         }
+
+        .bg-dark-grey h1,
+        .bg-dark-grey h2,
+        .bg-dark-grey h3 {
+            color: var(--primary);
+        }
+
         .bg-dark-grey pre {
             color: var(--light);
         }
+
+        .bdl-pm {
+            border-left: 1px dashed var(--light);
+
+        }
+
         /* cyrillic-ext */
         @font-face {
             font-family: 'Roboto';
