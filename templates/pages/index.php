@@ -161,7 +161,7 @@
             border-left: 1px dashed var(--light);
         }
 
-        @media (max-width:360px) {
+        @media (min-width:360px) {
 
             .bg-dark-grey h1,
             .bg-dark-grey h2,
