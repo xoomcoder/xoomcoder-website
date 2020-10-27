@@ -139,7 +139,8 @@
         .bg-dark-grey h1,
         .bg-dark-grey h2,
         .bg-dark-grey h3 {
-            color: var(--primary);
+            color: var(--primary-dark);
+            text-shadow: 1px 2px 4px var(--dark);
         }
 
         .bg-dark-grey pre {
