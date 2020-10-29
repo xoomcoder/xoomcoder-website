@@ -291,15 +291,20 @@
             </div>
         </aside>
         <main>
-            <section class="uk-section uk-padding-remove bg-dark-grey">
+            <section class="uk-section uk-padding-remove">
+                <style>
+                    article img {
+                        height:200px;
+                    }
+                </style>
                 <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-2@s" uk-grid="masonry: true" uk-scrollspy="target: > article pre; cls: uk-animation-scale-up; delay: 200; repeat: true;">
+                    <div class="uk-grid" uk-grid="masonry: true" uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
                         <article>
                             <h1>News</h1>
-                            <a class="cta w100" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
+                            <a class="uk-button" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
                             <nav class="w100">
-                                <a href="news">page 1</a>
-                                <a href="news-02">page 2</a>
+                                <a class="uk-button" href="news">page 1</a>
+                                <a class="uk-button" href="news-02">page 2</a>
                             </nav>
                         </article>
 
@@ -308,9 +313,9 @@
                     </div>
             </section>
 
-            <section class="uk-section uk-padding-remove bg-dark-grey">
+            <section class="uk-section uk-padding-remove">
                 <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-2@s" uk-grid="masonry: true" uk-scrollspy="target: > article pre; cls: uk-animation-scale-up; delay: 200; repeat: true;">
+                    <div class="uk-grid uk-child-width-1-3@s" uk-grid="masonry: true" uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
 
                         <article>
                             <picture>
