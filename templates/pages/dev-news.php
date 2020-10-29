@@ -319,7 +319,7 @@
                             </nav>
                         </article>
 
-                        <?php Cms::showNews() ?>
+                        <?php Cms::showNews2() ?>
 
                     </div>
             </section>
