@@ -301,6 +301,7 @@
                 article h2 a,
                 article h3 a {
                     color: var(--primary-dark);
+                    font-size:1.2rem;
                 }
                 article pre {
                     overflow: hidden;
@@ -309,7 +310,7 @@
 
             <section class="uk-section uk-padding-remove">
                 <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-3@l" uk-grid uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
+                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-3@l" uk-grid uk-scrollspy="target: > article img; cls: uk-animation-slide-up; delay: 200; repeat: true;">
                         <article class="uk-width-1-1@s">
                             <h1>News</h1>
                             <a class="uk-button uk-button-primary" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
@@ -320,6 +321,14 @@
                         </article>
 
                         <?php Cms::showNews2() ?>
+
+                        <article class="uk-width-1-1@s">
+                            <h3><a class="uk-button uk-button-primary" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a></h3>
+                            <nav class="w100">
+                                <a class="uk-button" href="news">page 1</a>
+                                <a class="uk-button" href="news-02">page 2</a>
+                            </nav>
+                        </article>
 
                     </div>
             </section>
