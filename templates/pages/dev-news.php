@@ -291,15 +291,17 @@
             </div>
         </aside>
         <main>
+            <style>
+                article img {
+                    height:200px;
+                    width:100%;
+                    object-fit: cover;
+                }
+            </style>
             <section class="uk-section uk-padding-remove">
-                <style>
-                    article img {
-                        height:200px;
-                    }
-                </style>
                 <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-3@s" uk-grid="masonry: true" uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
-                        <article>
+                    <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-3@l" uk-grid="masonry: true" uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
+                        <article class="uk-width-1-1@s">
                             <h1>News</h1>
                             <a class="uk-button" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
                             <nav class="w100">
