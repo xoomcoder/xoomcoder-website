@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="xoomcoder formation à distance. Formation Développeur Web Fullstack.">
+    <meta name="description" content="news - xoomcoder formation à distance. Formation Développeur Web Fullstack.">
+    <meta name="robots" content="index">
 
-    <title>XoomCoder Formation à Distance</title>
+    <meta property="og:title" content="news">
+    <meta property="og:description" content="News XoomCoder Formation à Distance">
+    <meta property="og:url" content="https://xoomcoder.com/news--fe">
+    <meta property="og:image" content="https://xoomcoder.com/news--fe.jpg">
+    <meta property="og:image:alt" content="news">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="XoomCoder">
+
+
+    <title>News - XoomCoder Formation à Distance</title>
+    <link rel="canonical" href="https://xoomcoder.com/news">
     <link rel="icon" href="assets/img/xoomcoder.svg">
-
     <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
     <style>
         /* variables */
@@ -256,6 +266,28 @@
 </head>
 
 <body>
+    <style>
+        article img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        article h2 a,
+        article h3 a {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
+
+        article pre {
+            overflow: hidden;
+        }
+
+        .uk-button-primary {
+            background-color: var(--primary-dark);
+            color: var(--light);
+        }
+    </style>
     <div class="page">
         <header class="uk-section uk-padding-small" uk-sticky>
             <div class="uk-container">
@@ -291,22 +323,6 @@
             </div>
         </aside>
         <main>
-            <style>
-                article img {
-                    height: 200px;
-                    width: 100%;
-                    object-fit: cover;
-                }
-
-                article h2 a,
-                article h3 a {
-                    color: var(--primary-dark);
-                    font-size:1.2rem;
-                }
-                article pre {
-                    overflow: hidden;
-                }
-            </style>
 
             <section class="uk-section uk-padding-remove">
                 <div class="uk-container">

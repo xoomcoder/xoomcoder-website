@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="xoomcoder formation à distance. Formation Développeur Web Fullstack.">
+    <meta name="robots" content="index">
+
+    <meta property="og:title" content="XoomCoder Formation à Distance">
+    <meta property="og:description" content="Formation Développeur Web Fullstack">
+    <meta property="og:url" content="https://xoomcoder.com/">
+    <meta property="og:image" content="https://xoomcoder.com/team.jpg">
+    <meta property="og:image:alt" content="xoomcoder">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="XoomCoder">
 
     <title>XoomCoder Formation à Distance</title>
+    <link rel="canonical" href="https://xoomcoder.com/">
+    
     <link rel="icon" href="assets/img/xoomcoder.svg">
-
     <link rel="stylesheet" href="assets/uikit/css/uikit.min.css">
     <style>
         /* variables */
