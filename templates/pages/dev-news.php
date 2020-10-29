@@ -293,17 +293,26 @@
         <main>
             <style>
                 article img {
-                    height:200px;
-                    width:100%;
+                    height: 200px;
+                    width: 100%;
                     object-fit: cover;
                 }
+
+                article h2 a,
+                article h3 a {
+                    color: var(--primary-dark);
+                }
+                article pre {
+                    overflow: hidden;
+                }
             </style>
+
             <section class="uk-section uk-padding-remove">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-3@l" uk-grid="masonry: true" uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
                         <article class="uk-width-1-1@s">
                             <h1>News</h1>
-                            <a class="uk-button" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
+                            <a class="uk-button uk-button-primary" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
                             <nav class="w100">
                                 <a class="uk-button" href="news">page 1</a>
                                 <a class="uk-button" href="news-02">page 2</a>
@@ -313,123 +322,6 @@
                         <?php Cms::showNews() ?>
 
                     </div>
-            </section>
-
-            <section class="uk-section uk-padding-remove">
-                <div class="uk-container">
-                    <div class="uk-grid uk-child-width-1-3@s" uk-grid="masonry: true" uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
-
-                        <article>
-                            <picture>
-                                <source srcset="assets/img/vuejs-3.svg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/code-640.jpg" alt="team" class="h200 of-cv">
-                            </picture>
-                            <h1>Formation Dev FullStack</h1>
-                            <pre>
-Devenez en quelques mois un développeur fullstack en apprenant à coder une MarketPlace, en méthodologie Agile. 
-Apprenez progressivement en travaillant sur des projets d'abord simples et puis de plus en plus complexes. 
-Les techniques pour chaque projet vont, étape par étape, construire les outils dont vous avez besoin pour réaliser le projet final de MarketPlace.
-                            </pre>
-                        </article>
-
-                        <article>
-                            <picture class="h200">
-                                <source srcset="assets/img/team-640.jpg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/team-640.jpg" alt="team" class="h200 of-cv">
-                            </picture>
-                            <h2>Formation à distance</h2>
-                            <pre>
-Vous êtes réunis en équipe suivant le niveau acquis. 
-L'entraide entre les apprenants permet aussi de créer votre réseau professionnel. 
-Une fois en entreprise, vous faites toujours partie de la communauté XoomCoder.com. 
-La formation est découpée en modules. Vous composez votre parcours progressivement.
-
-* Landing Page
-* Site Vitrine
-* Blog
-* CMS
-* Marketplace
-                            </pre>
-                        </article>
-
-                        <article>
-                            <picture class="h200">
-                                <source srcset="assets/img/coding-girl-640.jpg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/coding-girl-640.jpg" alt="team" class="h200 of-cv">
-                            </picture>
-                            <h3>Qui est le formateur ?</h3>
-                            <pre>
-Long Hai est diplômé Ingénieur Logiciel (Ensimag) depuis plus de 20 ans. 
-Et il a commencé à coder il y a plus de 35 ans! 
-Long Hai a une grande expérience des formations intensives. 
-Les groupes se composent autour de 10-20 apprenantes et apprenants. 
-En effet, il est formateur depuis plus de 6 ans, dans les écoles labellisées Grande Ecole du Numérique.
-Les formations "développeur web fullstack" durent de 3 à 6 mois, en présentiel en général.
-En 2020, les organismes de formation sont passés, pour la plupart, en formation à distance.
-                            </pre>
-                        </article>
-
-                        <article>
-                            <picture class="h200">
-                                <source srcset="assets/img/team-20.jpg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/team-20.jpg" alt="team" class="h200 of-cv">
-                            </picture>
-                            <h3>Est-ce que la formation est adaptée à votre projet professionnel ?</h3>
-                            <pre>
-Les apprenants sont souvent en situation de reconversion professionnelle, débutants ou avec une première expérience dans le domaine du web. Le profil d'origine de chaque personne est très varié. 
-Et ce mélange inattendu crée toujours une richesse des cultures et des expériences, autant professionnelles comme personnelles. 
-
-Il est naturellement important de rester bienveillant et solidaire, afin de participer à la création d'une communauté dynamique, active et positive.
-                            </pre>
-                        </article>
-
-                        <article>
-                            <picture class="h200">
-                                <source srcset="assets/img/team-21.jpg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/team-21.jpg" alt="team" class="h200 of-cv">
-                            </picture>
-                            <h3>Quelle est la durée de la formation ?</h3>
-                            <pre>
-XoomCoder innove en proposant une formation organisée par projets.
-Alors que la plupart des formations sont basées sur une durée fixe.
-En réalité, la durée de formation dépend beaucoup des situations individuelles. 
-
-Le cursus de formation complet est conçu pour environ 6 mois à temps plein.
-Les groupes sont organisés par niveau de difficulté de projet.
-Vous pourrez ainsi progresser à votre rythme individuel.
-
-                            </pre>
-                        </article>
-
-                        <article>
-                            <picture class="h200">
-                                <source srcset="assets/img/team-22.jpg" media="(max-width: 360px)">
-                                <img loading="lazy" src="assets/img/team-22.jpg" alt="team" class="h200 of-cv">
-                            </picture>
-                            <h3>Quel est le coût de la formation ?</h3>
-                            <pre>
-XoomCoder innove aussi en proposant des paiements par modules.
-Suivant votre rythme de progression, vous payez le module sur lequel vous êtes en cours de formation. Alors que la plupart des formations fixent un prix global, pour une durée figée et limitée.
-
-* Level 0: Gratuit / Hello L0.        
-* Level 1: Gratuit / Landing page.
-
-* Level 2: 100 euros / Site Vitrine.
-* Level 3: 200 euros / Blog.
-* Level 4: 300 euros / CMS.
-* Level 5: 400 euros / MarketPlace.
-
-Des modules supplémentaires sont aussi disponibles
-
-* CMS WordPress NoCode. (100 euros).
-* CMS WordPress FullStack. (200 euros).
-* Framework Front VueJS. (300 euros).
-* Framework Back Laravel. (400 euros).            
-                            </pre>
-                        </article>
-
-                    </div>
-                </div>
             </section>
 
         </main>
