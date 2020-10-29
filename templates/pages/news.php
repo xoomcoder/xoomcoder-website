@@ -279,7 +279,11 @@
             font-size: 1.2rem;
         }
 
-        article pre {
+        article pre,
+        article p {
+            white-space: pre-wrap;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
             overflow: hidden;
         }
 
@@ -287,6 +291,7 @@
             background-color: var(--primary-dark);
             color: var(--light);
         }
+
         a {
             color: var(--primary-dark);
         }
