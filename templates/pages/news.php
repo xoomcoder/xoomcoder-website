@@ -288,7 +288,7 @@
             color: var(--light);
         }
         a {
-            background-color: var(--primary-dark);
+            color: var(--primary-dark);
         }
     </style>
     <div class="page">
