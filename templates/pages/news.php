@@ -287,6 +287,9 @@
             background-color: var(--primary-dark);
             color: var(--light);
         }
+        a {
+            background-color: var(--primary-dark);
+        }
     </style>
     <div class="page">
         <header class="uk-section uk-padding-small" uk-sticky>
