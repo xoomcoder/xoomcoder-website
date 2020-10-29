@@ -298,7 +298,7 @@
                     }
                 </style>
                 <div class="uk-container">
-                    <div class="uk-grid" uk-grid="masonry: true" uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
+                    <div class="uk-grid uk-child-width-1-3@s" uk-grid="masonry: true" uk-scrollspy="target: > article img; cls: uk-animation-scale-up; delay: 200; repeat: true;">
                         <article>
                             <h1>News</h1>
                             <a class="uk-button" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
