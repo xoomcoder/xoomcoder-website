@@ -336,7 +336,7 @@
             <section class="uk-section uk-padding-remove">
                 <div class="uk-container">
                     <div class="uk-grid uk-child-width-1-2@s uk-child-width-1-3@l" uk-grid uk-scrollspy="target: > article img; cls: uk-animation-slide-top; delay: 200; repeat: true;">
-                        <article class="uk-width-1-1@s uk-flex uk-flex-column uk-flex-center">
+                        <article class="uk-width-1-1@s uk-flex uk-flex-column uk-text-center">
                             <h1>News</h1>
                             <a class="uk-button uk-button-primary" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
                             <nav class="w100">
