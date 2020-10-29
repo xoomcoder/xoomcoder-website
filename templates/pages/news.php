@@ -285,6 +285,7 @@
             font-family: 'Roboto', sans-serif;
             text-align: justify;
             overflow: hidden;
+            font-size: 0.875rem;
         }
 
         .uk-button-primary {
