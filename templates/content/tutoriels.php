@@ -45,3 +45,15 @@
         <p>tutoriel pour coder un site Marketplace</p>
     </article>
 </section>
+
+<section class="x3col">
+    <h1>Liste des tutoriels PHP8</h1>
+    <p class="w100">Pour démarrer avec les frameworks back comme WordPress, Laravel, Symfony...</p>
+    <a class="cta w100" href="inscription" title="REJOIGNEZ LA COMMUNAUTE XOOMCODER">Rejoignez la communauté XoomCoder&nbsp;!</a>
+    <article>
+        <a href="tutoriel-php8">
+            <h2>coder un site vitrine avec PHP8</h2>
+        </a>
+        <p>Tutoriel pour démarrer avec PHP8.</p>
+    </article>
+</section>
