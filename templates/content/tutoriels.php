@@ -55,5 +55,7 @@
             <h2>coder un site vitrine avec PHP8</h2>
         </a>
         <p>Tutoriel pour démarrer avec PHP8.</p>
+        <p>PHP est depuis plus de 10 ans le langage le plus populaire pour le développement web côté serveur.</p>
+
     </article>
 </section>
